@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +7,6 @@
     <title>Blizrd</title>
 </head>
 <body>
-    <div>Here I am!</div>
+    <div>HERE I AM!!!</div>
 </body>
 </html>
