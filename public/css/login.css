@@ -38,6 +38,8 @@ form{
     cursor: pointer;
     display: inline-block;
     position: relative;
+    transition: 0.5s;
+    transition-property: top,right;
   }
   
   .login-button span:after {
@@ -46,6 +48,8 @@ form{
     opacity: 0;
     top: 0;
     right: -20px;
+    transition: 0.5s;
+    transition-property: top,right;
   }
   
   .login-button:hover span {
