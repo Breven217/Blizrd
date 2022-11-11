@@ -8,5 +8,6 @@
 </head>
 <body>
     <div>Log me in baby</div>
+    <h1>{{$gamer}}</h1>
 </body>
 </html>
