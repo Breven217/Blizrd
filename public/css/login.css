@@ -30,6 +30,8 @@ form{
 
   .login-button:hover {
     background-color: #1d4e97;
+    transition-duration: 0.5s;
+    transition-property: background;
   }
 
   .login-button span {
@@ -52,13 +54,9 @@ form{
   
   .login-button:hover span {
     padding-right: 25px;
-    transition-duration: 0.5s;
-    transition-property: background;
   }
   
   .login-button:hover span:after {
     opacity: 1;
     right: 0;
-    transition-duration: 0.5s;
-    transition-property: background;
   }
