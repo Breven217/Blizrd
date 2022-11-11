@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content">
-        <h2>Login</h2>
+        <h1>Login</h1>
         <form>
             <input type="text" name="username" id="username">
             <input type="password" name="password" id="password">
