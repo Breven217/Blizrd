@@ -4,7 +4,6 @@
     margin-top: 20%;
     text-align: center;
     grid-template-rows: 50px 150px;
-    grid-template-columns: 60%;
 }
 
 form{
@@ -16,7 +15,7 @@ form{
 #login-button{
     justify-self: center;
     border-radius: 5px;
-    width: max(100px, 90%);
+    width: min(400px, 90%);
 }
 
 #username #password{
