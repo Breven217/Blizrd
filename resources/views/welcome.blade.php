@@ -7,7 +7,7 @@
         <title>Blizrd</title>
 
         <!-- Fonts -->
-        <link href="./css/app.css" rel="stylesheet">
+        <link href="app.css" rel="stylesheet">
 
     </head>
     <body class="antialiased">
