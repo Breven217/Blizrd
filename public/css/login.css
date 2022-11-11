@@ -1,6 +1,6 @@
 .content{
     display: grid;
-    justify-items: center;
+    justify-content: center;
     text-align: center;
     grid-template-rows: 50px 150px;
     grid-template-columns: 60%;
