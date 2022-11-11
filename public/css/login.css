@@ -18,10 +18,8 @@ form{
     border-radius: 4px;
     background-color: #2d6dcc;
     border: none;
-    color: #FFFFFF;
     text-align: center;
     justify-self: center;
-    font-size: 28px;
     padding: 5px;
     width: 90%;
     cursor: pointer;
@@ -32,6 +30,9 @@ form{
     cursor: pointer;
     display: inline-block;
     position: relative;
+    transition: 0.5s;
+    font-size: 28px;
+    color: #FFFFFF;
   }
   
   #login-button span:after {
