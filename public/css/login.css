@@ -14,7 +14,7 @@ form{
     font-size: medium;
 }
 
-#login-button {
+.login-button {
     border-radius: 4px;
     background-color: #2d6dcc;
     border: none;
@@ -24,18 +24,19 @@ form{
     width: 90%;
     cursor: pointer;
     margin: 5px;
-  }
-  
-  #login-button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
     font-size: 28px;
     color: #FFFFFF;
   }
   
-  #login-button span:after {
+  .login-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    
+  }
+  
+  .login-button span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -44,11 +45,11 @@ form{
     transition: 0.5s;
   }
   
-  #login-button:hover span {
+  .login-button:hover span {
     padding-right: 25px;
   }
   
-  #login-button:hover span:after {
+  .login-button:hover span:after {
     opacity: 1;
     right: 0;
   }
