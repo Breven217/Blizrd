@@ -34,16 +34,10 @@ form{
     background-color: #1d4e97;
   }
 
-  span {
-    font-size: 28px;
-    color: #FFFFFF;
-  }
-  
   .login-button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
-    transition: 0.5s;
   }
   
   .login-button span:after {
@@ -52,7 +46,6 @@ form{
     opacity: 0;
     top: 0;
     right: -20px;
-    transition: 0.5s;
   }
   
   .login-button:hover span {
