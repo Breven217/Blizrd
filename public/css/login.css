@@ -28,17 +28,6 @@ form{
     color: #FFFFFF;
   }
 
-  .login-button:hover {
-    background-color: #1d4e97;
-    transition-duration: 0.5s;
-    transition-property: background;
-  }
-
-  .login-button:after {
-    transition-duration: 0.5s;
-    transition-property: background;
-  }
-
   .login-button span {
     cursor: pointer;
     display: inline-block;
