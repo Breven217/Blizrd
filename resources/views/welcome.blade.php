@@ -10,7 +10,7 @@
         <link href="app.css" rel="stylesheet">
 
     </head>
-    <body class="antialiased">
+    <body>
        <div>HELLO WORLD!!</div>
     </body>
 </html>
