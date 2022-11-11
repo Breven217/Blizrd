@@ -18,3 +18,7 @@ form{
     border-radius: 5px;
     width: max(100px, 90%);
 }
+
+#username #password{
+    width: min(400px, 100%);
+}
