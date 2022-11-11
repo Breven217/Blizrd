@@ -13,6 +13,7 @@ form{
 }
 
 #login-button{
-    justify-self: right;
-    width: max(75px, 25%);
+    justify-self: center;
+    border-radius: 5px;
+    width: max(100px, 90%);
 }
