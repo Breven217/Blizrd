@@ -4,9 +4,14 @@
     margin-right: auto;
     text-align: center;
     grid-template-rows: 50px 150px;
+    grid-template-columns: 60%;
 }
 
 form{
     display: grid;
     grid-template-rows: 50px 50px 50px;
+}
+
+#login-button{
+    width: 50%;
 }

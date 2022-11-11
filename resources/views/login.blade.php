@@ -10,7 +10,7 @@
         <form>
             <input type="text" name="username" id="username">
             <input type="password" name="password" id="password">
-            <input type="button" value="Login" name="login-button">
+            <input type="button" value="Login" name="login-button" id="login-button">
         </form>
     </div>
 @endsection
