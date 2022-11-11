@@ -4,7 +4,7 @@
     grid-template-rows: 50px 300px;
     grid-row-gap: 20px;
     text-align: center;
-    align-items: center;
+    justify-content: center;
 }
 
 form{
@@ -18,7 +18,4 @@ form{
     justify-self: center;
     border-radius: 5px;
     width: 90%;
-}
-
-#username #password{
 }
