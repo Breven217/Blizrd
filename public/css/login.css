@@ -16,7 +16,7 @@ form{
 
 #login-button {
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color: #2d6dcc;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -32,7 +32,6 @@ form{
     cursor: pointer;
     display: inline-block;
     position: relative;
-    transition: 0.5s;
   }
   
   #login-button span:after {

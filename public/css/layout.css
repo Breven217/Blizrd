@@ -3,7 +3,7 @@ header{
     left: 0;
     top: 0;
     width: 100%;
-    background-color: red;
+    background-color: #2d6dcc;
     color: white;
     text-align: center;
 }
@@ -13,7 +13,7 @@ footer{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
+    background-color: #2d6dcc;
     color: white;
     text-align: center; 
 }
