@@ -3,7 +3,7 @@
     justify-content: center;
     margin-top: 20%;
     text-align: center;
-    grid-template-rows: 50px 150px;
+    grid-template-rows: 50px auto;
 }
 
 form{
