@@ -6,7 +6,11 @@
 
         <title>Blizrd</title>
 
-        <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" />
+
+        <script type="text/javascript" src="{{ URL::asset('js/login.js') }}"></script>
+
+
     </head>
     <body>
        <div>Login here</div>
