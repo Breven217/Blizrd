@@ -39,7 +39,7 @@ form{
     display: inline-block;
     position: relative;
     transition: 0.5s;
-    transition-property: top,right;
+    transition-property: top, right, padding;
   }
   
   .login-button span:after {
@@ -49,7 +49,7 @@ form{
     top: 0;
     right: -20px;
     transition: 0.5s;
-    transition-property: top,right;
+    transition-property: top, right, padding;
   }
   
   .login-button:hover span {
