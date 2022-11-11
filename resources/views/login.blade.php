@@ -9,6 +9,6 @@
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     </head>
     <body>
-       <div>HELLO WORLD!!</div>
+       <div>Login here</div>
     </body>
 </html>
