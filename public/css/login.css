@@ -10,20 +10,21 @@ form{
     margin-left: auto;
     margin-right: auto;
     display: grid;
-    grid-template-rows: 50px 50px auto;
+    grid-template-rows: 50px 50px 50px;
     grid-row-gap: 10px;
     width: min(600px, 100%);
     font-size: medium;
 }
 
 #login-button {
-    border-radius: 5px;
+    border-radius: 4px;
     background-color: #f4511e;
     border: none;
     color: #FFFFFF;
     text-align: center;
+    justify-self: center;
     font-size: 28px;
-    padding: 20px;
+    padding: 5px;
     width: 90%;
     transition: all 0.5s;
     cursor: pointer;
