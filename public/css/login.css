@@ -10,8 +10,9 @@
 form{
     display: grid;
     grid-template-rows: 50px 50px 50px;
+    text-align: center;
 }
 
 #login-button{
-    width: 50%;
+    width: max(50px, 25%);
 }
