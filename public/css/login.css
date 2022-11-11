@@ -13,6 +13,6 @@ form{
 }
 
 #login-button{
-    margin-right: 0;
+    margin-left: 100%;
     width: max(75px, 25%);
 }
