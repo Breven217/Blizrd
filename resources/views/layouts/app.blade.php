@@ -7,7 +7,7 @@
     <title>Blizrd</title>
 </head>
 <header>
-    @include('layout.header')
+    @include('layouts.header')
 </header>
 <body>
     @yield('content')
