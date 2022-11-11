@@ -7,10 +7,12 @@
         <title>Blizrd</title>
 
         <!-- Fonts -->
-        <link href="app.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 
     </head>
     <body>
        <div>HELLO WORLD!!</div>
     </body>
 </html>
+
+
