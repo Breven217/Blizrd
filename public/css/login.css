@@ -24,7 +24,6 @@ form{
     font-size: 28px;
     padding: 5px;
     width: 90%;
-    transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
   }
