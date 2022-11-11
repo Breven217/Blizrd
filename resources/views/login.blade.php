@@ -6,13 +6,13 @@
 
         <title>Blizrd</title>
 
-        <link rel="stylesheet" href="/resources/css/styles.css" />
+        <link rel="stylesheet" href="/styles.css" />
 
         <script type="text/javascript" src="{{ URL::asset('js/login.js') }}"></script>
 
 
     </head>
     <body>
-       <div>Login here1</div>
+       <div>Login here2</div>
     </body>
 </html>
