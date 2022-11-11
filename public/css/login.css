@@ -6,6 +6,7 @@
     grid-template-rows: 50px auto;
     grid-row-gap: 20px;
     text-align: center;
+    grid-column: 100%;
 }
 
 form{
