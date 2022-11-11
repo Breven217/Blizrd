@@ -13,5 +13,6 @@ form{
 }
 
 #login-button{
+    justify-self: right;
     width: max(75px, 25%);
 }
