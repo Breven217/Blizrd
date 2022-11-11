@@ -30,11 +30,6 @@ form{
   .login-button:hover {
     background-color: #1d4e97;
   }
-
-  .login-button span:before {
-    font-size: 28px;
-    color: #FFFFFF;
-  }
   
   .login-button span {
     cursor: pointer;
