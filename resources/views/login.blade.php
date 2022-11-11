@@ -6,7 +6,7 @@
 
         <title>Blizrd</title>
 
-        <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" />
+        <link rel="stylesheet" href="././css/styles.css" />
 
         <script type="text/javascript" src="{{ URL::asset('js/login.js') }}"></script>
 
