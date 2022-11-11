@@ -8,6 +8,8 @@ class LoginController extends Controller
 {
     public function index(){
         $gamer = "Gib Soobieb";
-        return view('login')->with('gamer', $gamer);
+        return view('login', [
+            'gamer' => $gamer
+        ]);
     }
 }
