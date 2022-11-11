@@ -10,7 +10,7 @@ form{
     margin-left: auto;
     margin-right: auto;
     display: grid;
-    grid-template-rows: 50px 50px 50px;
+    grid-template-rows: 50px 50px auto;
     grid-row-gap: 10px;
     width: min(600px, 100%);
     font-size: medium;
