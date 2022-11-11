@@ -26,8 +26,6 @@ form{
     margin: 5px;
     font-size: 28px;
     color: #FFFFFF;
-    transition-duration: 0.5s;
-    transition-property: background;
   }
 
   .login-button:hover {
