@@ -14,6 +14,10 @@ form{
     font-size: medium;
 }
 
+span {
+    font-size: 28px;
+    color: #FFFFFF;
+}
 .login-button {
     border-radius: 4px;
     background-color: #2d6dcc;
@@ -33,7 +37,6 @@ form{
     display: inline-block;
     position: relative;
     transition: 0.5s;
-    
   }
   
   .login-button span:after {
