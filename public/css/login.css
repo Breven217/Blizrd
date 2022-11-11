@@ -1,6 +1,7 @@
 .content{
     display: grid;
     justify-content: center;
+    justify-items: center;
     margin-top: 20%;
     grid-template-rows: 50px auto;
     grid-row-gap: 20px;
