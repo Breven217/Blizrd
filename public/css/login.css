@@ -1,5 +1,12 @@
 body{
     display: grid;
-    margin: auto;
-    grid-template-rows: 50px 50px 50px 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    grid-template-rows: 50px 150px;
+}
+
+form{
+    display: grid;
+    grid-template-rows: 50px 50px 50px;
 }
