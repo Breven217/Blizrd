@@ -7,7 +7,7 @@
         <title>Blizrd</title>
 
         <!-- Fonts -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+        <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
 
     </head>
     <body>
