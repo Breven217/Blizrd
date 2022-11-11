@@ -1,7 +1,7 @@
 .content{
     display: grid;
     justify-content: center;
-    align-content: center;
+    align-content: middle;
     text-align: center;
     grid-template-rows: 50px 150px;
     grid-template-columns: 60%;
