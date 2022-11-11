@@ -4,6 +4,7 @@
     margin-top: 20%;
     text-align: center;
     grid-template-rows: 50px auto;
+    grid-row-gap: 20px;
 }
 
 form{
