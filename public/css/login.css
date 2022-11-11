@@ -1,8 +1,6 @@
 .content{
     display: grid;
     margin-top: 20vh;
-    grid-template-rows: 50px 300px;
-    grid-row-gap: 20px;
     text-align: center;
 }
 
