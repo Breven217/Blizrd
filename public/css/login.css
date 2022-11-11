@@ -10,7 +10,7 @@ form{
     display: grid;
     grid-template-rows: 50px 50px 50px;
     grid-row-gap: 10px;
-    width: 100%;
+    width: min(400px, 100%);
 }
 
 #login-button{
