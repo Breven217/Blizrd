@@ -33,7 +33,7 @@ form{
     background-color: #1d4e97;
   }
 
-  .login-button span:before {
+  span {
     font-size: 28px;
     color: #FFFFFF;
   }
