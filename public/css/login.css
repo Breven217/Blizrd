@@ -14,10 +14,6 @@ form{
     font-size: medium;
 }
 
-span {
-    font-size: 28px;
-    color: #FFFFFF;
-}
 .login-button {
     border-radius: 4px;
     background-color: #2d6dcc;
@@ -30,6 +26,10 @@ span {
     margin: 5px;
     font-size: 28px;
     color: #FFFFFF;
+  }
+
+  .login-button:hover {
+    background-color: #1d4e97;
   }
   
   .login-button span {
