@@ -2,8 +2,8 @@
     display: grid;
     justify-content: center;
     justify-items: center;
-    margin-top: 20%;
-    grid-template-rows: 50px auto;
+    margin-top: 20vh;
+    grid-template-rows: 50px 100%;
     grid-row-gap: 20px;
     text-align: center;
 }
