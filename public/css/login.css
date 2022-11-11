@@ -24,19 +24,23 @@ form{
     width: 90%;
     cursor: pointer;
     margin: 5px;
-    font-size: 28px;
-    color: #FFFFFF;
     transition-duration: 0.5s;
   }
 
   .login-button:hover {
     background-color: #1d4e97;
   }
+
+  .login-button span:before {
+    font-size: 28px;
+    color: #FFFFFF;
+  }
   
   .login-button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
+    transition: 0.5s;
   }
   
   .login-button span:after {
@@ -45,6 +49,7 @@ form{
     opacity: 0;
     top: 0;
     right: -20px;
+    transition: 0.5s;
   }
   
   .login-button:hover span {
