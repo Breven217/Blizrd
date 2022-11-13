@@ -10,8 +10,8 @@ async function checkLogin(event) {
         },
         method: 'POST',
         body: JSON.stringify({
-            username : event.target.username,
-            password : event.target.password
+            username : event.target.username.value,
+            password : event.target.password.value
         })
     });
     console.log(response.json());
