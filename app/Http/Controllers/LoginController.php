@@ -29,7 +29,9 @@ class LoginController extends Controller
             ]);
         }
         else{
-            throw new Exception('Invalid User');
+            return response()->json([
+                'error' => new Exception('Invalid User');
+            ]);
         }
     }
 }
