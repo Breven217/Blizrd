@@ -5,7 +5,6 @@
 @endpush
 
 @push('scripts')
-    <script src="{{ mix('js/login.js') }}" type="text/javascript"></script>
 @endpush
 
 @section('content')
