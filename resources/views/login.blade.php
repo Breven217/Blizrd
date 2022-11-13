@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="content">
-        <form onsubmit="checkLogin()" method="POST">
+        <form onsubmit="checkLogin(this)" method="POST">
             <input type="text" name="username" id="username">
             <input type="password" name="password" id="password">
             <button name="login-button" class="login-button">
