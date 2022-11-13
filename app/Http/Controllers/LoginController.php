@@ -13,7 +13,7 @@ class LoginController extends Controller
         return view('login');
     }
 
-    public function checkLogin(LoginRequest $request){
+    public function checkLogin(){
         return 'test';
         $data = $request->validated();
         $user = User::where([
