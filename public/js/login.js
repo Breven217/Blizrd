@@ -13,6 +13,12 @@ async function checkLogin(event) {
             username : event.target.username.value,
             password : event.target.password.value
         })
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log('Success:', data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
     });
-    console.log(response.json());
 }
