@@ -1,5 +1,5 @@
 class Login {
-    checkLogin(params) {
+    checkLogin() {
         console.log('hereIAm')
     }
 }
