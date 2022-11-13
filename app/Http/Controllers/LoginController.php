@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     public function index(){
-        $gamer = "Gib Soobieb";
-        return view('login', [
-            'gamer' => $gamer
-        ]);
+        return view('login');
+    }
+
+    public function checkLogin(){
+        return "testtest";
     }
 }
