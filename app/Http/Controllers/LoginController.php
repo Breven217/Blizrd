@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use TheSeer\Tokenizer\Exception;
 
 class LoginController extends Controller
