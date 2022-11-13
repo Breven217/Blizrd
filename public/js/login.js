@@ -1,6 +1,7 @@
 class Login {
     
 }
-function checkLogin() {
+function checkLogin(event) {
+        event.preventDefault();
         console.log('hereIAm')
     }
