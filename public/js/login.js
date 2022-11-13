@@ -2,7 +2,8 @@ class Login {
     
 }
 function checkLogin(event) {
-    console.log(event);
-        event.preventDefault();
-        console.log('hereIAm')
-    }
+    event.preventDefault();
+    console.log('hereIAm')
+    let content = document.getElementsByClassName('content')[0]
+    content.innerHTML('<i class="fa-regular fa-snowflake"></i>')
+}

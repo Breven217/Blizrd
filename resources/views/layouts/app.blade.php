@@ -8,6 +8,7 @@
     <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
     @stack('styles')
     @yield('scripts')
+    <script src="https://kit.fontawesome.com/390c55ff1f.js" crossorigin="anonymous"></script>
 </head>
 <header>
     @include('layouts.header')
