@@ -9,7 +9,10 @@ async function checkLogin(event) {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
         method: 'POST',
-        body: event.target
+        body: JSON.stringify({
+            username : event.target.username,
+            password : event.target.password
+        })
     });
     console.log(response);
 }
