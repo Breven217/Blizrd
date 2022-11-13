@@ -13,25 +13,24 @@ class LoginController extends Controller
         return view('login');
     }
 
-    public function checkLogin(){
-        return 'test';
+    public function checkLogin(LoginRequest $request){
         $data = $request->validated();
-        $user = User::where([
+        $user = User::firstWhere([
             'username' => $data('username'),
             'password' => $data('password'),
-        ])
-        ->select([
-            'name',
-            'username',
-            'phone_number',
-            'email_address'
-        ])->first();
+        ]);
+
 
         if (filled($user)){
-            return $user;
+            return response()->json([
+                'name' => $user->name,
+                'username' => $user->username,
+                'email' => $user->email_address,
+                'phone_number' => $user->phone_number
+            ]);
         }
         else{
-            throw new Exception('Invalid User');
+            return new Exception('Invalid User');
         }
     }
 }
