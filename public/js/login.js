@@ -1,5 +1,6 @@
 class Login {
-    checkLogin() {
+    
+}
+function checkLogin() {
         console.log('hereIAm')
     }
-}
