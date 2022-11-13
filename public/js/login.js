@@ -5,6 +5,7 @@ async function checkLogin(event) {
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
 
     let response = await fetch("/login", {
+        method: 'POST',
         body: {
             username : event.target.username.value,
             password : event.target.password.value
