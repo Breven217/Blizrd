@@ -15,7 +15,5 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', [LoginController::class, 'index']);
-Route::post('/login', function(){
-    return 'hereIam';
-});
+Route::post('/login', [LoginController::class, 'checkLogin']);
 

@@ -13,7 +13,6 @@ class LoginController extends Controller
     }
 
     public function checkLogin(LoginRequest $request){
-        return 'test';
         $user = User::where([
             'username' => $request->validated('username'),
             'password' => $request->validated('password'),
