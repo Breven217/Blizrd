@@ -26,7 +26,8 @@ class LoginController extends Controller
         }
         else{
             return response()->json([
-                'error' => 'Invalid User'
+                'error' => 'Invalid User',
+                'username' => $request->input('username')
             ]);
         }
     }
