@@ -5,7 +5,7 @@
 @endpush
 
 @push('scripts')
-    <link href="{{ asset('js/login.js') }}" rel="script">
+    <script src="{{ mix('js/login.js') }}" type="text/javascript"></script>
 @endpush
 
 @section('content')
