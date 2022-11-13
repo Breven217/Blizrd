@@ -15,8 +15,8 @@ class LoginController extends Controller
 
     public function checkLogin(Request $request){
         $user = User::firstWhere([
-            'username' => $request->input('username'),
-            'password' => $request->input('password'),
+            'username', $request->input('username'),
+            'password', $request->input('password'),
         ]);
 
         if (filled($user)){
