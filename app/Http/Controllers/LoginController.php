@@ -14,15 +14,11 @@ class LoginController extends Controller
     }
 
     public function checkLogin(Request $request){
-        return response()->json([
-            'test' => 'hereIAm'
-        ]);
-        $data = $request->validated();
+       // $data = $request->validated();
         $user = User::firstWhere([
-            'username' => $data('username'),
-            'password' => $data('password'),
+            'username' => $request->input('username'),
+            'password' => $request->input('password'),
         ]);
-
 
         if (filled($user)){
             return response()->json([
