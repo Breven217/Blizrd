@@ -11,5 +11,5 @@ async function checkLogin(event) {
         method: 'POST',
         body: event.target
     });
-    console.log(response.json());
+    console.log(response);
 }
