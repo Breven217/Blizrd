@@ -14,7 +14,9 @@ class LoginController extends Controller
     }
 
     public function checkLogin(LoginRequest $request){
-        return 'test';
+        return response()->json([
+            'test' => 'hereIAm'
+        ]);
         $data = $request->validated();
         $user = User::firstWhere([
             'username' => $data('username'),
