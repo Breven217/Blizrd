@@ -14,10 +14,7 @@ class LoginController extends Controller
     }
 
     public function checkLogin(Request $request){
-        $user = User::firstWhere([
-            ['username', $request->input('username')],
-            ['password', $request->input('password')]
-        ]);
+        $user = User::firstWhere('username',$request->input('username'));
 
         if (filled($user)){
             return response()->json([
