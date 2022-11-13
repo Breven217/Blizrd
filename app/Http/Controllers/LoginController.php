@@ -29,7 +29,7 @@ class LoginController extends Controller
             ]);
         }
         else{
-            return new Exception('Invalid User');
+            throw new Exception('Invalid User');
         }
     }
 }
