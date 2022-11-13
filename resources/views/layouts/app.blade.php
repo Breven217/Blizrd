@@ -7,6 +7,7 @@
     <title>Blizrd</title>
     <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
     @stack('styles')
+    @stack('scripts')
 </head>
 <header>
     @include('layouts.header')
