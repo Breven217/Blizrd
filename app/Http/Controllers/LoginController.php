@@ -14,7 +14,6 @@ class LoginController extends Controller
     }
 
     public function checkLogin(Request $request){
-       // $data = $request->validated();
         $user = User::firstWhere([
             'username' => $request->input('username'),
             'password' => $request->input('password'),
@@ -30,7 +29,7 @@ class LoginController extends Controller
         }
         else{
             return response()->json([
-                'error' => new Exception('Invalid User')
+                'error' => 'Invalid User'
             ]);
         }
     }
