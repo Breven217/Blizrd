@@ -6,7 +6,7 @@ async function checkLogin(event) {
 
     let response = await fetch("/login", {
         headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+     //       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         method: 'POST',
         body: {
