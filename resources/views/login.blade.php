@@ -5,6 +5,7 @@
 @endpush
 
 @push('scripts')
+    <script src="{{ asset('js/login.js') }}" type="text/javascript"></script>
 @endpush
 
 @section('content')
