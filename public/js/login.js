@@ -10,10 +10,10 @@ async function checkLogin(event) {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
         method: 'POST',
-        body: JSON.stringify({
+        body: {
             username : event.target.username.value,
             password : event.target.password.value
-        })
+        }
     })
     .then((response) => response.json())
     .then((data) => {
