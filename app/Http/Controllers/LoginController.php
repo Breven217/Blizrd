@@ -12,7 +12,7 @@ class LoginController extends Controller
         return view('login');
     }
 
-    public function checkLogin(LoginRequest $request){
+    public function checkLogin(){
         return 'test';
         return response()->json([
             'test' => 'hereIAm'
