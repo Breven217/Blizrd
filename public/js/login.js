@@ -14,5 +14,5 @@ async function checkLogin(event) {
             password : event.target.password.value
         }
     });
-    console.log(response.json);
+    console.log(response.json());
 }
