@@ -13,6 +13,7 @@ class LoginController extends Controller
     }
 
     public function checkLogin(LoginRequest $request){
+        return 'test';
         return response()->json([
             'test' => 'hereIAm'
         ]);
