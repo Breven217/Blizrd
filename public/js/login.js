@@ -1,11 +1,15 @@
 
-function checkLogin(event) {
+async function checkLogin(event) {
     event.preventDefault();
-
+console.log(event);
     let content = document.getElementsByClassName('content')[0]
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
 
-    fetch("/login")
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+    let response = await fetch("/login", {
+        // body: {
+        //     username : ,
+        //     password : 
+        // }
+    });
+
 }
