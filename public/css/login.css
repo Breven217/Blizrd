@@ -10,7 +10,7 @@ form{
     display: grid;
     grid-template-rows: 50px 50px 50px;
     grid-row-gap: 10px;
-    width: min(600px, 100%);
+    width: min(500px, 100%);
     font-size: medium;
 }
 
@@ -21,7 +21,6 @@ form{
     text-align: center;
     justify-self: center;
     padding: 5px;
-    width: 90%;
     cursor: pointer;
     margin: 5px;
     font-size: 28px;
