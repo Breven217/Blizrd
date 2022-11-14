@@ -54,3 +54,8 @@ form{
     opacity: 1;
     right: 0;
   }
+
+  #username, #password {
+    border-radius: 4px;
+    background-color: #f1f4fa;
+  }

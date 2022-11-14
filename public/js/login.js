@@ -4,6 +4,9 @@ async function checkLogin(event) {
     let originalContent = content.innerHTML
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
 
+    if (event.target.username.value == '' || event.target.password.value == ''){
+        return
+    }
     await fetch("/login", {
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
@@ -18,13 +21,7 @@ async function checkLogin(event) {
             //throw up an error modal here
         }
         else{
-            console.log(data)
-            sessionStorage.setItem('user.id', data.id)
             sessionStorage.setItem('user.name', data.name)
-            sessionStorage.setItem('user.username', data.username)
-            sessionStorage.setItem('user.email_address', data.email_address)
-            sessionStorage.setItem('user.phone_number', data.phone_number)
-
             window.location.href = window.location.href + 'home';
         }
     });
