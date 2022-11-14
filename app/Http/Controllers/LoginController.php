@@ -29,7 +29,7 @@ class LoginController extends Controller
                 'id' => $user->id,
                 'name' => $user->name,
                 'username' => $user->username,
-                'email' => $user->email_address,
+                'email_address' => $user->email_address,
                 'phone_number' => $user->phone_number
             ]);
         }
