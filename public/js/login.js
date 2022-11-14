@@ -19,7 +19,8 @@ async function checkLogin(event) {
             //throw up an error modal here
         }
         else{
-            window.location.href = window.location.href + 'home';
+            document.body.innerHTML = data;
+           // window.location.href = window.location.href + 'home';
         }
     });
 }

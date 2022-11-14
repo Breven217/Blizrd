@@ -25,7 +25,12 @@ class LoginController extends Controller
         ]);
 
         if (filled($user)){
-            return redirect()->intended('home');
+            return response()->json([
+                'name' => $user->name,
+                'username' => $user->username,
+                'email' => $user->email_address,
+                'phone_number' => $user->phone_number
+            ]);
         }
         else{
             return response()->json([
