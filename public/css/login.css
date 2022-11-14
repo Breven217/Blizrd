@@ -24,8 +24,6 @@ form{
     cursor: pointer;
     margin: 5px;
     width:100%;
-    padding-left: 5px;
-    font-size: large;
     font-size: 28px;
     color: #FFFFFF;
   }
@@ -61,4 +59,6 @@ form{
     border-radius: 4px;
     border-style: none;
     background-color: #f2f6fd;
+    padding-left: 5px;
+    font-size: 20px;
   }
