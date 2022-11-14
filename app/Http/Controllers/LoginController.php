@@ -25,6 +25,8 @@ class LoginController extends Controller
         ]);
 
         if (filled($user)){
+            $_SESSION['user'] = $user;
+
             return response()->json([
                 'id' => $user->id,
                 'name' => $user->name,
@@ -41,6 +43,7 @@ class LoginController extends Controller
     }
 
     public function goHome(){
+        return $_SESSION['user'];
         return view('home');
     }
 }
