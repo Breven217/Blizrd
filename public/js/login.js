@@ -19,6 +19,7 @@ async function checkLogin(event) {
             //throw up an error modal here
         }
         else{
+            console.log(data)
             sessionStorage.setItem('user.id', data.id)
             sessionStorage.setItem('user.name', data.name)
             sessionStorage.setItem('user.username', data.username)
