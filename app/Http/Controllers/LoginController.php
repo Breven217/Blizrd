@@ -19,6 +19,10 @@ class LoginController extends Controller
         }
     }
 
+    public function goLogin(){
+        return view('login');
+    }
+    
     public function checkLogin(Request $request){
         $request->validate([
             'username' => 'required',
