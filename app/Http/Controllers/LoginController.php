@@ -29,7 +29,7 @@ class LoginController extends Controller
             $_SESSION['user'] = $user;
 
             return response()->json([
-                'id' => $user->id,
+                'id' => $_SESSION['user']->id,
                 'name' => $user->name,
                 'username' => $user->username,
                 'email_address' => $user->email_address,
