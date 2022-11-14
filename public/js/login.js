@@ -14,10 +14,12 @@ async function checkLogin(event) {
     })
     .then((response) => response.json())
     .then((data) => {
-        console.log(data);
         if (data.error){
             content.innerHTML = originalContent
             //throw up an error modal here
+        }
+        else{
+            fetch("/home");
         }
     });
 }

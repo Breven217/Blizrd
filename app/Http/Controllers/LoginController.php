@@ -33,4 +33,8 @@ class LoginController extends Controller
             ]);
         }
     }
+
+    public function goHome(){
+        return view('home');
+    }
 }
