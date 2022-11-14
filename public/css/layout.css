@@ -26,4 +26,7 @@ footer{
     color: white;
     text-align: center; 
     height: 50px;
+    background-image:url('/images/SnowFall.gif'); 
+    background-repeat:repeat;
+    background-size: 150px;
 }
