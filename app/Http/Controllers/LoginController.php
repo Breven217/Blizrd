@@ -26,6 +26,7 @@ class LoginController extends Controller
         ]);
 
         if (filled($user)){
+            session_destroy();
             session_start();
             $_SESSION['user'] = $user;
 
@@ -46,7 +47,7 @@ class LoginController extends Controller
 
     public function goHome(){
         session_start();
-        if (!filled($_SESSION['user'])){
+        if (empty($_SESSION['user'])){
             return redirect('/');
         }
         else{
