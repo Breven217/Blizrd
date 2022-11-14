@@ -26,10 +26,11 @@ class LoginController extends Controller
         ]);
 
         if (filled($user)){
+            session_start();
             $_SESSION['user'] = $user;
 
             return response()->json([
-                'id' => $_SESSION['user']->id,
+                'id' => $user->id,
                 'name' => $user->name,
                 'username' => $user->username,
                 'email_address' => $user->email_address,
