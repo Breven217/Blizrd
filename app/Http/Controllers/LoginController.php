@@ -26,8 +26,8 @@ class LoginController extends Controller
         ]);
 
         if (filled($user)){
-            session_destroy();
             session_start();
+            session_destroy();
             $_SESSION['user'] = $user;
 
             return response()->json([
