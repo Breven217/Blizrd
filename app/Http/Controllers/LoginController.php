@@ -47,11 +47,12 @@ class LoginController extends Controller
 
     public function goHome(){
         session_start();
+                    echo($_SESSION['user']);
+
         if (!isset($_SESSION['user'])){
             return redirect('/');
         }
         else{
-            echo($_SESSION['user']);
             return view('home');
         }
     }
