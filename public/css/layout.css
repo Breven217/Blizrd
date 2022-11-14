@@ -7,7 +7,7 @@ header{
     background-color: #2d6dcc;
     color: white;
     text-align: center;
-    background-image:url("{{ asset('images/SnowFall.gif') }}"); 
+    background-image:url('/images/SnowFall.gif'); 
     background-repeat:repeat;
 }
 
