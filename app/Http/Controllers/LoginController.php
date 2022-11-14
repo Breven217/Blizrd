@@ -27,7 +27,7 @@ class LoginController extends Controller
 
         if (filled($user)){
             session_start();
-            //session_destroy();
+            session_unset();
             $_SESSION['user'] = $user;
 
             return response()->json([
@@ -47,8 +47,6 @@ class LoginController extends Controller
 
     public function goHome(){
         session_start();
-                    echo($_SESSION['user']);
-
         if (!isset($_SESSION['user'])){
             return redirect('/');
         }
