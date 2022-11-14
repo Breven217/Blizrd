@@ -11,7 +11,12 @@ class LoginController extends Controller
 {
     public function index(){
         session_start();
-        return view('login');
+        if (!isset($_SESSION['user'])){
+            return redirect('/login');
+        }
+        else{
+            return redirect('/home');
+        }
     }
 
     public function checkLogin(Request $request){
@@ -48,7 +53,7 @@ class LoginController extends Controller
     public function goHome(){
         session_start();
         if (!isset($_SESSION['user'])){
-            return redirect('/');
+            return redirect('/login');
         }
         else{
             return view('home');
