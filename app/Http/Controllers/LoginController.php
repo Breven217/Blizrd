@@ -50,6 +50,7 @@ class LoginController extends Controller
             return redirect('/');
         }
         else{
+            echo($_SESSION['user']);
             return view('home');
         }
     }
