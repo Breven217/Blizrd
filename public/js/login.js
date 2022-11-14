@@ -19,7 +19,7 @@ async function checkLogin(event) {
             //throw up an error modal here
         }
         else{
-            window.location.href = window.location.href + '/home';
+            window.location.href = window.location.href + 'home';
         }
     });
 }
