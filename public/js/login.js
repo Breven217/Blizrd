@@ -22,7 +22,7 @@ async function checkLogin(event) {
         }
         else{
             sessionStorage.setItem('user.name', data.name)
-            window.location.href = window.location.href + 'home';
+            window.location.href = 'blizrd.com/home'
         }
     });
 }
