@@ -9,6 +9,7 @@ header{
     text-align: center;
     background-image:url('/images/SnowFall.gif'); 
     background-repeat:repeat;
+    background-size: 10px;
 }
 
 img.animated-gif{
