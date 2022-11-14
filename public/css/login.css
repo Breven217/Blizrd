@@ -57,5 +57,6 @@ form{
 
   #username, #password {
     border-radius: 4px;
-    background-color: #f1f4fa;
+    border-style: none;
+    background-color: #cedfff;
   }
