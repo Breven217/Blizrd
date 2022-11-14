@@ -1,1 +1,2 @@
-<iframe id="snowfall" src="{{ asset('images/SnowFall.gif') }}"></iframe>
+<img class="animated-gif" src="{{ asset('images/SnowFall.gif') }}">
+
