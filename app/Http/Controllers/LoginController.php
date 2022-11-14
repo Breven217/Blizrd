@@ -26,6 +26,7 @@ class LoginController extends Controller
 
         if (filled($user)){
             return response()->json([
+                'id' => $user->id,
                 'name' => $user->name,
                 'username' => $user->username,
                 'email' => $user->email_address,

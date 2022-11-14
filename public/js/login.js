@@ -19,8 +19,13 @@ async function checkLogin(event) {
             //throw up an error modal here
         }
         else{
-            document.body.innerHTML = data.data;
-           // window.location.href = window.location.href + 'home';
+            sessionStorage.setItem('user.id', data.id)
+            sessionStorage.setItem('user.name', data.name)
+            sessionStorage.setItem('user.username', data.username)
+            sessionStorage.setItem('user.email_address', data.email_address)
+            sessionStorage.setItem('user.phone_number', data.phone_number)
+
+            window.location.href = window.location.href + 'home';
         }
     });
 }
