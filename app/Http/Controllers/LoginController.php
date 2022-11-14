@@ -10,6 +10,7 @@ use Exception;
 class LoginController extends Controller
 {
     public function index(){
+        session_start();
         return view('login');
     }
 
@@ -43,6 +44,7 @@ class LoginController extends Controller
     }
 
     public function goHome(){
+        session_start();
         return $_SESSION['user'];
         return view('home');
     }
