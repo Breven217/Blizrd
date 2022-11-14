@@ -23,6 +23,9 @@ form{
     padding: 5px;
     cursor: pointer;
     margin: 5px;
+    width:100%;
+    padding-left: 5px;
+    font-size: large;
     font-size: 28px;
     color: #FFFFFF;
   }
