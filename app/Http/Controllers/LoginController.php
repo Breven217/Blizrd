@@ -14,18 +14,18 @@ class LoginController extends Controller
     }
 
     public function checkLogin(Request $request){
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+
         $user = User::firstWhere([
             ['username', $request->input('username')],
             ['password', $request->input('password')]
         ]);
 
         if (filled($user)){
-            return response()->json([
-                'name' => $user->name,
-                'username' => $user->username,
-                'email' => $user->email_address,
-                'phone_number' => $user->phone_number
-            ]);
+            return redirect()->intended('home');
         }
         else{
             return response()->json([

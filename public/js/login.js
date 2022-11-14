@@ -5,7 +5,7 @@ async function checkLogin(event) {
     let originalContent = content.innerHTML
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
 
-    let response = await fetch("/login", {
+    await fetch("/login", {
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
@@ -19,7 +19,6 @@ async function checkLogin(event) {
             //throw up an error modal here
         }
         else{
-            console.log(window.location.href);
             window.location.href = window.location.href + 'home';
         }
     });
