@@ -24,13 +24,13 @@ header{
   bottom: 0px;
 }
 
-.navbutton {
+.navbutton, .navbutton-active {
   transition-duration: 0.25s;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
 
-.navbutton:hover {
+.navbutton:hover{
   background-color: #849ec4;
 }
 
