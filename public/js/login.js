@@ -1,12 +1,13 @@
 async function checkLogin(event) {
     event.preventDefault();
+    if (event.target.username.value == '' || event.target.password.value == ''){
+        return
+    }
+
     let content = document.getElementsByClassName('content')[0]
     let originalContent = content.innerHTML
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
 
-    if (event.target.username.value == '' || event.target.password.value == ''){
-        return
-    }
     await fetch("/login", {
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
