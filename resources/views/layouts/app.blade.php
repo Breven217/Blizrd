@@ -9,7 +9,7 @@
     <title>Blizrd</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('styles')
-    @yield('scripts')
+    @stack('scripts')
     <script src="https://kit.fontawesome.com/390c55ff1f.js" crossorigin="anonymous"></script>
 </head>
 <header>

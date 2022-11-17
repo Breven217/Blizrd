@@ -1,3 +1,7 @@
+@push('scripts')
+    <script src="{{ asset('js/navigation.js') }}" type="text/javascript"></script>
+@endpush
+
 <div class="navbar">
     @php
         $url = '';
@@ -11,5 +15,5 @@
     <div @class(['navbutton' => ($url != "reports"), 'navbutton-active' => ($url == "reports")])>Reports</div>
     <div @class(['navbutton' => ($url != "invoicing"), 'navbutton-active' => ($url == "invoicing")])>Invoicing</div>
     <div @class(['navbutton' => ($url != "management"), 'navbutton-active' => ($url == "management")])>Management</div>
-    <div class="navbutton">Logout</div>
+    <div class="navbutton" onclick="logout()">Logout</div>
 </div>
