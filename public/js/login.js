@@ -7,10 +7,15 @@ async function checkLogin(event) {
     if (event.target.username.value == ''){
         fail = true
         document.getElementById("username-tooltip").style.visibility = "visible"
-    } 
+    }else{
+        document.getElementById("username-tooltip").style.visibility = "hidden"
+    }
     if (event.target.password.value == ''){
         fail = true
         document.getElementById("password-tooltip").style.visibility = "visible"
+    }
+    else{
+        document.getElementById("password-tooltip").style.visibility = "hidden"
     }
     if(fail){return}
 
