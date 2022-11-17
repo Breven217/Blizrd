@@ -6,7 +6,7 @@
         }
     @endphp
 
-    <div @class(['navbutton', 'active' => ($url == "home")])>Home</div>
+    <div @class(['navbutton', 'navbutton-active' => ($url == "home")])>Home</div>
     <div class="navbutton">Reports</div>
     <div class="navbutton">Invoicing</div>
     <div class="navbutton">Management</div>

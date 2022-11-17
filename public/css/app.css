@@ -26,10 +26,10 @@ header{
 
 .navbutton {
   transition-duration: 0.25s;
+  border-radius: 4px;
 }
 
-.navbutton .active {
-  border-radius: 4px;
+.navbutton-active {
   background-color: #fff;
   color: #2d6dcc;
 }
