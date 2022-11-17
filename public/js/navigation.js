@@ -4,14 +4,13 @@ async function logout(){
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
     })
-    .then((response) => response.json())
-    .then((data) => {
-        if (data.error){
-            content.innerHTML = originalContent
-            //throw up an error modal here
-        }
-        else{
+    .then(response => {
+        if (response.ok){
             window.location.href = 'login'
         }
+        else{
+            //throw up an error modal here
+        }
     });
+    
 }
