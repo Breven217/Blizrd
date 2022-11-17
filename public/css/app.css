@@ -10,13 +10,14 @@ header{
     background-image:url('/images/SnowFall.gif'); 
     background-repeat:repeat;
     background-size: 150px;
+    justify-content: center;
 }
 
 .navbar {
   display: grid;
   grid-template-columns: 15% 15% 15% 15% 15%;
   width: 100%;
-  justify-self: center;
+  text-align: center;
   margin-top: 50px;
 }
 
