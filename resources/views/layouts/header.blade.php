@@ -1,6 +1,6 @@
 <div class="navbar">
     @php
-        $url = "";
+        $url = "-";
         if(Request::url() == 'blizrd.com/home'){
             $url = "home";
         }
