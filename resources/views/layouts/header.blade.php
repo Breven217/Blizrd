@@ -1,7 +1,7 @@
 <div class="navbar">
     @php
-        $url = Request::path();
-        if(Request::path() == '/home'){
+        $url = '';
+        if(Request::path() == 'home'){
             $url = "home";
         }
     @endphp
