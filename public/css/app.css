@@ -30,13 +30,13 @@ header{
   border-top-left-radius: 4px;
 }
 
+.navbutton:hover {
+  background-color: #849ec4;
+}
+
 .navbutton-active {
   background-color: #fff;
   color: #2d6dcc;
-}
-
-.navbutton:hover {
-  background-color: #849ec4;
 }
 
 img.animated-gif{
