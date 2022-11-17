@@ -1,7 +1,5 @@
 async function checkLogin(event) {
     event.preventDefault();
-    let content = document.getElementsByClassName('content')[0]
-    let originalContent = content.innerHTML
     
     let fail = false
     if (event.target.username.value == ''){
@@ -19,6 +17,8 @@ async function checkLogin(event) {
     }
     if(fail){return}
 
+    let content = document.getElementsByClassName('content')[0]
+    let originalContent = content.innerHTML
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
 
     await fetch("/login", {
