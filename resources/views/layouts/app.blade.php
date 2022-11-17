@@ -9,7 +9,10 @@
     <title>Blizrd</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('styles')
-    @stack('scripts')
+    @yield('scripts')
+    @if(Request::path() != 'login')
+        <script src="{{ asset('js/navigation.js') }}" type="text/javascript"></script>
+    @endif
     <script src="https://kit.fontawesome.com/390c55ff1f.js" crossorigin="anonymous"></script>
 </head>
 <header>

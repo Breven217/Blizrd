@@ -4,9 +4,9 @@
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 @endpush
 
-@push('scripts')
+@section('scripts')
     <script src="{{ asset('js/login.js') }}" type="text/javascript"></script>
-@endpush
+@endsection
 
 @section('content')
     <div class="content">

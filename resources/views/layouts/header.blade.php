@@ -1,6 +1,3 @@
-@push('scripts')
-    <script src="{{ asset('js/navigation.js') }}" type="text/javascript"></script>
-@endpush
 
 <div class="navbar">
     @php
