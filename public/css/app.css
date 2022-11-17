@@ -35,11 +35,11 @@ footer{
 .tooltip {
     position: relative;
     display: inline-block;
-    visibility: hidden;
   }
   
   /* Tooltip text */
   .tooltip .tooltiptext {
+    visibility: hidden;
     width: 120px;
     background-color: #555;
     color: #fff;
