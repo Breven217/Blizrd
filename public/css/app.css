@@ -59,7 +59,7 @@ footer{
   .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 25%;
     right: 100%;
     border-width: 5px;
     border-style: solid;
