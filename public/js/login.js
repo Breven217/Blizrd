@@ -6,11 +6,11 @@ async function checkLogin(event) {
     let fail = false
     if (event.target.username.value == ''){
         fail = true
-        document.getElementById("username-tooltip").className = "tooltip tooltip-show"
+        document.getElementById("username-tooltip").hidden = false
     } 
     if (event.target.password.value == ''){
         fail = true
-        document.getElementById("password-tooltip").className = "tooltip tooltip-show"
+        document.getElementById("password-tooltip").hidden = false
     }
     if(fail){return}
 
