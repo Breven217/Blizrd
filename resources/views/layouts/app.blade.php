@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Blizrd</title>
-    <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('styles')
     @yield('scripts')
     <script src="https://kit.fontawesome.com/390c55ff1f.js" crossorigin="anonymous"></script>
