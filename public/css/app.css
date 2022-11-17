@@ -50,8 +50,8 @@ footer{
     /* Position the tooltip text */
     position: absolute;
     z-index: 1;
-    bottom: 125%;
-    right: 50%;
+    bottom: 50%;
+    left: 150%;
     margin-left: -60px;
     /*transition: opacity 0.3s;*/
   }
