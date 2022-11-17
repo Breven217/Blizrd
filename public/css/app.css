@@ -50,7 +50,7 @@ footer{
     /* Position the tooltip text */
     position: absolute;
     z-index: 1;
-    bottom: 0%;
+    bottom: 50%;
     left: 100%;
     /*transition: opacity 0.3s;*/
   }
@@ -63,6 +63,6 @@ footer{
     right: 100%;
     border-width: 5px;
     border-style: solid;
-    border-color: #555 transparent transparent transparent;
+    border-color: transparent #555 transparent transparent;
   }
   
