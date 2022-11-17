@@ -40,7 +40,7 @@ footer{
   /* Tooltip text */
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: auto;
     background-color: #555;
     color: #fff;
     text-align: center;
@@ -59,8 +59,8 @@ footer{
   .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
-    top: 100%;
-    left: 50%;
+    top: 50%;
+    left: 100%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
