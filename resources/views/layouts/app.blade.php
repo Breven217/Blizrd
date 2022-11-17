@@ -13,7 +13,9 @@
     <script src="https://kit.fontawesome.com/390c55ff1f.js" crossorigin="anonymous"></script>
 </head>
 <header>
-    @include('layouts.header')
+    @if(Request::url() != 'blizrd.com/login')
+        @include('layouts.header')
+    @endif
 </header>
 <body>
     @yield('content')
