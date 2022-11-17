@@ -29,6 +29,7 @@ header{
 }
 
 .navbutton .active {
+  border-radius: 4px;
   background-color: #fff;
   color: #2d6dcc;
 }
