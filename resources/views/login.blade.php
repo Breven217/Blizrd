@@ -12,11 +12,14 @@
     <div class="content">
         <form onsubmit="checkLogin(event)" method="POST">
             @csrf
-            <div class="tooltip" id="username">
-                <input type="text" name="username" id="username">
+            <div class="tooltip">
                 <span class="tooltiptext">Tooltip text</span>
+                <input type="text" name="username" id="username">
             </div>
-            <input type="password" name="password" id="password">
+            <div class="tooltip">
+                <span class="tooltiptext">Tooltip text</span>
+                <input type="password" name="password" id="password">
+            </div>
             <button name="login-button" class="login-button">
                 <span>
                     Login
