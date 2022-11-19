@@ -6,6 +6,7 @@ async function loadWeather(){
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             'User-Agent': ['blizrd.com', 'contact@myweatherapp.com']
         },
+        accept: application/ld+json
     })
     .then((response) => response.json())
     .then((data) => {
