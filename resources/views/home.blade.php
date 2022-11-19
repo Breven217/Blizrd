@@ -9,8 +9,8 @@
 @endsection
 
 @section('content')
-    <div class="content">
-        <div>This is the home page!</div>
+    <div class="content" onload="loadWeather()">
+        <div><i class="fa-regular fa-snowflake fa-spin fa-4x"></i></div>
     </div>
 @endsection
     
