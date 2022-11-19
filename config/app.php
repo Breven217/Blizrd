@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Facade;
 
 return [
 
+    'openweather_key' => '54a6d10f3bffb5d3e5e67b9fa58a63a6',
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
