@@ -1,12 +1,26 @@
 async function checkLogin(event) {
     event.preventDefault();
+    
+    let fail = false
+    if (event.target.username.value == ''){
+        fail = true
+        document.getElementById("username-tooltip").style.visibility = "visible"
+    }else{
+        document.getElementById("username-tooltip").style.visibility = "hidden"
+    }
+    if (event.target.password.value == ''){
+        fail = true
+        document.getElementById("password-tooltip").style.visibility = "visible"
+    }
+    else{
+        document.getElementById("password-tooltip").style.visibility = "hidden"
+    }
+    if(fail){return}
+
     let content = document.getElementsByClassName('content')[0]
     let originalContent = content.innerHTML
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
 
-    if (event.target.username.value == '' || event.target.password.value == ''){
-        return
-    }
     await fetch("/login", {
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')

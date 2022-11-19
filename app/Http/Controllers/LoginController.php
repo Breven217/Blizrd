@@ -54,6 +54,11 @@ class LoginController extends Controller
         }
     }
 
+    public function logout(){
+        session_start();
+        session_destroy();
+    }
+
     public function goHome(){
         session_start();
         if (!isset($_SESSION['user'])){
