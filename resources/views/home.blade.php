@@ -9,9 +9,12 @@
 @endsection
 
 @section('content')
-    <div class="content" onload="loadWeather()">
+    <div class="content">
         <div><i class="fa-regular fa-snowflake fa-spin fa-4x"></i></div>
     </div>
+    <script type="text/javascript">
+        loadWeather()
+     </script>
 @endsection
     
 
