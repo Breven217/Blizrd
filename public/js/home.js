@@ -3,7 +3,8 @@ async function loadWeather(){
     console.log('called');
     await fetch("https://api.weather.gov/points/41.7370,111.8338", {
         headers: {
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            'User-Agent': ['blizrd.com', 'contact@myweatherapp.com']
         },
     })
     .then((response) => response.json())
