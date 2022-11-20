@@ -36,6 +36,7 @@ header{
 
 .navbutton:hover{
   background-color: #849ec4;
+  cursor: pointer;
 }
 
 .navbutton-active {
