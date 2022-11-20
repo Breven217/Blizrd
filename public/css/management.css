@@ -29,6 +29,7 @@
 }
 
 #search-bar {
+    display: inline-block;
     width: 90%;
     height: 30px;
     border-radius: 4px;              
