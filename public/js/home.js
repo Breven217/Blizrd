@@ -28,8 +28,11 @@ async function forecast()
                 newContent += '<div class="forecast-day">' + 
                     '<div>' + data[i].day + '</div>' +  
                     '<div>' + 'Min: ' + data[i].temp_min + '°F<br>' +
-                    'Max: ' + data[i].temp_max +'°F</div>' +
-                    '<div class="forecast-day-hour">'
+                    'Max: ' + data[i].temp_max +'°F</div>'
+
+                if (y != 0) { newContent += '<hr>'}
+
+                newContent += '<div class="forecast-day-hour">'
 
                 for (y = 0; y < data[i].data.length; y++){
                     let entry = data[i].data[y]
@@ -57,7 +60,6 @@ async function forecast()
                         weatherIcon = '<i class="fa-solid fa-temperature-quarter"></i>'
                     }
 
-                    if (y != 0) { newContent += '<hr>'}
                     newContent += '<div>' + entry.time + 
                     weatherIcon + '<br>' + entry.weather_description + '</div>'
                 }
