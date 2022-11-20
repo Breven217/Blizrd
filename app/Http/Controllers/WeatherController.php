@@ -24,18 +24,18 @@ class WeatherController extends Controller
             ];
         });
 
-        // $listData = $listData->map(function ($item) {
-        //     return [
-        //         "day" => date('m/d/Y', $item->dt),
-        //         "data" => [
-        //             "time" => date('g A', $item->dt),
-        //             "temp_min" => $item->main->temp_min,
-        //             "temp_max" => $item->main->temp_max,
-        //             "weather_code" => $item->weather[0]->id,
-        //             "weather_description" => $item->weather[0]->description
-        //             ]
-        //     ];
-        // });
+        $listData = $listData->map(function ($item, $key) {
+            return [
+                "day" => $key,
+                "data" => [
+                    "time" => date('g A', $item->dt),
+                    "temp_min" => $item->main->temp_min,
+                    "temp_max" => $item->main->temp_max,
+                    "weather_code" => $item->weather[0]->id,
+                    "weather_description" => $item->weather[0]->description
+                    ]
+            ];
+        });
 
         return $listData;
     }
