@@ -26,14 +26,14 @@
     display: grid;
     grid-template-columns: 20% 80%;
     grid-column-gap: 20px;
-    text-align: left;
-    justify-items: center;
+    
 }
 
 #search-bar-container {
     width: min(400px, 100%);
     position: relative;
     height: 34px;
+    text-align: left;
 }
 
 #search-bar {
