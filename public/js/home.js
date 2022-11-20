@@ -1,12 +1,12 @@
 function loadWeather()
 {
     currentWeather()
-    //weatherAlerts()
+    forecast()
 }
 
-async function weatherAlerts() 
+async function forecast() 
 {
-    await fetch("/weather_alerts", {
+    await fetch("/forecast", {
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
         },
