@@ -27,6 +27,7 @@
     grid-template-columns: 20% 80%;
     grid-column-gap: 20px;
     text-align: left;
+    justify-content: center;
 }
 
 #search-bar-container {
