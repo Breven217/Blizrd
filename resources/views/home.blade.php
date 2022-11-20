@@ -10,10 +10,10 @@
 
 @section('content')
     <div class="content">
+        <script type="text/javascript">
+            let currentWeatherData = loadWeather()
+         </script>
         <div class="current-weather">
-            <script type="text/javascript">
-                let currentWeatherData = loadWeather()
-             </script>
             @include('components.currentWeather')
         </div>
         <div class="alerts">

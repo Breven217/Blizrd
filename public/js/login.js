@@ -1,4 +1,5 @@
-async function checkLogin(event) {
+async function checkLogin(event) 
+{
     event.preventDefault();
     
     let fail = false
