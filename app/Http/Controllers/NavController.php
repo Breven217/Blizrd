@@ -17,17 +17,31 @@ class NavController extends Controller
         if (!isset($_SESSION['user'])){
             return redirect('/login');
         }
+        else{
+            return false;
+        }
     }
 
     public function goHome()
     {
-        $this->checkLoggedUser();
-        return view('home');
+        $loggedIn = $this->checkLoggedUser();
+        if(!$loggedIn) {
+            return view('home');
+        }
+        else{
+            return $loggedIn;
+        }
+        
     }
 
     public function goManagement()
     {
-        $this->checkLoggedUser();
-        return view('management');
+        $loggedIn = $this->checkLoggedUser();
+        if(!$loggedIn) {
+            return view('management');
+        }
+        else{
+            return $loggedIn;
+        }
     }
 }
