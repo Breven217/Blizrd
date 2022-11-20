@@ -33,10 +33,11 @@
 .forecast-populated {
     display:grid;
     grid-template-rows: 16% 16% 16% 16% 16% 16%;
+    align-items: center;
 }
 .forecast-day {
     display: grid;
-    grid-template-columns: 20% 20% 60%;
+    grid-template-columns: 15% 15% 70%;
 }
 .forecast-day-hour {
     display: grid;
