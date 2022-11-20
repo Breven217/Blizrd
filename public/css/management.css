@@ -42,10 +42,10 @@
 #search-icon {
     display: inline-block;
     position:absolute;
-    right: 30px;
-    top: 3px;
+    right: 10px;
+    top: 10px;
     color: #849ec4;
-    font-size: 18px;
+    font-size: 20px;
     transition-duration: 0.25s;
 }
 #search-icon:hover {
