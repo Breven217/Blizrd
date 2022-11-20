@@ -31,20 +31,7 @@ class WeatherController extends Controller
             ];
         });
 
-        $listData = $listData->mapToGroups(function ($item) {
-            return [
-                $item['day'] => [
-                    'data' => $item['data']
-                ]
-            ];
-        });
-
-        $listData->map(function ($item, $key) {
-            return [
-                'day' => $key,
-                'data' => $item
-            ];
-        });
+        $listData = $listData->groupBy('day')->values;;
 
         return $listData;
     }
