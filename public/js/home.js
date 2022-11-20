@@ -24,12 +24,12 @@ async function forecast()
             let isDayTime = hours > 6 && hours < 20
 
             let newContent = ''
-            for (let i = 0; i < 5; i++){
-                let firstEntry = data.list[24*i]
+            for (let i = 0; i < data.length; i++){
+                let firstEntry = data[i][0]
                 let min = firstEntry.main.temp_min
                 let max = firstEntry.main.temp_max
-                for (y = 0; y < 24; y++){
-                    let entry = data.list[y*i]
+                for (y = 0; y < data[i].length; y++){
+                    let entry = data[i][y]
                     if (entry.main.temp_min < min) { min = entry.main.temp_min }
                     if (entry.main.temp_max > max) { max = entry.main.temp_max }
                     //time entry.dt_text
