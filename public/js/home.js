@@ -34,25 +34,25 @@ async function forecast()
                     let weatherIcon = ''
                     let weatherId = entry.weather_code
                     if (weatherId == 800) {
-                        if (isDayTime){weatherIcon = '<i class="fa-solid fa-sun fa-5x"></i>'}
-                        else {weatherIcon = '<i class="fa-solid fa-moon fa-5x"></i>'}
+                        if (isDayTime){weatherIcon = '<i class="fa-solid fa-sun"></i>'}
+                        else {weatherIcon = '<i class="fa-solid fa-moon"></i>'}
                     }
                     else if (weatherId > 800 && weatherId <= 804) {
-                        if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun fa-5x"></i>'}
-                        else {weatherIcon = '<i class="fa-solid fa-cloud-moon fa-5x"></i>'}
+                        if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun"></i>'}
+                        else {weatherIcon = '<i class="fa-solid fa-cloud-moon"></i>'}
                     }
                     else if (weatherId >= 600 && weatherId <=622) {
-                        weatherIcon = '<i class="fa-solid fa-snowflake fa-5x"></i>'
+                        weatherIcon = '<i class="fa-solid fa-snowflake"></i>'
                     }
                     else if (weatherId >= 500 && weatherId <= 531) {
-                        if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun-rain fa-5x"></i>'}
-                        else {weatherIcon = '<i class="fa-solid fa-cloud-moon-rain fa-5x"></i>'}
+                        if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun-rain"></i>'}
+                        else {weatherIcon = '<i class="fa-solid fa-cloud-moon-rain"></i>'}
                     }
                     else if (weatherId >= 200 && weatherId <= 232) {
-                        weatherIcon = '<i class="fa-solid fa-cloud-bolt fa-5x"></i>'
+                        weatherIcon = '<i class="fa-solid fa-cloud-bolt"></i>'
                     }
                     else {
-                        weatherIcon = '<i class="fa-solid fa-temperature-quarter fa-5x"></i>'
+                        weatherIcon = '<i class="fa-solid fa-temperature-quarter"></i>'
                     }
 
                     newContent += '<div>' + entry.time + '</div>' + 
