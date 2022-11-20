@@ -36,6 +36,7 @@
 }
 
 #search-icon {
+    display: inline-block;
     position:relative;
     right: 30px;
     top: 3px;

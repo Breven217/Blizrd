@@ -17,9 +17,8 @@
 
             <form onsubmit="">
                 <div>
-                                        <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
-
                     <input type="text" name="query" id="search-bar">
+                    <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
                 </div>
             </form>
         </div>
