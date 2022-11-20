@@ -24,8 +24,7 @@
 
 #search-container {
     display: grid;
-    grid-template-columns: 20% 75%;
-    grid-column-gap: 5%;
+    grid-template-columns: 20% 80%;
 }
 
 #search-bar {
