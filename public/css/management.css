@@ -37,7 +37,7 @@
 
 #search-icon {
     position:relative;
-    right: 30px;
+    left: -30px;
     top: 3px;
     color: #849ec4;
     font-size: 18px;
