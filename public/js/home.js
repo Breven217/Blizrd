@@ -33,27 +33,26 @@ async function forecast()
                     let entry = data[i].data[y]
                     let weatherIcon = ''
                     let weatherId = entry.weather_code
-                    switch(weatherId) {
-                        case 800:
-                            if (isDayTime){weatherIcon = '<i class="fa-solid fa-sun"></i>'}
-                            else {weatherIcon = '<i class="fa-solid fa-moon"></i>'}
-                          break;
-                        case weatherId > 800 && weatherId <= 804:
-                            if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun"></i>'}
-                            else {weatherIcon = '<i class="fa-solid fa-cloud-moon"></i>'}
-                          break;
-                        case weatherId >= 600 && weatherId <=622:
-                            weatherIcon = '<i class="fa-solid fa-snowflake"></i>'
-                          break;
-                        case weatherId >= 500 && weatherId <= 531:
-                            if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun-rain"></i>'}
-                            else {weatherIcon = '<i class="fa-solid fa-cloud-moon-rain"></i>'}
-                          break;
-                        case weatherId >= 200 && weatherId <= 232:
-                            weatherIcon = '<i class="fa-solid fa-cloud-bolt"></i>'
-                          break;
-                        default:
-                            weatherIcon = '<i class="fa-solid fa-temperature-quarter"></i>'
+                    if (weatherId == 800) {
+                        if (isDayTime){weatherIcon = '<i class="fa-solid fa-sun fa-5x"></i>'}
+                        else {weatherIcon = '<i class="fa-solid fa-moon fa-5x"></i>'}
+                    }
+                    else if (weatherId > 800 && weatherId <= 804) {
+                        if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun fa-5x"></i>'}
+                        else {weatherIcon = '<i class="fa-solid fa-cloud-moon fa-5x"></i>'}
+                    }
+                    else if (weatherId >= 600 && weatherId <=622) {
+                        weatherIcon = '<i class="fa-solid fa-snowflake fa-5x"></i>'
+                    }
+                    else if (weatherId >= 500 && weatherId <= 531) {
+                        if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun-rain fa-5x"></i>'}
+                        else {weatherIcon = '<i class="fa-solid fa-cloud-moon-rain fa-5x"></i>'}
+                    }
+                    else if (weatherId >= 200 && weatherId <= 232) {
+                        weatherIcon = '<i class="fa-solid fa-cloud-bolt fa-5x"></i>'
+                    }
+                    else {
+                        weatherIcon = '<i class="fa-solid fa-temperature-quarter fa-5x"></i>'
                     }
 
                     newContent += '<div>' + entry.time + '</div>' + 
@@ -88,30 +87,29 @@ async function currentWeather()
             let weatherDescription = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1);
 
             let weatherIcon = ''
-            let weatherId = 601//data.weather[0].id
-            switch(weatherId) {
-                case 800:
-                    if (isDayTime){weatherIcon = '<i class="fa-solid fa-sun fa-5x"></i>'}
-                    else {weatherIcon = '<i class="fa-solid fa-moon fa-5x"></i>'}
-                  break;
-                case weatherId > 800 && weatherId <= 804:
-                    if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun fa-5x"></i>'}
-                    else {weatherIcon = '<i class="fa-solid fa-cloud-moon fa-5x"></i>'}
-                  break;
-                case weatherId >= 600 && weatherId <=622:
-                    weatherIcon = '<i class="fa-solid fa-snowflake fa-5x"></i>'
-                  break;
-                case weatherId >= 500 && weatherId <= 531:
-                    if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun-rain fa-5x"></i>'}
-                    else {weatherIcon = '<i class="fa-solid fa-cloud-moon-rain fa-5x"></i>'}
-                  break;
-                case weatherId >= 200 && weatherId <= 232:
-                    weatherIcon = '<i class="fa-solid fa-cloud-bolt fa-5x"></i>'
-                  break;
-                default:
-                    weatherIcon = '<i class="fa-solid fa-temperature-quarter fa-5x"></i>'
-              }
-
+            let weatherId = data.weather[0].id
+            if (weatherId == 800) {
+                if (isDayTime){weatherIcon = '<i class="fa-solid fa-sun fa-5x"></i>'}
+                else {weatherIcon = '<i class="fa-solid fa-moon fa-5x"></i>'}
+            }
+            else if (weatherId > 800 && weatherId <= 804) {
+                if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun fa-5x"></i>'}
+                else {weatherIcon = '<i class="fa-solid fa-cloud-moon fa-5x"></i>'}
+            }
+            else if (weatherId >= 600 && weatherId <=622) {
+                weatherIcon = '<i class="fa-solid fa-snowflake fa-5x"></i>'
+            }
+            else if (weatherId >= 500 && weatherId <= 531) {
+                if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun-rain fa-5x"></i>'}
+                else {weatherIcon = '<i class="fa-solid fa-cloud-moon-rain fa-5x"></i>'}
+            }
+            else if (weatherId >= 200 && weatherId <= 232) {
+                weatherIcon = '<i class="fa-solid fa-cloud-bolt fa-5x"></i>'
+            }
+            else {
+                weatherIcon = '<i class="fa-solid fa-temperature-quarter fa-5x"></i>'
+            }
+                    
             container.className = "current-weather-populated"
             container.innerHTML = "<div class='extra-large-font'>" + data.main.temp + "°F</div>" + 
             "<div>" + weatherIcon + "<br>" + weatherDescription + "</div>"
