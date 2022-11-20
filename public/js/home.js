@@ -17,6 +17,8 @@ async function loadWeather(){
             let hours = new Date().getHours()
             let isDayTime = hours > 6 && hours < 20
 
+            let weatherDescription = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1);
+
             let weatherIcon = ''
             let weatherId = data.weather[0].id
             switch(weatherId) {
@@ -44,7 +46,7 @@ async function loadWeather(){
 
             container.className = "current-weather-populated"
             container.innerHTML = "<div class='extra-large-font'>" + data.main.temp + "°F</div>" + 
-            "<div>" + weatherIcon + "<br>" +  data.weather[0].main + "</div>"
+            "<div>" + weatherIcon + "<br>" + weatherDescription + "</div>"
         }
     });
 }
