@@ -26,6 +26,7 @@
     display: grid;
     grid-template-columns: 20% 30%;
     grid-column-gap: 20px;
+    justify-items: center;
 }
 
 #search-bar-container {
