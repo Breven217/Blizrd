@@ -28,8 +28,11 @@
     text-align: right;
 }
 
+#search-bar-container {
+    position: relative;
+}
+
 #search-bar {
-    display: inline-block;
     width: 90%;
     height: 30px;
     border-radius: 4px;              
@@ -38,7 +41,7 @@
 
 #search-icon {
     display: inline-block;
-    position:relative;
+    position:absolute;
     right: 30px;
     top: 3px;
     color: #849ec4;

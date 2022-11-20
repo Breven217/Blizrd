@@ -16,7 +16,7 @@
             </button>       
 
             <form onsubmit="">
-                <div>
+                <div id="search-bar-container">
                     <input type="text" name="query" id="search-bar">
                     <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
                 </div>
