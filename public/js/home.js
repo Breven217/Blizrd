@@ -14,6 +14,23 @@ async function loadWeather(){
             console.log(data);
             let container = document.getElementById('current-weather-container')
 
+            let hours = new Date().getHours()
+            let isDayTime = hours > 6 && hours < 20
+
+            let weatherIcon = ''
+            switch(data.weather[0].main) {
+                case 'Clear':
+                    if (isDayTime){
+                        weatherIcon = '<i class="fa-solid fa-sun"></i>'
+                    }
+                    else {
+                        weatherIcon = '<i class="fa-solid fa-moon"></i>'
+                    }
+                  break;
+                default:
+                    weatherIcon = '<i class="fa-solid fa-temperature-quarter"></i>'
+              }
+
             container.className = "current-weather-populated"
             container.innerHTML = "<div class='extra-large-font'>" + data.main.temp + "°F</div>" + 
             "<div>" + data.weather[0].main + "</div>"
