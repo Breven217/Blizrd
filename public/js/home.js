@@ -26,7 +26,7 @@ async function forecast()
             let newContent = ''
             for (let i = 0; i < data.length; i++){
                 newContent += '<div class="forecast-day">' + 
-                    '<div class="center-align">' + data[i].day + '</div>' +  
+                    '<div>' + data[i].day + '</div>' +  
                     '<div>' + 'Min: ' + data[i].temp_min + '°F<br>' +
                     'Max: ' + data[i].temp_max +'°F</div>'
 
