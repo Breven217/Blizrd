@@ -10,18 +10,19 @@
 
 @section('content')
     <div class="content">
-        <div id="management-search">        
+        <div id="search-container"> 
+            <button id="add-user-button" class="management-button">
+                Add Employee
+            </button>       
+
             <form onsubmit="">
                 <input type="text" name="query" id="search-bar">
                 <button id="add-user-button" class="management-button">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
-
-            <button id="add-user-button" class="management-button">
-                Add Employee
-            </button>
         </div>
+        
         <div id="employee-table" style="background-color: aqua;">
             Search for employee/user above
         </div>
