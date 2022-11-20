@@ -33,7 +33,7 @@ async function loadWeather(){
 
             container.className = "current-weather-populated"
             container.innerHTML = "<div class='extra-large-font'>" + data.main.temp + "°F</div>" + 
-            "<div>" + weatherIcon + "<br><div class='right-align'>" + data.weather[0].main + "</div></div>"
+            "<div>" + weatherIcon + "<br><div style='margin-left:10px;'>" + data.weather[0].main + "</div></div>"
         }
     });
 }
