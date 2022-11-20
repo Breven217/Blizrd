@@ -6,6 +6,19 @@
     margin-right: 20px;
 }
 
+.content button {
+    border-style: none;
+    background-color: #2d6dcc;
+    color: #fff;
+    transition-duration: 0.25s;
+    border-radius: 4px;
+}
+
+.content button:hover {
+    background-color: #849ec4;
+    cursor: pointer;
+}
+
 #search-container {
     display: grid;
     grid-template-columns: 20% 75%;
@@ -15,6 +28,11 @@
 #search-bar {
     width: 80%;
     height: 30px;
+}
+
+#add-user-button {
+    height: 30px;
+    font-size: 20px;
 }
 
 #employee-table {
