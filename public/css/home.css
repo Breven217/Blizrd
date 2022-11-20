@@ -38,8 +38,9 @@
     display: grid;
     grid-template-columns: 20% 20% 60%;
 }
-.forecase-day-hour {
-
+.forecast-day-hour {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%; 
 }
 
 .weather-title {
