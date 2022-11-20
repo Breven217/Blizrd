@@ -10,7 +10,7 @@
 .current-weather{
     background-color: #2d6dcc50;
     width:100%;
-    height: 35vh;
+    height: 500px;
     display: grid;
-    grid-template-rows: 50px, auto;
+    grid-template-rows: 50px, 450px;
 }
