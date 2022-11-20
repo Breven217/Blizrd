@@ -29,9 +29,10 @@ async function forecast()
                     '<div>' + data[i].day + '</div>' +  
                     '<div>' + data[i].temp_min + '°F/' + data[i].temp_max +'°F</div>'
 
-                for (y = 0; y < data[i].length; y++){
+                for (y = 0; y < data[i].data.length; y++){
+                    let entry = data[i].data[y]
                     let weatherIcon = ''
-                    let weatherId = data[i][y].weather_code
+                    let weatherId = entry.weather_code
                     switch(weatherId) {
                         case 800:
                             if (isDayTime){weatherIcon = '<i class="fa-solid fa-sun fa-2x"></i>'}
@@ -55,8 +56,8 @@ async function forecast()
                             weatherIcon = '<i class="fa-solid fa-temperature-quarter fa-2x"></i>'
                     }
 
-                    newContent += '<div>' + data[i][y].time + '</div>' + 
-                    '<div>' + weatherIcon + '<br>' + data[i][y].weatherDescription + '</div>'
+                    newContent += '<div>' + entry.time + '</div>' + 
+                    '<div>' + weatherIcon + '<br>' + entry.weatherDescription + '</div>'
                 }
                 newContent +='</div>'
 
