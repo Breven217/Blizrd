@@ -88,7 +88,7 @@ async function currentWeather()
             let weatherDescription = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1);
 
             let weatherIcon = ''
-            let weatherId = data.weather[0].id
+            let weatherId = 803//data.weather[0].id
             switch(weatherId) {
                 case 800:
                     if (isDayTime){weatherIcon = '<i class="fa-solid fa-sun fa-5x"></i>'}
