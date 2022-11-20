@@ -19,4 +19,6 @@
 .weather-title {
     background-color: #2d6dcc75;
     color: #fff;
+    width: 100%;
+    height: 100%;
 }
