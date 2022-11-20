@@ -39,8 +39,8 @@ class WeatherController extends Controller
             ];
         });
 
-        $listData->each(function ($item, $key) {
-            $item = [
+        $listData->map(function ($item, $key) {
+            return [
                 'day' => $key,
                 'data' => $item
             ];
