@@ -38,10 +38,13 @@
     display: grid;
     grid-template-columns: 15% 15% 70%;
     align-items: center;
+    font-size: 24px;
 }
 .forecast-day-hour {
     display: grid;
-    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%; 
+    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    text-align: left; 
+    font-size: 14px;
 }
 
 .weather-title {
