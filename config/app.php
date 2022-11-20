@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Facade;
 return [
 
     'openweather_key' => '54a6d10f3bffb5d3e5e67b9fa58a63a6',
+    'logan_lat' => '41.68417',
+    'logan_lon' => '-111.67957',
 
     /*
     |--------------------------------------------------------------------------

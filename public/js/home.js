@@ -1,7 +1,7 @@
 async function loadWeather(){
     let content = document.getElementsByClassName('content')[0]
     console.log('called');
-    await fetch("/test", {
+    await fetch("/current_weather", {
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
         },
