@@ -15,7 +15,7 @@ async function loadWeather(){
             let container = document.getElementById('current-weather-container')
 
             container.className = "current-weather-populated"
-            container.innerHTML = "<div>" + data.main.temp + "°F</div>" + 
+            container.innerHTML = "<div class='extra-large-font'>" + data.main.temp + "°F</div>" + 
             "<div>" + data.weather[0].main + "</div>"
         }
     });

@@ -19,7 +19,7 @@
 .current-weather-populated {
     display: grid;
     grid-template-columns: 50% 50%;
-    font-size: 20px;
+    align-items: center;
 }
 
 .alerts {

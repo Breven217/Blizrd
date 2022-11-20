@@ -100,4 +100,8 @@ footer{
     -ms-transform: translateY(-35%);
     transform: translateY(-35%);
   }
+
+  .extra-large-font {
+    font-size: 36px;
+  }
   
