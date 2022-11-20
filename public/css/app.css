@@ -94,7 +94,6 @@ footer{
   }
 
   .middle {
-    margin-top: auto;
-    margin-bottom: auto;
+    justify-self: center;
   }
   
