@@ -6,17 +6,28 @@ use Illuminate\Http\Request;
 
 class NavController extends Controller
 {
-    public function goLogin(){
+    public function goLogin()
+    {
         return view('login');
     }
 
-    public function goHome(){
+    private function checkLoggedUser() 
+    {
         session_start();
         if (!isset($_SESSION['user'])){
             return redirect('/login');
         }
-        else{
-            return view('home');
-        }
+    }
+
+    public function goHome()
+    {
+        $this->checkLoggedUser();
+        return view('home');
+    }
+
+    public function goManagement()
+    {
+        $this->checkLoggedUser();
+        return view('home');
     }
 }
