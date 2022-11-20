@@ -36,7 +36,9 @@
 
 #search-icon {
     position:relative;
-    right: 25px;
+    right: 35px;
+    top: 15px;
+    color: #2d6dcc;
 }
 
 #employee-table {
