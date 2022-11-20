@@ -39,9 +39,12 @@
 }
 .forecast-day {
     display: grid;
-    grid-template-columns: 15% 15% 70%;
+    grid-template-columns: 15% 20% 65%;
     align-items: center;
     font-size: 20px;
+}
+.forecast-day:nth-child(1) {
+    background-color: blue;
 }
 .forecast-day-hour {
     display: grid;
