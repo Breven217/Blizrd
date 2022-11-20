@@ -35,29 +35,29 @@ async function forecast()
                     let weatherId = entry.weather_code
                     switch(weatherId) {
                         case 800:
-                            if (isDayTime){weatherIcon = '<i class="fa-solid fa-sun fa-2x"></i>'}
-                            else {weatherIcon = '<i class="fa-solid fa-moon fa-2x"></i>'}
+                            if (isDayTime){weatherIcon = '<i class="fa-solid fa-sun"></i>'}
+                            else {weatherIcon = '<i class="fa-solid fa-moon"></i>'}
                           break;
                         case weatherId > 800 && weatherId <= 804:
-                            if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun fa-2x"></i>'}
-                            else {weatherIcon = '<i class="fa-solid fa-cloud-moon fa-2x"></i>'}
+                            if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun"></i>'}
+                            else {weatherIcon = '<i class="fa-solid fa-cloud-moon"></i>'}
                           break;
                         case weatherId >= 600 && weatherId <=622:
-                            weatherIcon = '<i class="fa-solid fa-snowflake fa-2x"></i>'
+                            weatherIcon = '<i class="fa-solid fa-snowflake"></i>'
                           break;
                         case weatherId >= 500 && weatherId <= 531:
-                            if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun-rain fa-2x"></i>'}
-                            else {weatherIcon = '<i class="fa-solid fa-cloud-moon-rain fa-2x"></i>'}
+                            if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun-rain"></i>'}
+                            else {weatherIcon = '<i class="fa-solid fa-cloud-moon-rain"></i>'}
                           break;
                         case weatherId >= 200 && weatherId <= 232:
-                            weatherIcon = '<i class="fa-solid fa-cloud-bolt fa-2x"></i>'
+                            weatherIcon = '<i class="fa-solid fa-cloud-bolt"></i>'
                           break;
                         default:
-                            weatherIcon = '<i class="fa-solid fa-temperature-quarter fa-2x"></i>'
+                            weatherIcon = '<i class="fa-solid fa-temperature-quarter"></i>'
                     }
 
                     newContent += '<div>' + entry.time + '</div>' + 
-                    '<div>' + weatherIcon + '<br>' + entry.weatherDescription + '</div>'
+                    '<div>' + weatherIcon + '<br>' + entry.weather_description + '</div>'
                 }
                 newContent +='</div>'
 
