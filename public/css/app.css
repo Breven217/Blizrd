@@ -93,7 +93,7 @@ footer{
     border-color: transparent #555 transparent transparent;
   }
 
-  .middle {
-    justify-self: center;
+  .vertical-center {
+    top: 50%;
   }
   
