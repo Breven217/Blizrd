@@ -56,8 +56,8 @@ async function forecast()
                         weatherIcon = '<i class="fa-solid fa-temperature-quarter"></i>'
                     }
 
-                    newContent += '<div>' + entry.time + '</div>' + 
-                    '<div>' + weatherIcon + '<br>' + entry.weather_description + '</div>'
+                  //  newContent += '<div>' + entry.time + '</div>' + 
+                 //   '<div>' + weatherIcon + '<br>' + entry.weather_description + '</div>'
                 }
                 newContent +='</div></div>'
 
