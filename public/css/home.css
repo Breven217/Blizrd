@@ -1,6 +1,6 @@
 .content{
     display: grid;
-    margin-top: 20vh;
+    margin-top: 10vh;
     text-align: center;
     margin-left: 20px;
     margin-right: 20px;
@@ -10,5 +10,5 @@
 .current-weather{
     background-color: #2d6dcc50;
     width:100%;
-    height: 30vh;
+    height: 35vh;
 }
