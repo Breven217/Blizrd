@@ -16,10 +16,12 @@ use App\Http\Controllers\WeatherController;
 */
 
 Route::get('/', [LoginController::class, 'index']);
-Route::get('/login', [LoginController::class, 'goLogin']);
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::post('/login', [LoginController::class, 'checkLogin']);
-Route::get('/home', [LoginController::class, 'goHome']);
+
+Route::get('/login', [NavController::class, 'goLogin']);
+Route::get('/home', [NavController::class, 'goHome']);
+
 Route::get('/current_weather', [WeatherController::class, 'getCurrentWeather']);
 Route::get('/forecast', [WeatherController::class, 'getForecast']);
 
