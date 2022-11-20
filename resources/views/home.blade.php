@@ -11,6 +11,9 @@
 @section('content')
     <div class="content">
         <div class="current-weather">
+            <script type="text/javascript">
+                let currentWeatherData = loadWeather()
+             </script>
             @include('components.currentWeather')
         </div>
         <div class="alerts">
@@ -20,9 +23,6 @@
             @include('components.forecast')
         </div>
     </div>
-    <script type="text/javascript">
-        loadWeather()
-     </script>
 @endsection
     
 
