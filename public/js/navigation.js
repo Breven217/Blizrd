@@ -12,5 +12,8 @@ async function logout(){
             //throw up an error modal here
         }
     });
-    
+}
+
+async function management(){
+    window.location.href = 'management'
 }

@@ -28,6 +28,6 @@ class NavController extends Controller
     public function goManagement()
     {
         $this->checkLoggedUser();
-        return view('home');
+        return view('management');
     }
 }

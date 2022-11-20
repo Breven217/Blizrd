@@ -17,7 +17,6 @@ async function forecast()
             //throw up an error modal here
         }
         else{
-            console.log(data)
             let container = document.getElementById('forecast-container')
 
             let hours = new Date().getHours()
