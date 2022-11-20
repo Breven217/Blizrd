@@ -12,6 +12,10 @@ async function loadWeather(){
         }
         else{
             console.log(data);
+            let container = document.getElementById('current-weather-container')
+
+            container.innerHTML = "<div>" + data.main.temp + "°F</div>" + 
+            "<div>" + data.weather[0].main + "</div>"
         }
     });
 }
