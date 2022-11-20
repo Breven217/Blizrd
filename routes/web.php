@@ -21,5 +21,5 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::post('/login', [LoginController::class, 'checkLogin']);
 Route::get('/home', [LoginController::class, 'goHome']);
 Route::get('/current_weather', [WeatherController::class, 'getCurrentWeather']);
-Route::get('/forecast', [WeatherController::class, 'forecast']);
+Route::get('/forecast', [WeatherController::class, 'getForecast']);
 
