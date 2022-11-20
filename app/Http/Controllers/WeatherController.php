@@ -27,7 +27,7 @@ class WeatherController extends Controller
 
         $listData = $listData->mapToGroups(function ($item) {
             return [
-                $item['day'] => $item
+                $item['day'] => $item['data']
             ];
         });
         
