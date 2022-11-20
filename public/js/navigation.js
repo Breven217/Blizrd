@@ -17,3 +17,7 @@ async function logout(){
 async function management(){
     window.location.href = 'management'
 }
+
+async function home(){
+    window.location.href = 'home'
+}

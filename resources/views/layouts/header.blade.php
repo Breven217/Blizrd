@@ -8,7 +8,7 @@
         if(Request::path() == 'management'){ $url = "management";}
     @endphp
 
-    <div @class(['navbutton' => ($url != "home"), 'navbutton-active' => ($url == "home")])>Home</div>
+    <div @class(['navbutton' => ($url != "home"), 'navbutton-active' => ($url == "home")]) onclick="home()">Home</div>
     <div @class(['navbutton' => ($url != "reports"), 'navbutton-active' => ($url == "reports")])>Reports</div>
     <div @class(['navbutton' => ($url != "invoicing"), 'navbutton-active' => ($url == "invoicing")])>Invoicing</div>
     <div @class(['navbutton' => ($url != "management"), 'navbutton-active' => ($url == "management")]) onclick="management()">Management</div>
