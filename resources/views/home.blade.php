@@ -12,6 +12,9 @@
     <div class="content">
         <div><i class="fa-regular fa-snowflake fa-spin fa-4x"></i></div>
     </div>
+    <div>
+        @include('components.currentWeather')
+    </div>
     <script type="text/javascript">
         loadWeather()
      </script>
