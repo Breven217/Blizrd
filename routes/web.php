@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\WeatherController;
+use App\Http\Controllers\NavController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ Route::post('/login', [LoginController::class, 'checkLogin']);
 
 Route::get('/login', [NavController::class, 'goLogin']);
 Route::get('/home', [NavController::class, 'goHome']);
+Route::get('/management', [NavController::class, 'goManagement']);
 
 Route::get('/current_weather', [WeatherController::class, 'getCurrentWeather']);
 Route::get('/forecast', [WeatherController::class, 'getForecast']);

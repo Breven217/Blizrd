@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\LoginRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Exception;
@@ -17,10 +16,6 @@ class LoginController extends Controller
         else{
             return redirect('/home');
         }
-    }
-
-    public function goLogin(){
-        return view('login');
     }
     
     public function checkLogin(Request $request){
@@ -57,15 +52,5 @@ class LoginController extends Controller
     public function logout(){
         session_start();
         session_destroy();
-    }
-
-    public function goHome(){
-        session_start();
-        if (!isset($_SESSION['user'])){
-            return redirect('/login');
-        }
-        else{
-            return view('home');
-        }
     }
 }
