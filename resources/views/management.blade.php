@@ -10,8 +10,8 @@
 
 @section('content')
     <div class="content">
-        <div>        
-            <form onsubmit="checkLogin(event)" method="POST">
+        <div id="management-search">        
+            <form onsubmit="">
                 <input type="text" name="query" id="search-bar">
                 <button id="add-user-button" class="management-button">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -21,6 +21,9 @@
             <button id="add-user-button" class="management-button">
                 Add Employee
             </button>
+        </div>
+        <div id="employee-table" style="background-color: aqua;">
+            Search for employee/user above
         </div>
     </div>
 @endsection
