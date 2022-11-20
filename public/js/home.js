@@ -30,7 +30,7 @@ async function forecast()
                     '<div>' + 'Min: ' + data[i].temp_min + '°F<br>' +
                     'Max: ' + data[i].temp_max +'°F</div>'
 
-                if (y != 0) { newContent += '<hr>'}
+                if (i != 0) { newContent += '<hr>'}
 
                 newContent += '<div class="forecast-day-hour">'
 
