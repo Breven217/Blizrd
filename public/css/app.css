@@ -113,4 +113,8 @@ footer{
   .right-align {
     text-align: right;
   }
+
+  .left-align {
+    text-align: left;
+  }
   
