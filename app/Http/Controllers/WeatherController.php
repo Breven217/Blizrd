@@ -24,18 +24,20 @@ class WeatherController extends Controller
 
         $listData = $listData->groupBy('day')->values();
 
-        // $listData = $listData->map(function ($item) {
-        //     return [
-        //         "day" => ,
-        //         "data" => [
-        //             "time" => date('g A', $item->dt),
-        //             "temp_min" => $item->main->temp_min,
-        //             "temp_max" => $item->main->temp_max,
-        //             "weather_code" => $item->weather[0]->id,
-        //             "weather_description" => $item->weather[0]->description
-        //             ]
-        //     ];
-        // });
+        $listData = $listData->map(function ($item) {
+            return [
+                "day" => $item->first()->day,
+                "data" => $item->map(function ($i) {
+                    return[
+                    "time" => date('g A', $i->dt),
+                    "temp_min" => $i->main->temp_min,
+                    "temp_max" => $i->main->temp_max,
+                    "weather_code" => $i->weather[0]->id,
+                    "weather_description" => $i->weather[0]->description
+                    ];
+                })
+            ];
+        });
 
         return $listData;
     }
