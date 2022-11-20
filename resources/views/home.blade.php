@@ -10,10 +10,9 @@
 
 @section('content')
     <div class="content">
-        <div><i class="fa-regular fa-snowflake fa-spin fa-4x"></i></div>
-    </div>
-    <div>
-        @include('components.currentWeather')
+        <div class="current-weather">
+            @include('components.currentWeather')
+        </div>
     </div>
     <script type="text/javascript">
         loadWeather()
