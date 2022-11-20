@@ -19,4 +19,5 @@ Route::get('/login', [LoginController::class, 'goLogin']);
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::post('/login', [LoginController::class, 'checkLogin']);
 Route::get('/home', [LoginController::class, 'goHome']);
+Route::get('/test', [LoginController::class, 'test']);
 
