@@ -18,8 +18,8 @@ class WeatherController extends Controller
         $rawData = json_decode($rawData);
         $listData = collect($rawData->list);
 
-        $listData = $listData->each(function ($item) {
-            collect($item)->put('day', date('m/d/Y', $item->dt));
+        $listData->each(function ($item) {
+            $item[] = ['day' => date('m/d/Y', $item->dt)];
         });
 
         $listData = $listData->groupBy('day')->values();
