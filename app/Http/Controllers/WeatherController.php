@@ -21,7 +21,6 @@ class WeatherController extends Controller
         $listData = $listData->map(function ($item) {
             return [
                 "day" => date('m/d/Y', $item->dt),
-                "min_temp" => $item->main->temp_min->min(),
                 "data" => [
                     "time" => date('g A', $item->dt),
                     "temp_min" => $item->main->temp_min,
