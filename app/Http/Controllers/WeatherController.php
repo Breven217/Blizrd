@@ -18,15 +18,9 @@ class WeatherController extends Controller
         $rawData = json_decode($rawData);
         $listData = collect($rawData->list);
 
-        $listData = $listData->mapToGroups(function ($item) {
+        $listData = $listData->map(function ($item) {
             return [
-                date('m/d/Y', $item->dt) => $item
-            ];
-        });
-
-        $listData = $listData->map(function ($item, $key) {
-            return [
-                "day" => $key,
+                "day" => date('m/d/Y', $item->dt),
                 "data" => [
                     "time" => date('g A', $item->dt),
                     "temp_min" => $item->main->temp_min,
@@ -34,6 +28,15 @@ class WeatherController extends Controller
                     "weather_code" => $item->weather[0]->id,
                     "weather_description" => $item->weather[0]->description
                     ]
+            ];
+        });
+
+        $listData = $listData->mapToGroups(function ($item) {
+            return [
+                $item['day'] => [
+                    'day' => $item['day'],
+                    'data' => $item['data']
+                ]
             ];
         });
 
