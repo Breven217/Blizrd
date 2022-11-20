@@ -26,8 +26,6 @@
     display: grid;
     grid-template-columns: 20% 80%;
     text-align: right;
-    margin-right: 20px;
-    margin-left: 20px;
 }
 
 #search-bar-container {
