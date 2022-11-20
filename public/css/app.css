@@ -108,4 +108,8 @@ footer{
   .extra-large-font {
     font-size: 42px;
   }
+
+  .right-align {
+    text-align: right;
+  }
   
