@@ -24,7 +24,7 @@
 
 .forecast {
     grid-column: 1 / span 2;
-    background-color: #2d6dcc30;
+    background-color: #fff;
     width:100%;
     height: auto;
     display: grid;
@@ -43,7 +43,7 @@
 .forecast-day:nth-child(1),
 .forecast-day:nth-child(3),
 .forecast-day:nth-child(5) {
-    background-color: #fff;
+    background-color: #2d6dcc30;
 }
 .forecast-day-hour {
     display: grid;
