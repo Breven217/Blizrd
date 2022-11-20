@@ -94,6 +94,7 @@ footer{
   }
 
   .vertical-center {
+    position: relative;
     margin-top: 50%;
   }
   
