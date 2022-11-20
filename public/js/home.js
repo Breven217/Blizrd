@@ -18,14 +18,25 @@ async function loadWeather(){
             let isDayTime = hours > 6 && hours < 20
 
             let weatherIcon = ''
-            switch(data.weather[0].id) {
+            let weatherId = data.weather[0].id
+            switch(weatherId) {
                 case 800:
-                    if (isDayTime){
-                        weatherIcon = '<i class="fa-solid fa-sun fa-5x"></i>'
-                    }
-                    else {
-                        weatherIcon = '<i class="fa-solid fa-moon fa-5x"></i>'
-                    }
+                    if (isDayTime){weatherIcon = '<i class="fa-solid fa-sun fa-5x"></i>'}
+                    else {weatherIcon = '<i class="fa-solid fa-moon fa-5x"></i>'}
+                  break;
+                case weatherId > 800 && weatherId <= 804:
+                    if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun fa-5x"></i>'}
+                    else {weatherIcon = '<i class="fa-solid fa-cloud-moon fa-5x"></i>'}
+                  break;
+                case weatherId >= 600 && weatherId <=622:
+                    weatherIcon = '<i class="fa-solid fa-snowflake fa-5x"></i>'
+                  break;
+                case weatherId >= 500 && weatherId <= 531:
+                    if (isDayTime){weatherIcon = '<i class="fa-solid fa-cloud-sun-rain fa-5x"></i>'}
+                    else {weatherIcon = '<i class="fa-solid fa-cloud-moon-rain fa-5x"></i>'}
+                  break;
+                case weatherId >= 200 && weatherId <= 232:
+                    weatherIcon = '<i class="fa-solid fa-cloud-bolt fa-5x"></i>'
                   break;
                 default:
                     weatherIcon = '<i class="fa-solid fa-temperature-quarter fa-5x"></i>'
@@ -33,7 +44,7 @@ async function loadWeather(){
 
             container.className = "current-weather-populated"
             container.innerHTML = "<div class='extra-large-font'>" + data.main.temp + "°F</div>" + 
-            "<div>" + weatherIcon + data.weather[0].main + "</div>"
+            "<div>" + weatherIcon + "<br>" +  data.weather[0].main + "</div>"
         }
     });
 }
