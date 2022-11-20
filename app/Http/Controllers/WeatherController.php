@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class WeatherController extends Controller
 {
     public function getCurrentWeather(){
+        return config('logan_lat');
         return file_get_contents("https://api.openweathermap.org/data/2.5/weather?lat=" . 
         config('logan_lat') . "&lon=" . config('logan_lon') . "&appid=" . config('openweather_key'));
 
