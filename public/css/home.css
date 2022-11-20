@@ -29,6 +29,10 @@
     display: grid;
     grid-template-rows: 50px 350px;
 }
+.forecast-populated {
+    display:grid;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+}
 
 .weather-title {
     background-color: #2d6dcc75;

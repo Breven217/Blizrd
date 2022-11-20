@@ -60,6 +60,7 @@ async function forecast()
                 }
                 newContent +='</div>'
 
+                container.className = 'forecast-populated'
                 container.innerHTML = newContent
             }
         }
