@@ -27,7 +27,8 @@ async function forecast()
             for (let i = 0; i < data.length; i++){
                 newContent += '<div class="forecast-day">' + 
                     '<div>' + data[i].day + '</div>' +  
-                    '<div>' + data[i].temp_min + '°F/' + data[i].temp_max +'°F</div>'
+                    '<div>' + data[i].temp_min + '°F/' + data[i].temp_max +'°F</div>' +
+                    '<div class="forecast-day-hour"'
 
                 for (y = 0; y < data[i].data.length; y++){
                     let entry = data[i].data[y]
@@ -58,7 +59,7 @@ async function forecast()
                     newContent += '<div>' + entry.time + '</div>' + 
                     '<div>' + weatherIcon + '<br>' + entry.weather_description + '</div>'
                 }
-                newContent +='</div>'
+                newContent +='</div></div>'
 
                 container.className = 'forecast-populated'
                 container.innerHTML = newContent
