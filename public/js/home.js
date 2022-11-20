@@ -21,14 +21,14 @@ async function loadWeather(){
             switch(data.weather[0].main) {
                 case 'Clear':
                     if (isDayTime){
-                        weatherIcon = '<i class="fa-solid fa-sun fa-6x"></i>'
+                        weatherIcon = '<i class="fa-solid fa-sun fa-5x"></i>'
                     }
                     else {
-                        weatherIcon = '<i class="fa-solid fa-moon fa-6x"></i>'
+                        weatherIcon = '<i class="fa-solid fa-moon fa-5x"></i>'
                     }
                   break;
                 default:
-                    weatherIcon = '<i class="fa-solid fa-temperature-quarter fa-6x"></i>'
+                    weatherIcon = '<i class="fa-solid fa-temperature-quarter fa-5x"></i>'
               }
 
             container.className = "current-weather-populated"
