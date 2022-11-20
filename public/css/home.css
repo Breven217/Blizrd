@@ -32,14 +32,14 @@
 }
 .forecast-populated {
     display:grid;
-    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-rows: 16% 16% 16% 16% 16% 16%;
 }
 .forecast-day {
     display: grid;
-    grid-template-columns: 20% ;
+    grid-template-columns: 20% 20% 60%;
 }
 .forecase-day-hour {
-    
+
 }
 
 .weather-title {
