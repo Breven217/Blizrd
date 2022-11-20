@@ -92,4 +92,9 @@ footer{
     border-style: solid;
     border-color: transparent #555 transparent transparent;
   }
+
+  .middle {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
   

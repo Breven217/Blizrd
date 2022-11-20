@@ -13,4 +13,5 @@
     height: 400px;
     display: grid;
     grid-template-rows: 50px 350px;
+    grid-row-gap: 20px;
 }
