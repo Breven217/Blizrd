@@ -16,9 +16,6 @@
         <div class="current-weather">
             @include('components.currentWeather')
         </div>
-        <div class="alerts">
-            @include('components.alerts')
-        </div>
         <div class="forecast">
             @include('components.forecast')
         </div>
