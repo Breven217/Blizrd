@@ -59,7 +59,7 @@ async function forecast()
                   //  newContent += '<div>' + entry.time + '</div>' + 
                  //   '<div>' + weatherIcon + '<br>' + entry.weather_description + '</div>'
                 }
-                newContent +='</div></div>'
+                newContent +='</div>'
 
                 container.className = 'forecast-populated'
                 container.innerHTML = newContent
