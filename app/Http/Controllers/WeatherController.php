@@ -22,7 +22,7 @@ class WeatherController extends Controller
             return [
                 "day" => date('m/d/Y', $item->dt),
                 "data" => [
-                    "time" => date('h A', $item->dt),
+                    "time" => date('g A', $item->dt),
                     "temp_min" => $item->main->temp_min,
                     "temp_max" => $item->main->temp_max,
                     "weather_code" => $item->weather[0]->id,
