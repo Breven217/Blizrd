@@ -31,7 +31,7 @@ class WeatherController extends Controller
             ];
         });
 
-        $listData = $listData->groupBy('day');
+        $listData = $listData->groupBy('day')->values();
 
         return $listData;
     }
