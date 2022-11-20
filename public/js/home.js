@@ -18,8 +18,8 @@ async function loadWeather(){
             let isDayTime = hours > 6 && hours < 20
 
             let weatherIcon = ''
-            switch(data.weather[0].main) {
-                case 'Clear':
+            switch(data.weather[0].id) {
+                case 800:
                     if (isDayTime){
                         weatherIcon = '<i class="fa-solid fa-sun fa-5x"></i>'
                     }
@@ -33,7 +33,7 @@ async function loadWeather(){
 
             container.className = "current-weather-populated"
             container.innerHTML = "<div class='extra-large-font'>" + data.main.temp + "°F</div>" + 
-            "<div>" + weatherIcon + "<br><div style='margin-left:25px;'>" + data.weather[0].main + "</div></div>"
+            "<div>" + weatherIcon + data.weather[0].main + "</div>"
         }
     });
 }
