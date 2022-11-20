@@ -28,11 +28,10 @@ class WeatherController extends Controller
             return [
                 "day" => $item->first()->day,
                 "temp_min" => $item->pluck('main.temp_min')->min(),
+                "temp_max" => $item->pluck('main.temp_max')->min(),
                 "data" => $item->map(function ($i) {
                     return[
                     "time" => date('g A', $i->dt),
-                    "temp_min" => $i->main->temp_min,
-                    "temp_max" => $i->main->temp_max,
                     "weather_code" => $i->weather[0]->id,
                     "weather_description" => $i->weather[0]->description
                     ];
