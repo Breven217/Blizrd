@@ -1,6 +1,7 @@
 function loadWeather()
 {
     currentWeather()
+    weatherAlerts()
 }
 
 async function weatherAlerts() 
