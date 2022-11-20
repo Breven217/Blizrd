@@ -34,6 +34,11 @@
     margin-top: 0px;
 }
 
+#search-icon {
+    position:relative;
+    right: 25px;
+}
+
 #employee-table {
     margin-top: 20px;
 }

@@ -17,12 +17,10 @@
 
             <form onsubmit="">
                 <input type="text" name="query" id="search-bar">
-                <button id="add-user-button" class="management-button">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
+                    <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
             </form>
         </div>
-        
+
         <div id="employee-table" style="background-color: aqua;">
             Search for employee/user above
         </div>
