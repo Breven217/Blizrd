@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password',100);
             $table->string('phone_number',10);
             $table->string('email_address',320);
+            $table->boolean('recieves_alerts');
             $table->timestamps();
         });
     }
