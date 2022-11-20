@@ -38,7 +38,7 @@ class WeatherController extends Controller
         });
 
         $listData->each(function ($item) {
-            $item->min_temp = $item->pluck('main.temp_min')->min();
+            $item->put('min_temp', $item->pluck('main.temp_min')->min());
         });
 
         return $listData;
