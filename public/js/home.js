@@ -28,16 +28,17 @@ async function forecast()
                 let firstEntry = data[i][0]
                 let min = firstEntry.main.temp_min
                 let max = firstEntry.main.temp_max
+
+                
                 for (y = 0; y < data[i].length; y++){
                     let entry = data[i][y]
                     if (entry.main.temp_min < min) { min = entry.main.temp_min }
                     if (entry.main.temp_max > max) { max = entry.main.temp_max }
-                    //time entry.dt_text
+                }
+//time entry.dt_text
                     //temp low/high entry.main.temp_max/temp_min
                     //weather icon entry.weather.id/description
-                }
-
-                                newContent += '<div class="forecast-day">' + data.list[24*i].dt_text.slice(0,10)
+                newContent += '<div class="forecast-day">' + data[i]
                     '<div>' + entry.main.temp_min + '°F/' + entry.main.temp_max +'°F'
 
                 newContent +='</div>'
