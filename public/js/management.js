@@ -1,11 +1,11 @@
 async function searchUsers(event)
 {
     event.preventDefault();
-    
+
     let queryString = ''
     let query = event.target.query.value 
 
-    if (query.length == 10 && !isNaN(query)){
+    if (!isNaN(query)){
         queryString = 'phone_number=' + query
     }
     else if (query.includes('@')){
