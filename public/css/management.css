@@ -73,6 +73,7 @@
     border-collapse: collapse;
     width:100%;
     text-align: left;
+    border-radius: 4px;
 }
 
 .user-table th {
