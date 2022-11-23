@@ -97,8 +97,11 @@
     grid-template-columns: 25% 25% 25% 25%;
 }
 
-.user-table tr:first-child {
+.user-table th:first-child {
     border-top-left-radius: 4px;
+}
+
+.user-table th:last-child {
     border-top-right-radius: 4px;
 }
 
