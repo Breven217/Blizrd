@@ -101,11 +101,11 @@
     text-align: center;
 }
 
-.user-table tr:nth-child(odd):not(.user-table tr:first){
+.user-table tr:nth-child(odd):not(.user-table tr:first-child){
     background-color: #2d6dcc30;
 }
 
-.user-table tr:hover:not(.user-table tr:first) {
+.user-table tr:hover:not(.user-table tr:first-child) {
     background-color: #2d6dcc75;
     cursor: pointer;
     color: #fff;
