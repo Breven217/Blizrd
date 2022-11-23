@@ -105,7 +105,7 @@
     background-color: #2d6dcc30;
 }
 
-.user-table tr:hover:not(.user-table th) {
+.user-table tr:hover:not(.user-table tr:first) {
     background-color: #2d6dcc75;
     cursor: pointer;
     color: #fff;
