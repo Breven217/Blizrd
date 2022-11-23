@@ -101,7 +101,7 @@
     text-align: center;
 }
 
-.user-table tr:nth-child(odd){
+.user-table tr:nth-child(odd):not(.user-table tr:first){
     background-color: #2d6dcc30;
 }
 
