@@ -76,13 +76,18 @@
     color: #fff;
     padding-top: 12px;
     padding-bottom: 12px;
+    font-size: 24px;
+    text-align: left;
 }
 
 .user-table tr {
     transition-duration: 0.25s;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 18px;
 }
 
-.user-table tr:nth-child(even){background-color: #2d6dcc30;}
+.user-table tr:nth-child(odd){background-color: #2d6dcc30;}
 
 .user-table tr:hover {
     background-color: #2d6dcc75;
