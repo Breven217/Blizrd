@@ -30,7 +30,7 @@ console.log('here');
         }
         else{
             let userTable = `
-            <table> 
+            <table class='user-table'> 
                 <tr>
                     <th>Name</th>
                     <th>Phone Number</th>
@@ -56,7 +56,6 @@ console.log('here');
 
             userTable += '</table>'
 
-            content.className = 'user-table'
             content.innerHTML = userTable
         }
     });
