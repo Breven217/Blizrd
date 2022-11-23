@@ -16,8 +16,8 @@ class UserSearchRequest extends FormRequest
     {
         return [
             'name' => 'nullable|string|prohibits:phone_number|prohibits:email_address',
-            'phone_number' => 'nullable|numeric|digits:10|prohibits:name|prohibits:email_address',
-            'email_address' => 'nullable|email|prohibits:phone_number|prohibits:name'
+            'phone_number' => 'nullable|numeric|prohibits:name|prohibits:email_address',
+            'email_address' => 'nullable|prohibits:phone_number|prohibits:name'
         ];
     }
 }
