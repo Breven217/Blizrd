@@ -1,7 +1,7 @@
 async function searchUsers(event)
 {
     event.preventDefault();
-
+console.log('here');
     let queryString = ''
     let query = event.target.query.value 
 
