@@ -65,6 +65,27 @@
     cursor: pointer;
 }
 
-#employee-table {
+.user-table {
     margin-top: 20px;
+    border-collapse: collapse;
+    width:100%;
+}
+
+.user-table th {
+    background-color: #849ec4;
+    color: #fff;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.user-table tr {
+    transition-duration: 0.25s;
+}
+
+.user-table tr:nth-child(even){background-color: #2d6dcc30;}
+
+.user-table tr:hover {
+    background-color: #2d6dcc75;
+    cursor: pointer;
+    color: #fff;
 }

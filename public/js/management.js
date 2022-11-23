@@ -56,6 +56,7 @@ console.log('here');
 
             userTable += '</table>'
 
+            content.className = 'user-table'
             content.innerHTML = userTable
         }
     });
