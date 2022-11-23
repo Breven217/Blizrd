@@ -77,13 +77,18 @@
     color: #fff;
     padding-top: 12px;
     padding-bottom: 12px;
+    padding-left: 10px;
     font-size: 20px;
+}
+
+.user-table td { 
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
 .user-table tr {
     transition-duration: 0.25s;
-    padding-top: 6px;
-    padding-bottom: 6px;
     font-size: 18px;
 }
 
