@@ -18,7 +18,10 @@
             <form onsubmit="searchUsers()">
                 <div id="search-bar-container">
                     <input type="text" name="query" id="search-bar">
-                    <i type="submit" class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass" id="search-icon"></i> 
+                    </button>
+                    
                 </div>
             </form>
         </div>
