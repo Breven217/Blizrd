@@ -40,8 +40,8 @@ async function searchUsers(event)
                 </tr>`
 
             data.forEach(result => {
-                let alertBox = '<i class="fa-regular fa-square"></i>'
-                if (result.receives_alerts){alertBox = '<i class="fa-regular fa-square-check"></i>'}
+                let alertBox = '<i class="fa-regular fa-square fa-lg"></i>'
+                if (result.receives_alerts){alertBox = '<i class="fa-regular fa-square-check fa-lg"></i>'}
                 userTable += `
                 <tr>
                     <td>` + result.name + `</td>
