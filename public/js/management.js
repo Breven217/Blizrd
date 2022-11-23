@@ -8,6 +8,12 @@ console.log('here');
     if (query.length == 10 && !isNaN(query)){
         queryString = 'phone_number=' + query
     }
+    else if (query.includes('@')){
+        queryString = 'email_address=' + query
+    }
+    else{
+        queryString = 'name=' + query
+    }
 
     let content = document.getElementById('management-content')
 
