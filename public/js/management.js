@@ -66,5 +66,5 @@ async function searchUsers(event)
 
 async function editUser(event)
 {
-    console.log(event.target)
+    console.log(event)
 }
