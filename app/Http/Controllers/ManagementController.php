@@ -55,6 +55,7 @@ class ManagementController extends Controller
 
     public function searchUsers(UserSearchRequest $request) 
     {
+        return $request->input('name');
         $name = $request->input('name');
         $phone = $request->input('phone_number');
         $email = $request->input('email_address');
