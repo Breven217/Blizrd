@@ -9,6 +9,8 @@ console.log('here');
         queryString = 'phone_number=' + query
     }
 
+    let content = document.getElementById('management-content')
+
     await fetch("/search_users?" + queryString, {
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
@@ -21,9 +23,7 @@ console.log('here');
             //throw up an error modal here
         }
         else{
-            let content = document.getElementById('management-content')
-
-            content.innerHTML(data);
+            content.innerHTML = data;
         }
     });
 }
