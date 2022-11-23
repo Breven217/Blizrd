@@ -45,7 +45,7 @@ async function searchUsers(event)
                     alertBox = '<i class="fa-regular fa-square-check fa-lg"></i>'
                 }
                 userTable += `
-                <tr>
+                <tr onclick="editUser(result)">
                     <td>` + result.name + `</td>
                     <td>` + result.phone_number.slice(0,3) + '-' + 
                         result.phone_number.slice(3,6) + '-' + 
@@ -62,4 +62,9 @@ async function searchUsers(event)
             content.innerHTML = userTable
         }
     });
+}
+
+async function editUser(user=null)
+{
+    console.log(user)
 }
