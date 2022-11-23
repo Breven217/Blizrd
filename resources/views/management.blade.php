@@ -26,7 +26,7 @@
             </form>
         </div>
 
-        <div id="employee-table" style="background-color: aqua;">
+        <div id="management-content" style="background-color: aqua;">
             Search for employee/user above
         </div>
     </div>

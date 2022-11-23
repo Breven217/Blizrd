@@ -37,7 +37,7 @@
 }
 
 #search-bar-container button {
-    background-color: none;
+    background-color: transparent;
     display: inline-block;
 }
 
