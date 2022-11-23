@@ -16,6 +16,7 @@ async function searchUsers(event)
     }
 
     let content = document.getElementById('management-content')
+    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
 
     await fetch("/search_users?" + queryString, {
         headers: {
