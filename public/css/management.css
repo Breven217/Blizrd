@@ -97,7 +97,7 @@
     grid-template-columns: 25% 25% 25% 25%;
 }
 
-.user-table tr td:last-child, .user-table th th:last-child {
+.user-table tr td:last-child, .user-table tr th:last-child {
     text-align: center;
 }
 
