@@ -55,23 +55,22 @@ class ManagementController extends Controller
 
     public function searchUsers(UserSearchRequest $request) 
     {
-        return $request->input('name');
         $name = $request->input('name');
         $phone = $request->input('phone_number');
         $email = $request->input('email_address');
 
         return User::query()
-            ->when($name, function ($query, $name) {
+            ->when(filled($name), function ($query, $name) {
                 $query
                 ->where('name', 'like', '%'.$name.'%')
                 ->orderByRaw('name like ? desc', [$name]);
             })
-            ->when($phone, function ($query, $name) {
+            ->when(filled($phone), function ($query, $name) {
                 $query
                 ->where('name', 'like', '%'.$name.'%')
                 ->orderByRaw('name like ? desc', [$name]);
             })
-            ->when($email, function ($query, $name) {
+            ->when(filled($email), function ($query, $name) {
                 $query
                 ->where('name', 'like', '%'.$name.'%')
                 ->orderByRaw('name like ? desc', [$name]);
