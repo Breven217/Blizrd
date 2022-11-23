@@ -70,7 +70,6 @@
     border-collapse: collapse;
     width:100%;
     text-align: left;
-    table-layout: auto;
 }
 
 .user-table th {
@@ -80,6 +79,7 @@
     padding-bottom: 12px;
     padding-left: 10px;
     font-size: 20px;
+    width: auto;
 }
 
 .user-table td { 
