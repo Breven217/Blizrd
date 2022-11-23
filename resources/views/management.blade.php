@@ -15,7 +15,7 @@
                 Add Employee
             </button>       
 
-            <form onsubmit="searchUsers()">
+            <form onsubmit="searchUsers(event)">
                 <div id="search-bar-container">
                     <input type="text" name="query" id="search-bar">
                     <button type="submit">
