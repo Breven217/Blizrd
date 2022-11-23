@@ -75,6 +75,6 @@ class ManagementController extends Controller
                 ->where('name', 'like', '%'.$name.'%')
                 ->orderByRaw('name like ? desc', [$name]);
             })
-        ->get();
+        ->toSql();
     }
 }
