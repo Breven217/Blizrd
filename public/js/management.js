@@ -45,7 +45,7 @@ async function searchUsers(event)
                     alertBox = '<i class="fa-regular fa-square-check fa-lg"></i>'
                 }
                 userTable += `
-                <tr onclick="editUser(result)">
+                <tr onclick="editUser(event)" user_id="` + result.id + `>
                     <td>` + result.name + `</td>
                     <td>` + result.phone_number.slice(0,3) + '-' + 
                         result.phone_number.slice(3,6) + '-' + 
