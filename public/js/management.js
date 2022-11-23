@@ -64,7 +64,7 @@ async function searchUsers(event)
     });
 }
 
-async function editUser(user=null)
+async function editUser(event)
 {
-    console.log(user)
+    console.log(event.target)
 }
