@@ -29,7 +29,17 @@ console.log('here');
             //throw up an error modal here
         }
         else{
+            let userTable = `
+            <table> 
+                <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Email Address</th>
+                    <th>Receives Alert</th>
+                </tr>`
             content.innerHTML = data;
+
+            userTable += '</table>'
         }
     });
 }
