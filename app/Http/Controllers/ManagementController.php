@@ -60,20 +60,20 @@ class ManagementController extends Controller
         $email = $request->input('email_address');
 
         return User::query()
-            ->when(filled($name), function ($query, $name) {
+            ->when($name, function ($query, $name) {
                 $query
                 ->where('name', 'like', '%'.$name.'%')
                 ->orderByRaw('name like ? desc', [$name]);
             })
-            ->when(filled($phone), function ($query, $name) {
+            ->when($phone, function ($query, $phone) {
                 $query
-                ->where('name', 'like', '%'.$name.'%')
-                ->orderByRaw('name like ? desc', [$name]);
+                ->where('phone_number', 'like', '%'.$phone.'%')
+                ->orderByRaw('phone_number like ? desc', [$phone]);
             })
-            ->when(filled($email), function ($query, $name) {
+            ->when($email, function ($query, $email) {
                 $query
-                ->where('name', 'like', '%'.$name.'%')
-                ->orderByRaw('name like ? desc', [$name]);
+                ->where('email_address', 'like', '%'.$email.'%')
+                ->orderByRaw('email_address like ? desc', [$email]);
             })
         ->toSql();
     }
