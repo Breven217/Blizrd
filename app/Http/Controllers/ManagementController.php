@@ -75,6 +75,6 @@ class ManagementController extends Controller
                 ->where('email_address', 'like', '%'.$email.'%')
                 ->orderByRaw('email_address like ? desc', [$email]);
             })
-        ->get();
+        ->toSql();
     }
 }
