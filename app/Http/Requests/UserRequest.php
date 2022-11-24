@@ -9,10 +9,6 @@ class UserRequest extends FormRequest
 {
     public ?User $user = null;
 
-    Public function response(array $errors) { 
-        return response()->json(['errors' => $errors], 500); 
-     } 
-
     /**
      * Get the validation rules that apply to the request.
      *

@@ -20,6 +20,8 @@ async function searchUsers(event)
 
     await fetch("/search_users?" + queryString, {
         headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
     })
@@ -74,6 +76,8 @@ async function editUser(user_id=null)
     if (user_id != null) {
         await fetch("/get_user?user_id=" + user_id, {
             headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             },
         })
@@ -173,6 +177,8 @@ async function deleteUser(user_id=null)
 
     let response = await fetch("/delete_user?user_id=" + user_id, {
         headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
         method: 'POST'

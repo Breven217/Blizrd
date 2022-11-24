@@ -8,6 +8,8 @@ async function forecast()
 {
     await fetch("/forecast", {
         headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
         },
     })
@@ -73,6 +75,8 @@ async function currentWeather()
 {
     await fetch("/current_weather", {
         headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
         },
     })
