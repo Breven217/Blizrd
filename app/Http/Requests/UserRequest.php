@@ -4,29 +4,16 @@ namespace App\Http\Requests;
 
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\Validator;
 
 class UserRequest extends FormRequest
 {
     public ?User $user = null;
 
-    /**
-     * Custom Failed Response
-     *
-     * Overrides the Illuminate\Foundation\Http\FormRequest
-     * response function to stop it from auto redirecting
-     * and applies a API custom response format.
-     *
-     * @param array $errors
-     * @return JsonResponse
-     */
-    public function response(array $errors) {
-
-        // Put whatever response you want here.
-        return new JsonResponse([
-            'status' => '422',
-            'errors' => $errors,
-        ], 422);
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json(['errors' => $validator->errors()], 422));
     }
 
     /**
