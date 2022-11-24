@@ -19,6 +19,7 @@ class ManagementController extends Controller
     public function updateUser(UserRequest $request)
     {
         $validated = $request->validated(); 
+throw new Exception($request->user);
         if (filled($request->user)){
             $request->user->name = $validated['name'];
             $request->user->username = $validated['username'];
