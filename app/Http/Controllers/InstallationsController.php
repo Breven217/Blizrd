@@ -75,14 +75,18 @@ class InstallationsController extends Controller
                 'installed_on' => $request->input('installed_on'),
                 'location_id' => $request->input('location_id')
             ]);
-            foreach ($request->actions as $action) {
-                ChainAction::create([
-                    'installation_id' => $installation->id,
-                    'vehicle_id' => $action->vehicle_id,
-                    'user_id' => $action->user_id,
-                    'install_chain' => $action->installed
-                ]);
-            }   
+            if (filled($request->actions))
+            {
+                foreach ($request->actions as $action) {
+                    ChainAction::create([
+                        'installation_id' => $installation->id,
+                        'vehicle_id' => $action->vehicle_id,
+                        'user_id' => $action->user_id,
+                        'install_chain' => $action->installed
+                    ]);
+                } 
+            }
+              
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
