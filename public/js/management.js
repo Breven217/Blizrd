@@ -140,6 +140,7 @@ async function updateUser(event)
 {
     event.preventDefault()
     let content = document.getElementById('management-content')
+    let originalContent = content.innerHTML
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
 }
 
@@ -147,6 +148,25 @@ async function deleteUser(user_id=null)
 {
     event.preventDefault()
     let content = document.getElementById('management-content')
+    let originalContent = content.innerHTML
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
+
+    await fetch("/delete_user?user_id=" + user_id, {
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+        method: 'POST'
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.error){
+            content.innerHTML = originalContent
+            //throw up an error modal here
+        }
+        else {
+            content.innerHTML = ''
+            //throw up a success modal here
+        }   
+    })
 }
 
