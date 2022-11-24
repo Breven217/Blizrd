@@ -12,7 +12,7 @@ class UserRequest extends FormRequest
 {
     public ?User $user = null;
 
-    protected $redirectAction = action('Controller@throwError');
+    protected $redirectAction = 'Controller@throwError';
 
     /**
      * Get the validation rules that apply to the request.
