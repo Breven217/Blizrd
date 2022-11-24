@@ -97,7 +97,7 @@ async function editUser(user_id=null)
         <input type="text" name="phone_number" id="phone-number" placeholder="Phone Number" value="` + user_data.phone_number + `">
         <input type="text" name="email_address" id="email-address" placeholder="Email Address" value="` + user_data.email_address + `">
         <label for="alert-box">Receives Alerts: </label>
-        <input type="checkbox" name="alerts" id="alert-box" checked="` + user_data.receives_alerts + `">
+        <input type="checkbox" name="recieves_alerts" id="alert-box" checked="` + user_data.receives_alerts + `">
 
         <button type="button" name="delete_button" class="user-delete-button" onclick="deleteUser(`+user_id+`)">
             <span>
@@ -125,7 +125,7 @@ async function addUser()
         <input type="text" name="phone_number" id="phone-number" placeholder="Phone Number" required>
         <input type="text" name="email_address" id="email-address" placeholder="Email Address" required>
         <label for="alert-box">Receives Alerts: </label>
-        <input type="checkbox" name="alerts" id="alert-box">
+        <input type="checkbox" name="recieves_alerts" id="alert-box">
 
         <button name="update_button" class="user-update-button">
             <span>
@@ -143,7 +143,7 @@ async function updateUser(event)
     let originalContent = content.innerHTML
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
 
-    await fetch("/update_user", {
+    let response = await fetch("/update_user", {
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
