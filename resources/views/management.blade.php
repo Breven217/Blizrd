@@ -27,7 +27,6 @@
         </div>
 
         <div id="management-content">
-            Search for employee/user above
         </div>
     </div>
 @endsection

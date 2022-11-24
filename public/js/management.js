@@ -139,10 +139,14 @@ async function addUser()
 async function updateUser(event)
 {
     event.preventDefault()
+    let content = document.getElementById('management-content')
+    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
 }
 
 async function deleteUser(user_id=null)
 {
     event.preventDefault()
+    let content = document.getElementById('management-content')
+    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
 }
 
