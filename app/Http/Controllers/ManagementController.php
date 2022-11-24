@@ -26,7 +26,7 @@ class ManagementController extends Controller
                 'password' => $validated['password'],
                 'phone_number' => $validated['phone_number'],
                 'email_address' => $validated['email_address'],
-                'receives_alerts' => $validated['recieves_alerts']
+                'receives_alerts' => $validated['receives_alerts']
             ]);
         }
         else{
