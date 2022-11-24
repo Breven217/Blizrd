@@ -102,6 +102,8 @@ footer{
   height: 100vh;
   background-color: purple;
   z-index: 99;
+  display: inline-block;
+  position: absolute;
 }
 
 .modal-header {
