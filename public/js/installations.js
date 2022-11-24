@@ -221,7 +221,7 @@ async function saveInstallation()
     let actionElements = Array.from(document.getElementsByClassName('add-action-info'))
     if (actionElements.length != 0)
     {
-        let actions = []
+        let actions = {}
         actionElements.forEach(element => {
             actions.push({
                 'vehicle_id': element.querySelector('#vehicle_id').value,
