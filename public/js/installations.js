@@ -89,7 +89,7 @@ async function markPaid(index=null)
 {
     let content = document.getElementsByClassName('content')[0]
     let originalContent = content.innerHTML
-    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
+    content.innerHTML = '<div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>'
 
     await fetch("/mark_installation_paid?installation_id=" + installationsData[index].id, {
         headers: {
@@ -106,7 +106,7 @@ async function markPaid(index=null)
         }
         else{
             content.innerHTML = ''
-            createModal('Installation has been marked paid.', 'success', 'goBack()')
+            createModal('Installation has been marked paid.', 'success', goBack)
         }
     })
 }
