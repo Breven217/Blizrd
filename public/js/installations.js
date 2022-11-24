@@ -96,6 +96,7 @@ async function markPaid(index=null)
             'Accept': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
         },
+        method: 'POST'
     })
     .then((response) => response.json())
     .then((data) => {
