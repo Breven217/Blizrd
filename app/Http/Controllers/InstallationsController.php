@@ -80,9 +80,9 @@ class InstallationsController extends Controller
                 foreach ($request->actions as $action) {
                     ChainAction::create([
                         'installation_id' => $installation->id,
-                        'vehicle_id' => $action->vehicle_id,
-                        'user_id' => $action->user_id,
-                        'install_chain' => $action->installed
+                        'vehicle_id' => $action['vehicle_id'],
+                        'user_id' => $action['user_id'],
+                        'install_chain' => $action['installed']
                     ]);
                 } 
             }
