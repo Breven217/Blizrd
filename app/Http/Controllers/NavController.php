@@ -13,13 +13,7 @@ class NavController extends Controller
      */
     public function goLogin()
     {
-        $loggedIn = $this->checkLoggedUser();
-        if($loggedIn) {
-            return view('home');
-        }
-        else{
-            return view('login');
-        }
+        return view('login');
     }
 
     /**

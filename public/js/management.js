@@ -154,7 +154,7 @@ async function updateUser(event)
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
         method: 'POST',
-        body: new FormData(event.target)
+        data: new FormData(event.target)
     })
     if (response.ok)
     {
