@@ -23,6 +23,16 @@
     cursor: pointer;
 }
 
+.installation-container {
+    width:100%;
+    text-align: center;
+}
+
+.installation-buttons {
+    width:100%;
+    text-align: right;
+}
+
 .installations-table {
     border-collapse: collapse;
     width:100%;
@@ -76,9 +86,4 @@
     background-color: #2d6dcc75;
     cursor: pointer;
     color: #fff;
-}
-
-.installation-buttons {
-    width:100%;
-    text-align: right;
 }

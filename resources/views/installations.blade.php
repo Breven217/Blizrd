@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="content">
-        <div class='installations-table'>
+        <div class='installations-container'>
             <i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>
         </div>
         <div class="installation-buttons">
