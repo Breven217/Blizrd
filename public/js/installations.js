@@ -158,7 +158,7 @@ async function addInstallation()
                         </div>
                     </div>
                 </div>
-                <div class="add-installation-buttons>
+                <div class="add-installation-buttons">
                         <button id="back-button" onclick="goBack()">
                             Back
                         </button>
@@ -167,8 +167,12 @@ async function addInstallation()
                         </button>
                 </div>
                 `
-            
             content.innerHTML = newContent
         }
     })
+}
+
+function addAction()
+{
+    let content = document.getElementById('add-actions')
 }
