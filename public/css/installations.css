@@ -104,7 +104,7 @@
 
 .expanded-installation {
     display: grid;
-    grid-template-rows: 50px 50px 50px 100px auto;
+    grid-template-rows: 30px 30px 30px 50px auto;
     margin-top: 40px;
     width: min(600px, 100%);
 }
@@ -129,7 +129,7 @@
     overflow: auto;
 }
 
-.installation-actions tr:nth-child(even){
+.installation-actions:nth-child(even){
     background-color: #2d6dcc30;
 }
 
