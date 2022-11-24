@@ -29,6 +29,7 @@
     background-color: #2d6dcc30;
     display: grid;
     border-radius: 4px;
+    grid-template-rows: 50px auto;
 }
 
 .installation-title {
