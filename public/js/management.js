@@ -108,6 +108,29 @@ async function editUser(user_id=null)
     `
 }
 
+async function addUser()
+{
+    let content = document.getElementById('management-content')
+
+    content.innerHTML = `
+    <form class="user-form" onsubmit="updateUser(event)"  method="POST">
+        <input type="text" name="username" id="username" placeholder="Username" required>
+        <input type="text" name="password" id="password" placeholder="Password" required>
+        <input type="text" name="name" id="name" placeholder="Name" required>
+        <input type="text" name="phone_number" id="phone-number" placeholder="Phone Number" required>
+        <input type="text" name="email_address" id="email-address" placeholder="Email Address" required>
+        <label for="alert-box">Receives Alerts: </label>
+        <input type="checkbox" name="alerts" id="alert-box">
+
+        <button name="update_button" class="user-update-button">
+            <span>
+                Create User
+            </span>
+        </button>
+    </form>
+    `
+}
+
 async function updateUser(event)
 {
     event.preventDefault()
