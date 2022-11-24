@@ -208,16 +208,16 @@ async function saveInstallation()
     let content = document.getElementsByClassName('content')[0]
     let originalContent = content.innerHTML
 
-    let body = new FormData()
     let installed_on = document.getElementById('installed_on')
     if (installed_on.value == '')
     {
         createModal('Select an installed on date.', 'error')
         return
     }
-    body.set('installed_on', installed_on.value)
-    body.set('location_id', document.getElementById('location_id').value)
-
+    let body = {
+        'installed_on': installed_on.value,
+        'location_id': document.getElementById('location_id').value
+    }
     let actionElements = Array.from(document.getElementsByClassName('add-action-info'))
     if (actionElements.length != 0)
     {
@@ -229,7 +229,7 @@ async function saveInstallation()
                 'installed': element.querySelector('#installed').value
             })
         });
-        body.set('actions', JSON.stringify(actions))
+        body.actions = actions
     }
 
     content.innerHTML = '<div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>'
