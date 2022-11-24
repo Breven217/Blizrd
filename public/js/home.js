@@ -6,6 +6,7 @@ function loadWeather()
 
 async function forecast() 
 {
+    let container = document.getElementById('forecast-container')
     await fetch("/forecast", {
         headers: {
             'Accept': 'application/json',
@@ -15,11 +16,9 @@ async function forecast()
     .then((response) => response.json())
     .then((data) => {
         if (data.error){
-            //throw up an error modal here
+            container.innerHTML = error
         }
         else{
-            let container = document.getElementById('forecast-container')
-
             let hours = new Date().getHours()
             let isDayTime = hours > 6 && hours < 20
 

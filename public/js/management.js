@@ -26,9 +26,9 @@ async function searchUsers(event)
     })
     .then((response) => response.json())
     .then((data) => {
-        if (data.error){
+        if (data.message){
             content.innerHTML = ''
-            createModal('Failed to get Employee data.  Error: ' + data.error, 'error')
+            createModal('Failed to get Employee data.  Error: ' + data.message, 'error')
         }
         else{
             let userTable = `
@@ -81,9 +81,9 @@ async function editUser(user_id=null)
         })
         .then((response) => response.json())
         .then((data) => {
-            if (data.error){
+            if (data.message){
                 content.innerHTML = originalContent
-                createModal('Failed to get Employee data.  Error: ' + data.error, 'error')
+                createModal('Failed to get Employee data.  Error: ' + data.message, 'error')
             }
             else {
                 user_data = data;
@@ -162,9 +162,9 @@ async function updateUser(event)
     })
     .then((response) => response.json())
     .then((data) => {
-        if (data.error){
+        if (data.message){
             content.innerHTML = originalContent
-            createModal('Failed to get Employee data.  Error: ' + data.error, 'error')
+            createModal('Failed to get Employee data.  Error: ' + data.message, 'error')
         }
         else {
             content.innerHTML = ''
