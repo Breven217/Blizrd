@@ -12,14 +12,8 @@
     <div class="content">
         <form onsubmit="checkLogin(event)" method="POST">
             @csrf
-            <div class="tooltip">
-                <span class="tooltiptext" id="username-tooltip">Username is required</span>
-                <input type="text" name="username" id="username" required>
-            </div>
-            <div class="tooltip">
-                <span class="tooltiptext" id="password-tooltip">Password is required</span>
-                <input type="password" name="password" id="password">
-            </div>
+            <input type="text" name="username" id="username" required>
+            <input type="password" name="password" id="password">
             <button name="login-button" class="login-button">
                 <span>
                     Login

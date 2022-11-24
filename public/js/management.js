@@ -92,20 +92,14 @@ async function editUser(user_id=null)
     userContent = `
     <form class="user-form" onsubmit="updateUser(event)">
     @csrf
-            <div class="tooltip">
-                <span class="tooltiptext" id="username-tooltip">Username is required</span>
-                <input type="text" name="username" id="username" placeholder="Username" value="` + user_data.username ?? "" + `">
-            </div>
-            <div class="tooltip">
-                <span class="tooltiptext" id="username-tooltip">Password is required</span>
-                <input type="text" name="password" id="password" placeholder="Password" value="` + user_data.password ?? "" + `">
-            </div>
+        <input type="text" name="username" id="username" placeholder="Username" value="` + user_data.username ?? "" + `">
+        <input type="text" name="password" id="password" placeholder="Password" value="` + user_data.password ?? "" + `">
 
-            <button name="login-button" class="login-button">
-                <span>
-                    Login
-                </span>
-            </button>
+        <button name="login-button" class="login-button">
+            <span>
+                Login
+            </span>
+        </button>
     </form>
     `
 }
