@@ -50,8 +50,8 @@ function createModal(message=null, type=null)
                     Confirm
                 </button>
             </div>
-            <div class="modal-lock"></div>
         </div>
+        <div id="modal-lock"></div>
     `
 
     content.innerHTML = content.innerHTML + modal
@@ -60,8 +60,12 @@ function createModal(message=null, type=null)
 function closeModal()
 {
     let modal = document.getElementById('modal')
+    let lock = document.getElementById('modal-lock')
 
     if (modal != undefined){
         modal.remove()
+    }
+    if (lock != undefined){
+        lock.remove()
     }
 }
