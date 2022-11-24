@@ -211,12 +211,12 @@ function updateVehicleOptions()
 
     locationElement = document.getElementById('location_id')
     let locationVehicles = installationOptions.vehicles.filter(vehicle => vehicle.location_id == locationElement.value)
-    
+
     elements.forEach(element => {
         let options = ''
 
         locationVehicles.forEach(lv => {
-            options += '<option value="'+veh.id+'">'+veh.vehicle_number+'</option>'
+            options += '<option value="'+lv.id+'">'+lv.vehicle_number+'</option>'
         });
 
         element.innerHTML = options
