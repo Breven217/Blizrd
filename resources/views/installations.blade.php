@@ -12,7 +12,10 @@
     <div class="content">
         <div class='installation-container'>
             <h2 class="installation-title">Outstanding Installations</h2>
-            <div>
+            <script type="text/javascript">
+                getOutstandingInstallations()
+            </script>
+            <div id="installation-table-container">
                 <i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>
             </div>
         </div>
