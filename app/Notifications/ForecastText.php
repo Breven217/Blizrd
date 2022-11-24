@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\VonageMessage;
 use Illuminate\Notifications\Notification;
 
-class ForecastText extends Notification
+class ForecastText extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -36,33 +36,6 @@ class ForecastText extends Notification
     }
 
     /**
-     * Get the mail representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
-     */
-    public function toMail($notifiable)
-    {
-        return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
-    }
-
-    /**
-     * Get the array representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
-    public function toArray($notifiable)
-    {
-        return [
-            //
-        ];
-    }
-
-    /**
     * Get the Vonage / SMS representation of the notification.
     *
     * @param  mixed  $notifiable
@@ -70,7 +43,7 @@ class ForecastText extends Notification
     */
     public function toVonage($notifiable)
     {
-        return (new VonageMessage)
+        return (new VonageMessage())
                     ->content($this->message);
     }
 }
