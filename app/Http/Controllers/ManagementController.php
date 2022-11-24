@@ -26,7 +26,7 @@ class ManagementController extends Controller
                 'password' => $validated['password'],
                 'phone_number' => $validated['phone_number'],
                 'email_address' => $validated['email_address'],
-                'recieves_alerts' => $validated['recieves_alerts']
+                'receives_alerts' => $validated['recieves_alerts']
             ]);
         }
         else{
@@ -38,7 +38,7 @@ class ManagementController extends Controller
             }
             $request->user->phone_number = $validated['phone_number'];
             $request->user->email_address = $validated['email_address'];
-            $request->user->recieves_alerts = $validated['recieves_alerts'];
+            $request->user->recieves_alerts = $validated['receives_alerts'];
             $request->user->save();
 
             return $request->user;

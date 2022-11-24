@@ -1,7 +1,6 @@
 async function logout(){
     await fetch("/logout", {
         headers: {
-            'Content-Type': 'application/json',
             'Accept': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },

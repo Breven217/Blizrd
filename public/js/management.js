@@ -20,7 +20,6 @@ async function searchUsers(event)
 
     await fetch("/search_users?" + queryString, {
         headers: {
-            'Content-Type': 'application/json',
             'Accept': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
@@ -76,7 +75,6 @@ async function editUser(user_id=null)
     if (user_id != null) {
         await fetch("/get_user?user_id=" + user_id, {
             headers: {
-                'Content-Type': 'application/json',
                 'Accept': 'application/json',
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             },
@@ -101,7 +99,7 @@ async function editUser(user_id=null)
         <input type="text" name="phone_number" id="phone-number" placeholder="Phone Number" value="` + user_data.phone_number + `">
         <input type="text" name="email_address" id="email-address" placeholder="Email Address" value="` + user_data.email_address + `">
         <label for="alert-box">Receives Alerts: </label>
-        <input type="checkbox" name="recieves_alerts" id="alert-box" checked="` + user_data.receives_alerts + `">
+        <input type="checkbox" name="receives_alerts" id="alert-box" checked="` + user_data.receives_alerts + `">
 
         <button type="button" name="delete_button" class="user-delete-button" onclick="deleteUser(`+user_id+`)">
             <span>
@@ -129,7 +127,7 @@ async function addUser()
         <input type="text" name="phone_number" id="phone-number" placeholder="Phone Number" required>
         <input type="text" name="email_address" id="email-address" placeholder="Email Address" required>
         <label for="alert-box">Receives Alerts: </label>
-        <input type="checkbox" name="recieves_alerts" id="alert-box">
+        <input type="checkbox" name="receives_alerts" id="alert-box">
 
         <button name="update_button" class="user-update-button">
             <span>
@@ -147,13 +145,15 @@ async function updateUser(event)
     let originalContent = content.innerHTML
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
 
+    let body = new FormData(event.target)
+    body.receives_alerts = event.target.receives_alerts.isSelected()
     let response = await fetch("/update_user", {
         headers: {
             'Accept': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
         method: 'POST',
-        body: new FormData(event.target)
+        body: 
     })
     if (response.ok)
     {
@@ -176,7 +176,6 @@ async function deleteUser(user_id=null)
 
     let response = await fetch("/delete_user?user_id=" + user_id, {
         headers: {
-            'Content-Type': 'application/json',
             'Accept': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
