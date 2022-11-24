@@ -202,3 +202,47 @@ function addAction()
         </div>
     `
 }
+
+async function saveInstallation()
+{
+    let content = document.getElementsByClassName('content')[0]
+    let originalContent = content.innerHTML
+    content.innerHTML = '<div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>'
+
+
+    let body = new FormData()
+    body.set('installed_on', document.getElementById('installed_on').value)
+    body.set('location_id', document.getElementById('location_id').value)
+
+    let actionElements = document.getElementsByClassName('add-action-info')
+    let actions = []
+    actionElements.forEach(element => {
+        actions.push({
+        'vehicle_id': element.querySelector('#vehicle_id').value,
+        'user_id': element.querySelector('#user_id').value,
+        'installed': element.querySelector('#installed').value
+        })
+    });
+
+    body.set('actions', actions)
+
+    await fetch("/create_installation", {
+        headers: {
+            'Accept': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        },
+        method: 'POST',
+        body: body
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.message){
+            content.innerHTML = originalContent
+            createModal('Failed to create Installation.  Error: ' + data.message, 'error')
+        }
+        else{
+            content.innerHTML = ''
+            createModal('Installation has been Created.', 'success', goBack)
+        }
+    })
+}
