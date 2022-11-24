@@ -28,7 +28,7 @@ async function getOutstandingInstallations()
                 <tr onclick="expandInstallation(` + installation.id + `)">
                     <td>` + installation.location.name + `</td>
                     <td>` + installation.installed_on + `</td>
-                    <td> $` + installation.balance_due + `</td>
+                    <td> $` + installation.balance_due + `.00</td>
                 </tr>
                 `
             });

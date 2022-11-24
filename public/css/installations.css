@@ -76,7 +76,7 @@
     transition-duration: 0.25s;
     font-size: 18px;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 33% 33% 34%;
 }
 
 .installation-table tr:last-child {
