@@ -40,6 +40,7 @@ function createModal(message=null, type=null)
     let modal = `
         <div id="modal" class="` + modalClass + `">
             <div class="modal-header">
+            ` + type + `
             </div>
             <div class="modal-body">
             ` + message + `

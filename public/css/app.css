@@ -92,7 +92,7 @@ footer{
   border-radius: 4px;
   display: grid;
   width: 300px;
-  grid-template-rows: 30px 200px 30px;
+  grid-template-rows: 30px 200px 35px;
   background-color: #2d6dcc30;
 }
 
@@ -100,11 +100,12 @@ footer{
   background-color: #2d6dcc;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  text-align: left;
 }
 
 .modal-body {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .modal-footer {
