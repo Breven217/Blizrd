@@ -45,7 +45,7 @@ function createModal(message=null, type=null)
             ` + message + `
             </div>
             <div class="modal-footer">
-                <button onclick="closeModal()">
+                <button id="modal-button" onclick="closeModal()">
                     Confirm
                 </button>
             </div>

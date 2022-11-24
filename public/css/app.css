@@ -106,6 +106,6 @@ footer{
   text-align: right;
 }
 
-.modal-footer button {
+#modal-button {
   height: 30px;
 }
