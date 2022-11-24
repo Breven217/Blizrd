@@ -223,11 +223,11 @@ async function saveInstallation()
     {
         let actions = []
         actionElements.forEach(element => {
-            let actionData = new FormData()
-            actionData.set('vehicle_id',element.querySelector('#vehicle_id').value)
-            actionData.set('user_id',element.querySelector('#user_id').value)
-            actionData.set('installed',element.querySelector('#installed').value)
-            actions.push(actionData)
+            actions.push({
+                'vehicle_id': element.querySelector('#vehicle_id').value,
+                'user_id': element.querySelector('#user_id').value,
+                'installed': element.querySelector('#installed').value
+            })
         });
         body.set('actions', JSON.stringify(actions))
     }
