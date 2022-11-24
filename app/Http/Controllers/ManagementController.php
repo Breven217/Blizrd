@@ -6,6 +6,7 @@ use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserSearchRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use TheSeer\Tokenizer\Exception;
 
 class ManagementController extends Controller
 {
@@ -18,8 +19,7 @@ class ManagementController extends Controller
     public function updateUser(UserRequest $request)
     {
         $validated = $request->validated(); 
-echo($validated);
-return $validated;
+throw new Exception($request->user);
         if (filled($request->user)){
             return User::create([
                 'name' => $validated['name'],
