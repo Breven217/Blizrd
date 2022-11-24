@@ -13,7 +13,7 @@
         <form onsubmit="checkLogin(event)" method="POST">
             @csrf
             <input type="text" name="username" id="username" required>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" required>
             <button name="login-button" class="login-button">
                 <span>
                     Login
