@@ -63,4 +63,20 @@ class NavController extends Controller
             return $loggedIn;
         }
     }
+
+    /**
+     * returns the Installations view if a user is not logged in or the login view if not
+     *
+     * @return \Illuminate\Contracts\View\View|boolean
+     */
+    public function goInstallations()
+    {
+        $loggedIn = $this->checkLoggedUser();
+        if(!$loggedIn) {
+            return view('installations');
+        }
+        else{
+            return $loggedIn;
+        }
+    }
 }

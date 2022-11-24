@@ -13,6 +13,8 @@ Route::post('/login', [LoginController::class, 'checkLogin']);
 Route::get('/login', [NavController::class, 'goLogin']);
 Route::get('/home', [NavController::class, 'goHome']);
 Route::get('/management', [NavController::class, 'goManagement']);
+Route::get('/installations', [NavController::class, 'goInstallations']);
+
 
 Route::get('/current_weather', [WeatherController::class, 'getCurrentWeather']);
 Route::get('/forecast', [WeatherController::class, 'getForecast']);
