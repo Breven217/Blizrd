@@ -210,10 +210,8 @@ function updateVehicleOptions()
     elements = Array.from(document.getElementsByClassName('vehicle-option'))
 
     locationElement = document.getElementById('location_id')
-    console.log(locationElement.id)
-    let locationVehicles = installationOptions.vehicles.find(vehicle => vehicle.location_id == locationElement.value)
-    console.log(installationOptions.vehicles)
-    console.log(installationOptions.vehicles.find(vehicle => vehicle.location_id == locationElement.value))
+    let locationVehicles = installationOptions.vehicles.filter(vehicle => vehicle.location_id == locationElement.value)
+    
     elements.forEach(element => {
         let options = ''
 
