@@ -134,7 +134,7 @@ async function addInstallation()
         else{
             installationOptions = data;
             let locations = `<label for="location_id">Location:</label>
-                <select name="location_id" id="location_id">`
+                <select name="location_id" id="location_id" onchange="updateVehicleOptions()">`
             installationOptions.locations.forEach(loc => {
                 locations += '<option value="'+loc.id+'">'+loc.name+'</option>'
             });
@@ -187,11 +187,7 @@ function addAction()
     users += '</select></div>'
 
     let vehicles = `<div><label for="vehicle_id">Vehicle:</label>
-        <select name="vehicle_id" id="vehicle_id">`
-    installationOptions.vehicles.forEach(veh => {
-        vehicles += '<option value="'+veh.id+'">'+veh.vehicle_number+'</option>'
-    });
-    vehicles += '</select></div>'
+        <select name="vehicle_id" id="vehicle_id" class="vehicle-option"></select></div>`
 
     content.innerHTML = content.innerHTML + `
         <div class="add-action-info">
@@ -205,6 +201,26 @@ function addAction()
             </div>
         </div>
     `
+
+    updateVehicleOptions()
+}
+
+function updateVehicleOptions() 
+{
+    elements = Array.from(document.getElementsByClassName('vehicle-option'))
+
+    locationElement = document.getElementById('location_id')
+    let locationVehicles = installationOptions.vehicle.find(vehicle => vehicle.location_id == locationElement.value)
+
+    elements.forEach(element => {
+        let options = ''
+
+        locationVehicles.forEach(lv => {
+            options += '<option value="'+veh.id+'">'+veh.vehicle_number+'</option>'
+        });
+
+        element.innerHTML = options
+    });
 }
 
 async function saveInstallation()
