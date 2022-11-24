@@ -29,6 +29,7 @@ async function getOutstandingInstallations()
                     <td>` + installation.location.name + `</td>
                     <td>` + installation.installed_on + `</td>
                     <td> $` + installation.balance_due + `.00</td>
+                    <div>testman</div>
                 </tr>
                 `
             });
