@@ -16,7 +16,7 @@ class ManagementController extends Controller
      * @param UserRequest $request
      * @return void
      */
-    public function updateUser(Request $request)
+    public function updateUser(UserRequest $request)
     {
        $validated = $request->validated(); 
 
