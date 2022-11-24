@@ -102,10 +102,17 @@ footer{
   border-top-right-radius: 4px;
 }
 
+.modal-body {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
 .modal-footer {
   text-align: right;
 }
 
 #modal-button {
   height: 30px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
