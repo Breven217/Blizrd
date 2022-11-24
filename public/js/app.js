@@ -45,6 +45,6 @@ function closeModal(func=null)
     }
     if (func != null)
     {
-        func
+        func()
     }
 }
