@@ -76,15 +76,7 @@
     transition-duration: 0.25s;
     font-size: 18px;
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-}
-
-.installation-table th:first-child {
-    border-top-left-radius: 4px;
-}
-
-.installation-table th:last-child {
-    border-top-right-radius: 4px;
+    grid-template-columns: 33% 33% 33%;
 }
 
 .installation-table tr:last-child {
