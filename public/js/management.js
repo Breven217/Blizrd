@@ -99,7 +99,12 @@ async function editUser(user_id=null)
         <label for="alert-box">Receives Alerts: </label>
         <input type="checkbox" name="alerts" id="alert-box" value="` + user_data.receives_alerts + `">
 
-        <button name="update_button" class="user-update-button">
+        <button type="button" name="delete_button" class="user-delete-button" onclick="deleteUser(`+user_id+`)">
+            <span>
+                Delete User
+            </span>
+        </button>
+        <button type="submit" name="update_button" class="user-update-button">
             <span>
                 Update User
             </span>
@@ -132,6 +137,11 @@ async function addUser()
 }
 
 async function updateUser(event)
+{
+    event.preventDefault()
+}
+
+async function deleteUser(user_id=null)
 {
     event.preventDefault()
 }
