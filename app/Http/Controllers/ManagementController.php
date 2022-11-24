@@ -19,18 +19,8 @@ class ManagementController extends Controller
     public function updateUser(UserRequest $request)
     {
         $validated = $request->validated(); 
-throw new Exception($request->user);
+throw new Exception($validated['name']);
         if (filled($request->user)){
-            return User::create([
-                'name' => $validated['name'],
-                'username' => $validated['username'],
-                'password' => $validated['password'],
-                'phone_number' => $validated['phone_number'],
-                'email_address' => $validated['email_address'],
-                'receives_alerts' => $validated['receives_alerts']
-            ]);
-        }
-        else{
             $request->user->name = $validated['name'];
             $request->user->username = $validated['username'];
             if (filled($validated['password']))
@@ -43,6 +33,16 @@ throw new Exception($request->user);
             $request->user->save();
 
             return $request->user;
+        }
+        else{
+            return User::create([
+                'name' => $validated['name'],
+                'username' => $validated['username'],
+                'password' => $validated['password'],
+                'phone_number' => $validated['phone_number'],
+                'email_address' => $validated['email_address'],
+                'receives_alerts' => $validated['receives_alerts']
+            ]);   
         }
     }
 
