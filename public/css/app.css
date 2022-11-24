@@ -85,9 +85,9 @@ footer{
 
 #modal {
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -30%);
   box-shadow: #2d6dcc;
   border-radius: 4px;
   display: grid;
@@ -98,8 +98,14 @@ footer{
 
 .modal-header {
   background-color: #2d6dcc;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .modal-footer {
   text-align: right;
+}
+
+.modal-footer button {
+  height: 100%;
 }
