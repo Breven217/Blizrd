@@ -32,7 +32,7 @@ class ManagementController extends Controller
         else{
             $request->user->name = $validated['name'];
             $request->user->username = $validated['username'];
-            if (filled($request->input('password')))
+            if (filled($validated['password']))
             {
                 $request->user->password = $validated['password'];
             }
