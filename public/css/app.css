@@ -102,7 +102,7 @@ footer{
   height: 100vh;
   top: 0px;
   left: 0px;
-  background-color: purple;
+  background-color: #2d6dcc0a;
   z-index: 99;
   position: absolute;
 }
