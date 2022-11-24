@@ -69,6 +69,5 @@ class LoginController extends Controller
     public function logout(){
         session_start();
         session_destroy();
-        Artisan::call('command:WeatherAlert');
     }
 }

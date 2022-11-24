@@ -30,8 +30,7 @@ Route::get('/get_installation_options', [InstallationsController::class, 'getIns
 Route::post('/mark_installation_paid', [InstallationsController::class, 'markPaid']);
 Route::post('/create_installation', [InstallationsController::class, 'createInstallation']);
 
-Route::get('/updateapp', function()
+Route::get('/testText', function()
 {
-    Artisan::call('dump-autoload');
-    echo 'dump-autoload complete';
+    Artisan::call('command:WeatherAlert');
 });

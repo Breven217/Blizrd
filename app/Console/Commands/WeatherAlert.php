@@ -6,7 +6,6 @@ use App\Http\Controllers\WeatherController;
 use App\Models\User;
 use App\Notifications\ForecastText;
 use Illuminate\Console\Command;
-use Illuminate\Notifications\Messages\VonageMessage;
 use Illuminate\Support\Facades\Notification;
 
 class WeatherAlert extends Command
