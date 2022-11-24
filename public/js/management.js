@@ -112,6 +112,8 @@ async function editUser(user_id=null)
                 Update User
             </span>
         </button>
+
+        <input type="hidden" name="user_id" value="` + user_id + `">
     </form>
     `
 }
@@ -140,7 +142,6 @@ async function addUser()
 }
 
 async function updateUser(event)
-{
     event.preventDefault()
     let content = document.getElementById('management-content')
     let originalContent = content.innerHTML
