@@ -129,7 +129,7 @@
     overflow: auto;
 }
 
-.installation-actions:nth-child(even){
+.action-info:nth-child(even){
     background-color: #2d6dcc30;
 }
 
