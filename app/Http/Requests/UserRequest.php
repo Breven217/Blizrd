@@ -20,7 +20,7 @@ class UserRequest extends FormRequest
             'name' => 'required|string',
             'username' => 'required|string',
             'password' => 'nullable|string',
-            'phone_number' => 'required|numeric|digits:10',
+            'phone_number' => 'required|numeric|digits:11',
             'email_address' => 'required|email',
             'receives_alerts' => 'required|boolean',
             'user_id' => 'nullable|integer|exists:user,id'
