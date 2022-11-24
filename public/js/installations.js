@@ -111,6 +111,8 @@ async function markPaid(index=null)
     })
 }
 
+let installationOptions = [];
+
 async function addInstallation()
 {
     let content = document.getElementsByClassName('content')[0]
@@ -130,14 +132,13 @@ async function addInstallation()
             createModal('Failed to get Installation options.  Error: ' + data.message, 'error')
         }
         else{
+            installationOptions = data;
             let locations = `<label for="location_id">Location:</label>
                 <select name="location_id" id="location_id">`
-            data.locations.forEach(loc => {
+            installationOptions.locations.forEach(loc => {
                 locations += '<option value="'+loc.id+'">'+loc.name+'</option>'
             });
             locations += '</select>'
-
-            let date = new Date();
 
             let newContent = `
                 <div class="add-installation-container">
@@ -175,4 +176,29 @@ async function addInstallation()
 function addAction()
 {
     let content = document.getElementById('add-actions')
+
+    let users = `<label for="user_id">Employee:</label>
+        <select name="user_id" id="user_id">`
+    installationOptions.users.forEach(user => {
+        users += '<option value="'+user.id+'">'+user.name+'</option>'
+    });
+    users += '</select>'
+
+    let vehicles = `<label for="vehicle_id">Vehicle:</label>
+        <select name="vehicle_id" id="vehicle_id">`
+    installationOptions.vehicles.forEach(veh => {
+        vehicles += '<option value="'+veh.id+'">'+veh.vehicle_number+'</option>'
+    });
+    vehicles += '</select>'
+
+    content.innerHTML = content.innerHTML + `
+        <div class="add-action-info">
+            ` + users + vehicles + `
+            <label for="installed">Action Type: </label>
+            <select name="installed" id="installed">
+                <option value="true">Install</option>
+                <option value="false">Removal</option>
+            </select>
+        </div>
+    `
 }
