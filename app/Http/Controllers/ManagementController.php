@@ -20,8 +20,7 @@ class ManagementController extends Controller
        $validated = $request->validated(); 
 
         if (blank($request->user)){
-            print_r('here');
-            User::create([
+            return User::create([
                 'name' => $validated['name'],
                 'username' => $validated['username'],
                 'password' => $validated['password'],
@@ -31,8 +30,6 @@ class ManagementController extends Controller
             ]);
         }
         else{
-            print_r('not where i should be');
-
             $request->user->name = $validated['name'];
             $request->user->username = $validated['username'];
             if (filled($request->input('password')))
@@ -43,6 +40,8 @@ class ManagementController extends Controller
             $request->user->email_address = $validated['email_address'];
             $request->user->recieves_alerts = $validated['recieves_alerts'];
             $request->user->save();
+
+            return $request->user;
         }
     }
 
