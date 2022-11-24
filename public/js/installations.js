@@ -241,7 +241,7 @@ async function saveInstallation()
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
         },
         method: 'POST',
-        body: body
+        body: JSON.stringify(body)
     })
     .then((response) => response.json())
     .then((data) => {
