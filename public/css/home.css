@@ -15,6 +15,7 @@
     height: 200px;
     display: grid;
     grid-template-rows: 50px 150px;
+    border-radius: 4px;
 }
 .current-weather-populated {
     display: grid;
@@ -29,6 +30,7 @@
     height: auto;
     display: grid;
     grid-template-rows: 50px 350px;
+    border-radius: 4px;
 }
 .forecast-populated {
     display:grid;

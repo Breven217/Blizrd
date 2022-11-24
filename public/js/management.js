@@ -134,7 +134,7 @@ async function addUser()
             <label for="alert-box">Receives Alerts: </label>
             <input type="checkbox" name="receives_alerts" id="alert-box">
         </div>
-        <button name="update_button" class="user-update-button">
+        <button name="add_button" class="user-add-button">
             <span>
                 Create User
             </span>
