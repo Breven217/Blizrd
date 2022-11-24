@@ -85,14 +85,15 @@ footer{
 
 #modal {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   box-shadow: #2d6dcc;
   border-radius: 4px;
-  border-style: solid;
   display: grid;
-  grid-template-rows: 30px 240px 30px;
+  width: 300px;
+  grid-template-rows: 30px 200px 30px;
+  background-color: #2d6dcc75;
 }
 
 .modal-header {
