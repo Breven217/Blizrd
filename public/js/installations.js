@@ -91,7 +91,7 @@ async function markPaid(index=null)
     let originalContent = content.innerHTML
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
 
-    await fetch("/get_installations", {
+    await fetch("/mark_installation_paid?installation_id=" + installationsData[index].id, {
         headers: {
             'Accept': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
