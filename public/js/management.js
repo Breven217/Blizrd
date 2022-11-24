@@ -146,6 +146,7 @@ async function updateUser(event)
     let response = await fetch("/update_user", {
         headers: {
             'Content-Type': 'application/json',
+            'append': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
         method: 'POST',
