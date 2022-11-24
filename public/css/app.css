@@ -94,7 +94,7 @@ footer{
   width: 400px;
   grid-template-rows: 30px auto 35px;
   background-color: #2d6dcc30;
-  z-index: 2;
+  z-index: 100;
 }
 
 .modal-lock {
@@ -103,8 +103,8 @@ footer{
   top: 0px;
   left: 0px;
   background-color: purple;
-  z-index: 1;
-  position: fixed;
+  z-index: 99;
+  position: absolute;
 }
 
 .modal-header {
@@ -116,19 +116,16 @@ footer{
   line-height: 30px;
   padding-left: 5px;
   font-size: 18px;
-  z-index: 100;
 }
 
 .modal-body {
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 18px;
-  z-index: 100;
 }
 
 .modal-footer {
   text-align: right;
-  z-index: 100;
 }
 
 #modal-button {
