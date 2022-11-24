@@ -92,7 +92,7 @@ footer{
   border-radius: 4px;
   display: grid;
   width: 300px;
-  grid-template-rows: 30px auto + 50px 35px;
+  grid-template-rows: 30px auto+100px 35px;
   background-color: #2d6dcc30;
 }
 
