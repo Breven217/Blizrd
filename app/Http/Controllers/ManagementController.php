@@ -16,8 +16,17 @@ class ManagementController extends Controller
      * @param UserRequest $request
      * @return void
      */
-    public function updateUser(UserRequest $request)
+    public function updateUser(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'username' => 'required|string',
+            'password' => 'nullable|string',
+            'phone_number' => 'required|numeric|digits:10',
+            'email_address' => 'required|email',
+            'recieves_alerts' => 'required|boolean',
+            'user_id' => 'nullable|integer|exists:user,id'
+        ]);
        $validated = $request->validated(); 
 
         if (blank($request->user)){
