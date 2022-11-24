@@ -64,7 +64,7 @@ class InstallationsController extends Controller
      * creates a new installation entry and adds all chain actions entries associated
      *
      * @param CreateInstallationRequest
-     * @return void
+     * @return Installation
      */
     public function createInstallation(CreateInstallationRequest $request)
     {
@@ -88,6 +88,8 @@ class InstallationsController extends Controller
             }
               
             DB::commit();
+
+            return $installation;
         } catch (Exception $e) {
             DB::rollBack();
             throw new Exception($e->getMessage());

@@ -219,7 +219,6 @@ async function saveInstallation()
     body.set('location_id', document.getElementById('location_id').value)
 
     let actionElements = document.getElementsByClassName('add-action-info')
-    console.log(actionElements)
     if (actionElements.length != 0)
     {
         let actions = []
