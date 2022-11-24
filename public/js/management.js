@@ -187,16 +187,13 @@ async function deleteUser(user_id=null)
         },
         method: 'POST'
     })
-    .then((response) => response.json())
-    .then((data) => {
-        if (data.error){
-            content.innerHTML = originalContent
-            createModal('Failed to delete Employee.  Error: ' + data.error, 'error')
-        }
-        else {
-            content.innerHTML = ''
-            createModal('Employee has been deleted', 'success')
-        }   
-    })
+    if (response.ok){
+        content.innerHTML = ''
+        createModal('Employee has been deleted', 'success')
+    }
+    else {
+        content.innerHTML = originalContent
+        createModal('Failed to delete Employee.', 'error')
+    }
 }
 
