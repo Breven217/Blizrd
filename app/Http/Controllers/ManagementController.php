@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserSearchRequest;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 
 class ManagementController extends Controller
@@ -17,6 +18,7 @@ class ManagementController extends Controller
      */
     public function updateUser(UserRequest $request)
     {
+        throw new Exception('I"m a gay bitch');
        $validated = $request->validated(); 
 
         if (blank($request->user)){
