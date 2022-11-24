@@ -72,7 +72,7 @@ class InstallationsController extends Controller
 
         try {
             $installation = Installation::create([
-                'installed_on' => Carbon::now(),
+                'installed_on' => $request->input('installed_on'),
                 'location_id' => $request->input('location_id')
             ]);
             foreach ($request->actions as $action) {

@@ -15,6 +15,7 @@ class CreateInstallationRequest extends FormRequest
     public function rules()
     {
         return [
+            'installed_on' => 'required|date',
             'location_id' => 'required|integer|exists:location,id',
             'actions' => 'required|array',
                 'actions.*.vehicle_id' => 'required|integer|exists:vehicle,id',

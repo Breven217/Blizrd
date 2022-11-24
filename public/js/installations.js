@@ -145,7 +145,8 @@ async function addInstallation()
                         `+locations+`
                     </div>
                     <div>
-                        Installed on: ` + date.getFullYear() + '/' + date.getMonth() + '/' + date.getDate() + `
+                        <label for="installed_on">Installed on:</label>
+                        <input type="date" id="installed_on" name="installed_on">
                     </div>
                 </div>
                 `
