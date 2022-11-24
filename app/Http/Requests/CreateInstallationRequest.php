@@ -17,7 +17,7 @@ class CreateInstallationRequest extends FormRequest
         return [
             'installed_on' => 'required|date',
             'location_id' => 'required|integer|exists:location,id',
-            'actions' => 'nullable|array',
+            'actions' => 'nullable|array:vehicle_id,user_id,installed',
                 'actions.*.vehicle_id' => 'required|integer|exists:vehicle,id',
                 'actions.*.user_id' => 'required|integer|exists:user_id',
                 'actions.*.installed' => 'required|boolean'
