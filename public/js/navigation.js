@@ -39,6 +39,8 @@ function createModal(message=null, type=null)
 
     let modal = `
         <div id="modal" class="` + modalClass + `">
+            <div class="modal-header">
+            </div>
             <div class="modal-body">
             ` + message + `
             </div>
