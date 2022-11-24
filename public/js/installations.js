@@ -196,8 +196,8 @@ function addAction()
             ` + users + vehicles + `
             <label for="installed">Action Type: </label>
             <select name="installed" id="installed">
-                <option value="true">Install</option>
-                <option value="false">Removal</option>
+                <option value="1">Install</option>
+                <option value="0">Removal</option>
             </select>
         </div>
     `
