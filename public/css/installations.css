@@ -142,3 +142,8 @@
     padding-top: 5px;
     padding-left: 10px;
 }
+
+#back-button {
+    justify-self: right;
+    width: min(75px, 100%);
+}
