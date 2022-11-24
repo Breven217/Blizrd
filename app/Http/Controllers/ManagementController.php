@@ -19,7 +19,7 @@ class ManagementController extends Controller
     public function updateUser(UserRequest $request)
     {
         $validated = $request->validated();
-         
+
         if (filled($request->user)){
             $request->user->name = $validated['name'];
             $request->user->username = $validated['username'];
@@ -29,7 +29,7 @@ class ManagementController extends Controller
             }
             $request->user->phone_number = $validated['phone_number'];
             $request->user->email_address = $validated['email_address'];
-            $request->user->recieves_alerts = $validated['receives_alerts'];
+            $request->user->receives_alerts = $validated['receives_alerts'];
             $request->user->save();
 
             return $request->user;
