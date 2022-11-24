@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('vehicle', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('vehicle_number');
-            $table->foreignId('location_id')->constrained()->cascadeOnDelete();
+            $table->foreign('location_id')->references('id')->on('location');
             $table->timestamps();
         });
     }

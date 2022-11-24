@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('chain_action', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vehicle_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('installation_id')->constrained()->cascadeOnDelete();
+            $table->foreign('vehicle_id')->references('id')->on('vehicle');
+            $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('installation_id')->references('id')->on('installation');
             $table->boolean('install_chain');
             $table->timestamps();
         });
