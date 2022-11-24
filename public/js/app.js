@@ -1,4 +1,4 @@
-function createModal(message=null, type=null)
+function createModal(message=null, type=null, func=null)
 {
     let content = document.getElementsByClassName('content')[0]
 
@@ -21,7 +21,7 @@ function createModal(message=null, type=null)
             ` + message + `
             </div>
             <div class="modal-footer">
-                <button id="modal-button" onclick="closeModal()">
+                <button id="modal-button" onclick="closeModal(`+func+`)">
                     Confirm
                 </button>
             </div>
@@ -32,7 +32,7 @@ function createModal(message=null, type=null)
     content.innerHTML = content.innerHTML + modal
 }
 
-function closeModal()
+function closeModal(func=null)
 {
     let modal = document.getElementById('modal')
     let lock = document.getElementById('modal-lock')
@@ -42,5 +42,9 @@ function closeModal()
     }
     if (lock != undefined){
         lock.remove()
+    }
+    if (func != null)
+    {
+        func
     }
 }

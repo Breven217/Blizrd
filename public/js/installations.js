@@ -84,3 +84,27 @@ function goBack()
 {
     location.reload()
 }
+
+async function markPaid(index=null)
+{
+    let content = document.getElementsByClassName('content')[0]
+    let originalContent = content.innerHTML
+    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
+
+    await fetch("/get_installations", {
+        headers: {
+            'Accept': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.message){
+            content.innerHTML = originalContent
+            createModal('Failed to mark installation paid.  Error: ' + data.message, 'error')
+        }
+        else{
+            createModal('Installation has been marked paid.', 'success', goBack())
+        }
+    })
+}
