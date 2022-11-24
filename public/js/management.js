@@ -99,9 +99,10 @@ async function editUser(user_id=null)
         <input type="text" name="name" id="name" placeholder="Name" value="` + user_data.name + `">
         <input type="text" name="phone_number" id="phone-number" placeholder="Phone Number" value="` + user_data.phone_number + `">
         <input type="text" name="email_address" id="email-address" placeholder="Email Address" value="` + user_data.email_address + `">
-        <label for="alert-box">Receives Alerts: </label>
-        <input type="checkbox" name="receives_alerts" id="alert-box" ` + alerts + `>
-
+        <div class="checkbox-div">
+            <label for="alert-box">Receives Alerts: </label>
+            <input type="checkbox" name="receives_alerts" id="alert-box" ` + alerts + `>
+        </div>
         <button type="button" name="delete_button" class="user-delete-button" onclick="deleteUser(`+user_id+`)">
             <span>
                 Delete User
@@ -129,9 +130,10 @@ async function addUser()
         <input type="text" name="name" id="name" placeholder="Name" required>
         <input type="text" name="phone_number" id="phone-number" placeholder="Phone Number" required>
         <input type="text" name="email_address" id="email-address" placeholder="Email Address" required>
-        <label for="alert-box">Receives Alerts: </label>
-        <input type="checkbox" name="receives_alerts" id="alert-box">
-
+        <div class="checkbox-div">
+            <label for="alert-box">Receives Alerts: </label>
+            <input type="checkbox" name="receives_alerts" id="alert-box">
+        </div>
         <button name="update_button" class="user-update-button">
             <span>
                 Create User
