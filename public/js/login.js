@@ -9,7 +9,6 @@ async function checkLogin(event)
     await fetch("/login", {
         headers: {
             'Content-Type': 'application/json',
-            'Accept': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
         method: 'POST',
