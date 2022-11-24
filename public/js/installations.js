@@ -211,7 +211,7 @@ async function saveInstallation()
 
 
     let body = new FormData()
-    console.log(document.getElementById("installed_on"))
+    console.log(document.getElementById('location_id'))
     body.set('installed_on', document.getElementById('installed_on').value)
     body.set('location_id', document.getElementById('location_id').value)
 
