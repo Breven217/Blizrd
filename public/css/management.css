@@ -160,6 +160,7 @@
 
 .checkbox-div input {
     justify-self: right;
+    width: 30px;
 }
 
 .user-add-button {
