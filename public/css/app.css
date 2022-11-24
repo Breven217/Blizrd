@@ -94,6 +94,7 @@ footer{
   width: 400px;
   grid-template-rows: 30px auto 35px;
   background-color: #2d6dcc30;
+  z-index: 2;
 }
 
 .modal-lock {
@@ -102,9 +103,9 @@ footer{
   top: 0px;
   left: 0px;
   background-color: purple;
-  z-index: 99;
+  z-index: 1;
   display: inline-block;
-  position: absolute;
+  position: fi;
 }
 
 .modal-header {
