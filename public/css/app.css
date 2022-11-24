@@ -97,7 +97,7 @@ footer{
   z-index: 100;
 }
 
-.modal-lock {
+#modal-lock {
   width: 100vw;
   height: 100vh;
   top: 0px;
