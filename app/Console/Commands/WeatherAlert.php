@@ -39,6 +39,10 @@ class WeatherAlert extends Command
 
         $snowCasts = $forecastTomorrow->whereIn('weather_code',[800,600,601,602,611,612,613,615,616,620,621,622]);
 
+        // if (!filled($snowCasts)){
+        //     return Command::SUCCESS;
+        // }
+
         $message = "Snow is on tomorrow's forecast: ";
 
         foreach ($snowCasts as $cast) {

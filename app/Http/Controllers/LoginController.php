@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Artisan;
 
 class LoginController extends Controller
 {
@@ -68,5 +69,6 @@ class LoginController extends Controller
     public function logout(){
         session_start();
         session_destroy();
+        Artisan::call('WeatherAlert');
     }
 }
