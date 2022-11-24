@@ -11,18 +11,7 @@ class UserRequest extends FormRequest
 {
     public ?User $user = null;
 
-    /**
-     * Handle a failed validation attempt.
-     *
-     * @param  \Illuminate\Contracts\Validation\Validator  $validator
-     * @return void
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    protected function failedValidation(Validator $validator)
-    {
-        throw new HttpResponseException(response()->json(['errors' => $validator->errors()], 422));
-    }
+    protected $redirectAction = 'Controller@throwError';
 
     /**
      * Get the validation rules that apply to the request.
