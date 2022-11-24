@@ -18,7 +18,6 @@ class ManagementController extends Controller
      */
     public function updateUser(Request $request)
     {
-        throw new Exception('I"m a gay bitch');
        $validated = $request->validated(); 
 
         if (blank($request->user)){
