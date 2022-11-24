@@ -167,6 +167,7 @@ async function updateUser(event)
             createModal('Failed to get Employee data.  Error: ' + data.error, 'error')
         }
         else {
+            content.innerHTML = ''
             createModal(data.name + ' has been saved', 'success')
         }   
     })
@@ -193,6 +194,7 @@ async function deleteUser(user_id=null)
             createModal('Failed to delete Employee.  Error: ' + data.error, 'error')
         }
         else {
+            content.innerHTML = ''
             createModal('Employee has been deleted', 'success')
         }   
     })

@@ -88,7 +88,7 @@ footer{
   top: 30%;
   left: 50%;
   transform: translate(-50%, -30%);
-  box-shadow: 10px 10px 10px 10px #2d6dcc;
+  box-shadow: 10px 10px #2d6dcc;
   border-radius: 4px;
   display: grid;
   width: 300px;
