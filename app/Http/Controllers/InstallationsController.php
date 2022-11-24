@@ -19,7 +19,7 @@ class InstallationsController extends Controller
      */
     public function getOutstandingInstallations()
     {
-        $installations = Installation::where('paid',false)->with('chainActions','location')->get();
+        $installations = Installation::where('paid',false)->with('chainActions.vehicle','chainActions.user','location')->get();
 
         $installations->each(function ($i) {
             $i->installed_on = date("Y/m/d", strtotime($i->installed_on));

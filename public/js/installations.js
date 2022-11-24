@@ -1,4 +1,6 @@
 
+let installations = []
+
 async function getOutstandingInstallations()
 {
     await fetch("/get_installations", {
@@ -14,6 +16,7 @@ async function getOutstandingInstallations()
             content.innerHTML = 'Failed to get installations data.  Error: ' + data.message
         }
         else{
+            installations = data
             let content = document.getElementById('installation-table-container')
             let installationTable = `
             <table class='installation-table'> 
@@ -25,11 +28,10 @@ async function getOutstandingInstallations()
 
             data.forEach(installation => {
                 installationTable += `
-                <tr onclick="expandInstallation(` + installation.id + `)">
+                <tr onclick="expandInstallation(` + installations.indexOf(installation) + `)">
                     <td>` + installation.location.name + `</td>
                     <td>` + installation.installed_on + `</td>
                     <td> $` + installation.balance_due + `.00</td>
-                    <div>testman</div>
                 </tr>
                 `
             });
@@ -41,6 +43,16 @@ async function getOutstandingInstallations()
     })
 }
 
-function expandInstallation(installation_id=null){
-    console.log(installation_id);
+function expandInstallation(index=null){
+    let content = document.getElementsByClassName('content')[0]
+
+    let installation = installations[index]
+    content.innerHTML = `
+        <div class="expanded-installation">
+            <div>Location: ` + installation.location.name + `</div>
+            <div>Installed on: ` + installation.installed_on + `</div>
+            <div>Balance Due: ` + installation.balance_due + `</div>
+
+        </div>
+    `
 }

@@ -14,17 +14,27 @@ class ChainAction extends Model
     *
     * @var string
     */
-   protected $table = 'chain_action';
+    protected $table = 'chain_action';
 
    /**
     * The attributes that are mass assignable.
     *
     * @var array<int, string>
     */
-   protected $fillable = [
+    protected $fillable = [
        'installation_id',
        'vehicle_id',
        'user_id',
        'install_chain'
-   ];
+    ];
+
+    public function vehicle()
+    {
+        return $this->belongsTo(Vehicle::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
