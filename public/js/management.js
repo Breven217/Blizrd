@@ -161,9 +161,8 @@ async function updateUser(event)
     })
     if (response.ok)
     {
-        content.innerHTML = 'success'
-        let data = response.json()
-        createModal(data.name + ' has been saved', 'success')
+        content.innerHTML = ''
+        createModal('Employee has been saved', 'success')
     }
     else 
     {
@@ -188,7 +187,7 @@ async function deleteUser(user_id=null)
     })
     if (response.ok)
     {
-        content.innerHTML = 'success'
+        content.innerHTML = ''
         createModal('Successfully deleted employee', 'success')
     }
     else 
