@@ -229,7 +229,7 @@ async function saveInstallation()
             actionData.set('installed',element.querySelector('#installed').value)
             actions.push(actionData)
         });
-        body.set('actions', actions)
+        body.set('actions', actions.toString())
     }
 
     content.innerHTML = '<div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>'
