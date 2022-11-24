@@ -1,5 +1,3 @@
-const { isSet } = require("lodash");
-
 async function searchUsers(event)
 {
     event.preventDefault();
@@ -148,7 +146,7 @@ async function updateUser(event)
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
 
     let body = new FormData(event.target)
-    body.receives_alerts = isSet(body.receives_alerts) ? true : false
+    body.receives_alerts = body.receives_alerts != undefined ? true : false
     let response = await fetch("/update_user", {
         headers: {
             'Accept': 'application/json',
