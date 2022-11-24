@@ -41,13 +41,13 @@ Route::get('/testText', function()
 });
 Route::get('/addLocation', function(Request $request) 
 {
-    Location::create([
+    return Location::create([
         'name' => $request->input('name'),
     ]);
 });
 Route::get('/addVehicle', function(Request $request) 
 {
-    Vehicle::create([
+    return Vehicle::create([
         'vehicle_number' => $request->input('vehicle_number'),
         'location_id' => $request->input('location_id')
     ]);
