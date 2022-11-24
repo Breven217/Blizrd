@@ -12,7 +12,9 @@
     <div class="content">
         <div class='installation-container'>
             <h2 class="installation-title">Outstanding Installations</h2>
-            <i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>
+            <div>
+                <i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>
+            </div>
         </div>
         <div class="installation-buttons">
             <button id="add-installation-button" onclick="">
