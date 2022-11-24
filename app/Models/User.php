@@ -19,7 +19,7 @@ class User extends Model
      */
     public function routeNotificationForVonage($notification)
     {
-        return $this->phone_number;
+        return '1' + $this->phone_number;
     }
 
      /**
