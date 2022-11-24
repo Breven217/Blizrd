@@ -17,7 +17,7 @@ class ManagementController extends Controller
      */
     public function updateUser(UserRequest $request)
     {
-       $validated = $request->validated(); 
+       //$validated = $request->validated(); 
 
         if (blank($request->user)){
             return User::create([
