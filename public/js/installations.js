@@ -105,7 +105,8 @@ async function markPaid(index=null)
             createModal('Failed to mark installation paid.  Error: ' + data.message, 'error')
         }
         else{
-            createModal('Installation has been marked paid.', 'success', goBack())
+            content.innerHTML = ''
+            createModal('Installation has been marked paid.', 'success', 'goBack()')
         }
     })
 }
