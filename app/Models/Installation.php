@@ -14,22 +14,27 @@ class Installation extends Model
     *
     * @var string
     */
-   protected $table = 'installation';
+    protected $table = 'installation';
 
-   /**
+    /**
     * The attributes that are mass assignable.
     *
     * @var array<int, string>
     */
-   protected $fillable = [
+    protected $fillable = [
        'installed_on',
        'location_id',
        'paid',
        'paid_on'
    ];
 
-   public function chainActions()
+    public function chainActions()
     {
         return $this->hasMany(ChainAction::class);
+    }
+
+    public function location()
+    {
+        return $this->hasOne(Location::class);
     }
 }
