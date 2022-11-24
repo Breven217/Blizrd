@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Location extends Model
+class ChainAction extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,7 @@ class Location extends Model
     *
     * @var string
     */
-   protected $table = 'location';
+   protected $table = 'chain_action';
 
    /**
     * The attributes that are mass assignable.
@@ -22,6 +22,9 @@ class Location extends Model
     * @var array<int, string>
     */
    protected $fillable = [
-       'name'
+       'installation_id',
+       'vehicle_id',
+       'user_id',
+       'install_chain'
    ];
 }

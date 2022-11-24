@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->dateTime('installed_on');
             $table->unsignedBigInteger('location_id');
+            $table->boolean('paid')->default(false);
+            $table->dateTime('paid_on')->nullable()->default(null);
             $table->timestamps();
 
             $table->foreign('location_id')->references('id')->on('location');

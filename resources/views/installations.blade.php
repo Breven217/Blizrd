@@ -10,7 +10,14 @@
 
 @section('content')
     <div class="content">
-       this is the installations page
+        <div class='installations-table'>
+            <i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>
+        </div>
+        <div class="installation-buttons">
+            <button id="add-installation-button" onclick="">
+                Add installation
+            </button>
+        </div>
     </div>
 @endsection
     
