@@ -130,7 +130,24 @@ async function addInstallation()
             createModal('Failed to get Installation options.  Error: ' + data.message, 'error')
         }
         else{
+            let locations = `<label for="location_id">Location:</label>
+                <select name="location_id" id="location_id">`
+            data.locations.forEach(loc => {
+                locations += '<option value="'+loc.id+'">'+loc.name+'</option>'
+            });
+            locations += '</select>'
+
+            let date = new Date();
+
             let newContent = `
+                <div class="add-installation-container">
+                    <div>
+                        `+locations+`
+                    </div>
+                    <div>
+                        Installed on: ` + date.getFullYear() + '/' + date.getMonth() + '/' + date.getDate() + `
+                    </div>
+                </div>
                 `
             
             content.innerHTML = newContent
