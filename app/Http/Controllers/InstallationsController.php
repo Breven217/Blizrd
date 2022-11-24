@@ -39,9 +39,9 @@ class InstallationsController extends Controller
     public function getInstallationOptions()
     {
         return collect([
-            User::all(),
-            Location::all(),
-            Vehicle::all()
+            'users' => User::all(),
+            'locations' => Location::all(),
+            'vehicles' => Vehicle::all()
         ]);
     }
 
