@@ -19,7 +19,7 @@ class ManagementController extends Controller
     {
        $validated = $request->validated(); 
 
-        if (!filled($request->user)){
+        if (blank($request->user)){
             print_r('here');
             User::create([
                 'name' => $validated['name'],
