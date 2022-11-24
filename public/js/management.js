@@ -97,7 +97,7 @@ async function editUser(user_id=null)
         <input type="text" name="phone_number" id="phone-number" placeholder="Phone Number" value="` + user_data.phone_number + `">
         <input type="text" name="email_address" id="email-address" placeholder="Email Address" value="` + user_data.email_address + `">
         <label for="alert-box">Receives Alerts: </label>
-        <input type="checkbox" name="alerts" id="alert-box" value="` + user_data.receives_alerts + `">
+        <input type="checkbox" name="alerts" id="alert-box" checked="` + user_data.receives_alerts + `">
 
         <button type="button" name="delete_button" class="user-delete-button" onclick="deleteUser(`+user_id+`)">
             <span>
