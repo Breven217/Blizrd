@@ -10,8 +10,8 @@
 
 @section('content')
     <div class="content">
-        <div class='installations-container'>
-            <h2 class="installation-title">OutStanding Installations</h2>
+        <div class='installation-container'>
+            <h2 class="installation-title">Outstanding Installations</h2>
             <i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>
         </div>
         <div class="installation-buttons">
