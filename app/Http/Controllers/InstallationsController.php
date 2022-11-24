@@ -19,7 +19,13 @@ class InstallationsController extends Controller
      */
     public function getOutstandingInstallations()
     {
-        return Installation::where('paid',false)->with('chainActions','location')->get();
+        $installations = Installation::where('paid',false)->with('chainActions','location')->get();
+
+        $installations->each(function ($i) {
+            $i->installed_on = date_format($i->installed_on, "Y/m/D");
+            $i->balance_due = $i->chainActions->count('id') * config('app.chain_rate');
+        });
+        return $installations;
     }
 
     /**

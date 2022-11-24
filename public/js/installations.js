@@ -18,26 +18,17 @@ async function getOutstandingInstallations()
             let installationTable = `
             <table class='installation-table'> 
                 <tr>
-                    <th>Name</th>
-                    <th>Phone Number</th>
-                    <th>Email Address</th>
-                    <th>Receives Alert</th>
+                    <th>Location</th>
+                    <th>Installation Date</th>
+                    <th>Balance Due</th>
                 </tr>`
 
-            data.forEach(result => {
-                let alertBox = '<i class="fa-regular fa-square fa-lg"></i>'
-                if (result.receives_alerts){
-                    alertBox = '<i class="fa-regular fa-square-check fa-lg"></i>'
-                }
+            data.forEach(installation => {
                 installationTable += `
-                <tr onclick="editUser(` + result.id + `)">
-                    <td>` + result.name + `</td>
-                    <td>` + result.phone_number.slice(0,3) + '-' + 
-                        result.phone_number.slice(3,6) + '-' + 
-                        result.phone_number.slice(6,10) + 
-                    `</td>
-                    <td>` + result.email_address + `</td>
-                    <td>` + alertBox + `</td>
+                <tr onclick="expandInstallation(` + installation.id + `)">
+                    <td>` + installation.location.name + `</td>
+                    <td>` + installation.installed_on + `</td>
+                    <td> $` + installation.balance_due + `</td>
                 </tr>
                 `
             });
@@ -47,4 +38,8 @@ async function getOutstandingInstallations()
             content.innerHTML = installationTable
         }
     })
+}
+
+function expandInstallation(installation_id=null){
+    console.log(installation_id);
 }
