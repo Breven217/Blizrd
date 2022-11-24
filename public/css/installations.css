@@ -164,3 +164,8 @@
     text-align: left;
     grid-template-columns: 34% 33% 33%;
 }
+
+.add-action-info:hover {
+    background-color: #2d6dcc75;
+    color: #fff;
+}
