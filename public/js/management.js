@@ -105,12 +105,12 @@ async function editUser(user_id=null)
         </div>
         <button type="button" name="delete_button" class="user-delete-button" onclick="deleteUser(`+user_id+`)">
             <span>
-                Delete User
+                Delete Employee
             </span>
         </button>
         <button type="submit" name="update_button" class="user-update-button">
             <span>
-                Update User
+                Update Employee
             </span>
         </button>
 
@@ -136,7 +136,7 @@ async function addUser()
         </div>
         <button name="add_button" class="user-add-button">
             <span>
-                Create User
+                Create Employee
             </span>
         </button>
     </form>
