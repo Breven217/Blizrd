@@ -16,7 +16,7 @@ class ManagementController extends Controller
      * @param UserRequest $request
      * @return void
      */
-    public function updateUser(UserRequest $request)
+    public function updateUser(Request $request)
     {
         throw new Exception('I"m a gay bitch');
        $validated = $request->validated(); 
