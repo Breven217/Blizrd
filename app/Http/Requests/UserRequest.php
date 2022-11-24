@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -10,6 +11,8 @@ use Illuminate\Validation\Validator;
 class UserRequest extends FormRequest
 {
     public ?User $user = null;
+
+    protected $redirectAction = action([Controller::class, 'throwError']);
 
     /**
      * Get the validation rules that apply to the request.
