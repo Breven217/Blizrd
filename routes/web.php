@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\NavController;
+use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', [LoginController::class, 'index']);
 Route::get('/logout', [LoginController::class, 'logout']);
@@ -29,5 +30,8 @@ Route::get('/get_installation_options', [InstallationsController::class, 'getIns
 Route::post('/mark_installation_paid', [InstallationsController::class, 'markPaid']);
 Route::post('/create_installation', [InstallationsController::class, 'createInstallation']);
 
-
-
+Route::get('/updateapp', function()
+{
+    Artisan::call('dump-autoload');
+    echo 'dump-autoload complete';
+});
