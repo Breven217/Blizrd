@@ -142,6 +142,7 @@ async function addUser()
 }
 
 async function updateUser(event)
+{
     event.preventDefault()
     let content = document.getElementById('management-content')
     let originalContent = content.innerHTML
