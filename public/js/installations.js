@@ -48,9 +48,7 @@ function expandInstallation(index=null){
 
     let installation = installationsData[index]
     let newContent = `
-        <button id="back-button" onclick="goBack()">
-                Back
-        </button>
+        
         <div class="expanded-installation">
             <div>Location: ` + installation.location.name + `</div>
             <div>Installed on: ` + installation.installed_on + `</div>
@@ -74,7 +72,15 @@ function expandInstallation(index=null){
         `
     });
 
-    newContent += `</div> </div>`
+    newContent += `</div> </div>
+        <button id="back-button" onclick="goBack()">
+            Back
+        </button>`
     
     content.innerHTML = newContent
+}
+
+function goBack()
+{
+    location.reload()
 }
