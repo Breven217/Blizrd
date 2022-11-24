@@ -93,7 +93,7 @@ footer{
   display: grid;
   width: 300px;
   grid-template-rows: 30px 200px 30px;
-  background-color: #2d6dcc75;
+  background-color: #2d6dcc30;
 }
 
 .modal-header {
@@ -107,5 +107,5 @@ footer{
 }
 
 .modal-footer button {
-  height: 100%;
+  height: 30px;
 }
