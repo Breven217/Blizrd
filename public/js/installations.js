@@ -148,6 +148,23 @@ async function addInstallation()
                         <label for="installed_on">Installed on:</label>
                         <input type="date" id="installed_on" name="installed_on">
                     </div>
+                    <div id="add-actions-container">
+                        <h3>Chain installs/removals</h3>
+                        <button id="add-action-button" onclick="addAction()">
+                            Add Action
+                        </button>
+                        <div id="add-actions">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="add-installation-buttons>
+                        <button id="back-button" onclick="goBack()">
+                            Back
+                        </button>
+                        <button id="save-installation-button" onclick="saveInstallation()">
+                            Add Installation
+                        </button>
                 </div>
                 `
             
