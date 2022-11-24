@@ -28,7 +28,7 @@ class NavController extends Controller
             return redirect('/login');
         }
         else{
-            return true;
+            return false;
         }
     }
 
@@ -40,7 +40,7 @@ class NavController extends Controller
     public function goHome()
     {
         $loggedIn = $this->checkLoggedUser();
-        if($loggedIn) {
+        if(!$loggedIn) {
             return view('home');
         }
         else{
@@ -50,14 +50,14 @@ class NavController extends Controller
     }
 
     /**
-     * returns the management view if a user is not logged in or the login view if not
+     * returns the Home view if a user is not logged in or the login view if not
      *
      * @return \Illuminate\Contracts\View\View|boolean
      */
     public function goManagement()
     {
         $loggedIn = $this->checkLoggedUser();
-        if($loggedIn) {
+        if(!$loggedIn) {
             return view('management');
         }
         else{
