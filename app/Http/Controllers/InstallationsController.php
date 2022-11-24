@@ -19,7 +19,7 @@ class InstallationsController extends Controller
      */
     public function getOutstandingInstallations()
     {
-        return Installation::where('paid',false)->with('chainActions');
+        return Installation::where('paid',false)->with('chainActions')->get();
     }
 
     /**
