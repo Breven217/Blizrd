@@ -149,17 +149,16 @@ async function updateUser(event)
         },
         method: 'POST'
     })
-    .then((response) => response.json())
-    .then((data) => {
-        if (data.error){
-            content.innerHTML = originalContent
-            //throw up an error modal here
-        }
-        else {
-            content.innerHTML = ''
+    if (response.ok)
+    {
+        content.innerHTML = ''
             //throw up a success modal here
-        }   
-    })
+    }
+    else 
+    {
+        content.innerHTML = originalContent
+            //throw up an error modal here
+    }
 }
 
 async function deleteUser(user_id=null)
@@ -169,22 +168,21 @@ async function deleteUser(user_id=null)
     let originalContent = content.innerHTML
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
 
-    await fetch("/delete_user?user_id=" + user_id, {
+    let response = await fetch("/delete_user?user_id=" + user_id, {
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
         method: 'POST'
     })
-    .then((response) => response.json())
-    .then((data) => {
-        if (data.error){
-            content.innerHTML = originalContent
-            //throw up an error modal here
-        }
-        else {
-            content.innerHTML = ''
+    if (response.ok)
+    {
+        content.innerHTML = ''
             //throw up a success modal here
-        }   
-    })
+    }
+    else 
+    {
+        content.innerHTML = originalContent
+            //throw up an error modal here
+    }
 }
 
