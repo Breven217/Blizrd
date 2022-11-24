@@ -31,6 +31,8 @@ class ManagementController extends Controller
             ]);
         }
         else{
+            print_r('not where i should be');
+
             $request->user->name = $validated['name'];
             $request->user->username = $validated['username'];
             if (filled($request->input('password')))
