@@ -143,11 +143,12 @@ async function updateUser(event)
     let originalContent = content.innerHTML
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
 
-    await fetch("/edit_user?user_id=" + user_id, {
+    await fetch("/update_user", {
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
-        method: 'POST'
+        method: 'POST',
+        body: new FormData(event.target)
     })
     if (response.ok)
     {
