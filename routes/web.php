@@ -6,6 +6,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\NavController;
+use App\Models\Location;
+use App\Models\Vehicle;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', [LoginController::class, 'index']);
@@ -30,7 +33,22 @@ Route::get('/get_installation_options', [InstallationsController::class, 'getIns
 Route::post('/mark_installation_paid', [InstallationsController::class, 'markPaid']);
 Route::post('/create_installation', [InstallationsController::class, 'createInstallation']);
 
+
+//testing routes
 Route::get('/testText', function()
 {
     Artisan::call('command:WeatherAlert');
+});
+Route::get('/addLocation', function(Request $request) 
+{
+    Location::create([
+        'name' => $request->input('name'),
+    ]);
+});
+Route::get('/addVehicle', function(Request $request) 
+{
+    Vehicle::create([
+        'vehicle_number' => $request->input('vehicle_number'),
+        'location_id' => $request->input('location_id')
+    ]);
 });
