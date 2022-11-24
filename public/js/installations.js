@@ -210,6 +210,11 @@ async function saveInstallation()
 
     let body = new FormData()
     let installed_on = document.getElementById('installed_on')
+    if (installed_on.value == '')
+    {
+        createModal('Select an installed on date.', 'error')
+        return
+    }
     body.set('installed_on', installed_on.value)
     body.set('location_id', document.getElementById('location_id').value)
 
