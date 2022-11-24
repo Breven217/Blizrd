@@ -1,8 +1,6 @@
 
 async function getOutstandingInstallations()
 {
-    let content = document.getElementById('installation-table-container')
-
     await fetch("/get_installations", {
         headers: {
             'Accept': 'application/json',
@@ -12,9 +10,11 @@ async function getOutstandingInstallations()
     .then((response) => response.json())
     .then((data) => {
         if (data.message){
+            let content = document.getElementById('installation-table-container')
             content.innerHTML = 'Failed to get installations data.  Error: ' + data.message
         }
         else{
+            let content = document.getElementById('installation-table-container')
             let installationTable = `
             <table class='installation-table'> 
                 <tr>

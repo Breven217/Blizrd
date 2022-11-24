@@ -22,7 +22,7 @@ class InstallationsController extends Controller
         $installations = Installation::where('paid',false)->with('chainActions','location')->get();
 
         $installations->each(function ($i) {
-            $i->installed_on = date("Y/m/D", strtotime($i->installed_on));
+            $i->installed_on = date("Y/m/d", strtotime($i->installed_on));
             $i->balance_due = $i->chainActions->count('id') * config('app.chain_rate');
         });
         return $installations;
