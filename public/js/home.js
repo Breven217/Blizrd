@@ -6,7 +6,6 @@ function loadWeather()
 
 async function forecast() 
 {
-    let container = document.getElementById('forecast-container')
     await fetch("/forecast", {
         headers: {
             'Accept': 'application/json',
@@ -16,9 +15,11 @@ async function forecast()
     .then((response) => response.json())
     .then((data) => {
         if (data.message){
+            let container = document.getElementById('forecast-container')
             container.innerHTML = message
         }
         else{
+            let container = document.getElementById('forecast-container')
             let hours = new Date().getHours()
             let isDayTime = hours > 6 && hours < 20
 
@@ -71,7 +72,6 @@ async function forecast()
 
 async function currentWeather()
 {
-    let container = document.getElementById('current-weather-container')
     await fetch("/current_weather", {
         headers: {
             'Accept': 'application/json',
@@ -81,9 +81,11 @@ async function currentWeather()
     .then((response) => response.json())
     .then((data) => {
         if (data.message){
+            let container = document.getElementById('current-weather-container')
             container.innerHTML = message
         }
         else{
+            let container = document.getElementById('current-weather-container')
             let hours = new Date().getHours()
             let isDayTime = hours > 6 && hours < 20
 
