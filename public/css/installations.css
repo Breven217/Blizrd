@@ -34,7 +34,7 @@
     grid-template-rows: 50px auto;
 }
 
-.installation-title, .add-actions-title {
+.installation-title{
     background-color: #2d6dcc75;
     color: #fff;
     width: 100%;
@@ -131,7 +131,7 @@
     overflow: auto;
 }
 
-.action-info:nth-child(even){
+.action-info:nth-child(even), .add-action-info:nth-child(even){
     background-color: #2d6dcc30;
 }
 
@@ -151,4 +151,16 @@
 .add-actions-title {
     display:grid;
     grid-template-columns: 50% 50%;
+    background-color: #2d6dcc75;
+    color: #fff;
+    width: 100%;
+    margin-top:10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.add-action-info {
+    display:grid;
+    text-align: left;
+    grid-template-columns: 34% 33% 33%;
 }
