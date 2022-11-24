@@ -91,6 +91,7 @@ async function editUser(user_id=null)
         })
     }
 
+    let alerts = user_data.receives_alerts ? 'checked' : ''
     content.innerHTML = `
     <form class="user-form" onsubmit="updateUser(event)"  method="POST">
         <input type="text" name="username" id="username" placeholder="Username" value="` + user_data.username + `">
@@ -99,7 +100,7 @@ async function editUser(user_id=null)
         <input type="text" name="phone_number" id="phone-number" placeholder="Phone Number" value="` + user_data.phone_number + `">
         <input type="text" name="email_address" id="email-address" placeholder="Email Address" value="` + user_data.email_address + `">
         <label for="alert-box">Receives Alerts: </label>
-        <input type="checkbox" name="receives_alerts" id="alert-box" ` + user_data.receives_alerts ? 'checked' : '' + `>
+        <input type="checkbox" name="receives_alerts" id="alert-box" ` + alerts + `>
 
         <button type="button" name="delete_button" class="user-delete-button" onclick="deleteUser(`+user_id+`)">
             <span>
