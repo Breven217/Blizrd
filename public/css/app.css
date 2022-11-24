@@ -88,11 +88,11 @@ footer{
   top: 30%;
   left: 50%;
   transform: translate(-50%, -30%);
-  box-shadow: 10px 10px #2d6dcc;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 4px;
   display: grid;
-  width: 300px;
-  grid-template-rows: 30px auto+100px 35px;
+  width: 400px;
+  grid-template-rows: 30px auto 35px;
   background-color: #2d6dcc30;
 }
 
@@ -109,7 +109,8 @@ footer{
 
 .modal-body {
   margin-top: 20px;
-  font-size: 16px;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .modal-footer {
