@@ -164,7 +164,7 @@ async function updateUser(event)
     .then((data) => {
         if (data.message){
             content.innerHTML = originalContent
-            createModal('Failed to get Employee data.  Error: ' + data.message, 'error')
+            createModal('Failed to save Employee.  Error: ' + data.message, 'error')
         }
         else {
             content.innerHTML = ''

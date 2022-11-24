@@ -15,8 +15,8 @@ async function forecast()
     })
     .then((response) => response.json())
     .then((data) => {
-        if (data.error){
-            container.innerHTML = error
+        if (data.message){
+            container.innerHTML = message
         }
         else{
             let hours = new Date().getHours()
@@ -71,6 +71,7 @@ async function forecast()
 
 async function currentWeather()
 {
+    let container = document.getElementById('current-weather-container')
     await fetch("/current_weather", {
         headers: {
             'Accept': 'application/json',
@@ -79,12 +80,10 @@ async function currentWeather()
     })
     .then((response) => response.json())
     .then((data) => {
-        if (data.error){
-            //throw up an error modal here
+        if (data.message){
+            container.innerHTML = message
         }
         else{
-            let container = document.getElementById('current-weather-container')
-
             let hours = new Date().getHours()
             let isDayTime = hours > 6 && hours < 20
 
