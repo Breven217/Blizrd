@@ -141,12 +141,14 @@
     width: min(800px, 100%);
 }
 
-.action-info {
+.action-info, .add-action-info {
     display: grid;
     grid-template-columns: 34% 33% 33%;
     text-align: left;
     padding-top: 5px;
     padding-left: 10px;
+    padding-bottom: 5px;
+    font-size: 18px;
 }
 
 #back-button {
@@ -169,15 +171,7 @@
 
 .add-actions-title h3{
     padding: 0;
-}
-
-.add-action-info {
-    display:grid;
-    text-align: left;
-    grid-template-columns: 34% 33% 33%;
-    padding-left: 10px;
-    padding-top: 5px;
-    font-size: 18px;
+    margin: 0;
 }
 
 .add-action-info:hover {
