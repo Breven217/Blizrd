@@ -6,10 +6,14 @@ use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserSearchRequest;
 use App\Models\User;
 use Exception;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Request;
 
 class ManagementController extends Controller
 {
+    public function throwError(){
+        throw new HttpResponseException(response()->json(['errors' => ['fuck me']], 422));
+    }
     /**
      * updates the matching user with all parameters passed up or creates a new user
      *
