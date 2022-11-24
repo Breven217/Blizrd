@@ -35,9 +35,13 @@ Route::post('/create_installation', [InstallationsController::class, 'createInst
 
 
 //testing routes
-Route::get('/testText', function()
+Route::get('/weatherAlert', function()
 {
     Artisan::call('command:WeatherAlert');
+});
+Route::get('/weatherText', function()
+{
+    Artisan::call('command:WeatherText');
 });
 Route::get('/addLocation', function(Request $request) 
 {
