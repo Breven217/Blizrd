@@ -207,11 +207,8 @@ async function saveInstallation()
 {
     let content = document.getElementsByClassName('content')[0]
     let originalContent = content.innerHTML
-    content.innerHTML = '<div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>'
-
 
     let body = new FormData()
-    console.log(document.getElementById('location_id'))
     body.set('installed_on', document.getElementById('installed_on').value)
     body.set('location_id', document.getElementById('location_id').value)
 
@@ -226,6 +223,8 @@ async function saveInstallation()
     });
 
     body.set('actions', actions)
+
+    content.innerHTML = '<div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>'
 
     await fetch("/create_installation", {
         headers: {
