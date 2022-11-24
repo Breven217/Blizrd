@@ -16,7 +16,7 @@ async function searchUsers(event)
     }
 
     let content = document.getElementById('management-content')
-    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
+    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
 
     await fetch("/search_users?" + queryString, {
         headers: {
@@ -68,7 +68,7 @@ async function editUser(user_id=null)
 {
     let content = document.getElementById('management-content')
     let originalContent = content.innerHTML
-    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
+    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
 
     let user_data = null
     if (user_id != null) {
@@ -140,13 +140,13 @@ async function updateUser(event)
 {
     event.preventDefault()
     let content = document.getElementById('management-content')
-    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
+    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
 }
 
 async function deleteUser(user_id=null)
 {
     event.preventDefault()
     let content = document.getElementById('management-content')
-    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
+    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
 }
 
