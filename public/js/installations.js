@@ -216,6 +216,7 @@ function updateVehicleOptions()
     {
         document.getElementById('add-actions').innerHTML = ''
         createModal('No vehicles available at this Location.', 'error')
+        return
     }
 
     elements.forEach(element => {
