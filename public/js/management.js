@@ -27,7 +27,8 @@ async function searchUsers(event)
     .then((response) => response.json())
     .then((data) => {
         if (data.error){
-            content.innerHTML = 'No Employees found'
+            content.innerHTML = ''
+            createModal('Failed to get Employee data.  Error: ' + data.error, 'error')
         }
         else{
             let userTable = `
@@ -81,8 +82,8 @@ async function editUser(user_id=null)
         .then((response) => response.json())
         .then((data) => {
             if (data.error){
-            content.innerHTML = originalContent
-            createModal('Failed to get Employee data', 'error')
+                content.innerHTML = originalContent
+                createModal('Failed to get Employee data.  Error: ' + data.error, 'error')
             }
             else {
                 user_data = data;
@@ -159,16 +160,16 @@ async function updateUser(event)
         method: 'POST',
         body: body
     })
-    if (response.ok)
-    {
-        content.innerHTML = ''
-        createModal('Employee has been saved', 'success')
-    }
-    else 
-    {
-        content.innerHTML = originalContent
-        createModal('Failed to save employee', 'error')
-    }
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.error){
+            content.innerHTML = originalContent
+            createModal('Failed to get Employee data.  Error: ' + data.error, 'error')
+        }
+        else {
+            createModal(data.name + ' has been saved', 'success')
+        }   
+    })
 }
 
 async function deleteUser(user_id=null)
@@ -185,15 +186,15 @@ async function deleteUser(user_id=null)
         },
         method: 'POST'
     })
-    if (response.ok)
-    {
-        content.innerHTML = ''
-        createModal('Successfully deleted employee', 'success')
-    }
-    else 
-    {
-        content.innerHTML = originalContent
-        createModal('Failed to delete employee', 'error')
-    }
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.error){
+            content.innerHTML = originalContent
+            createModal('Failed to delete Employee.  Error: ' + data.error, 'error')
+        }
+        else {
+            createModal('Employee has been deleted', 'success')
+        }   
+    })
 }
 
