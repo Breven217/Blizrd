@@ -94,12 +94,13 @@ footer{
   width: 400px;
   grid-template-rows: 30px auto 35px;
   background-color: #2d6dcc30;
-  z-index: 100;
 }
 
 .modal-lock {
   width: 100vw;
   height: 100vh;
+  top: 0px;
+  left: 0px;
   background-color: purple;
   z-index: 99;
   display: inline-block;
@@ -115,16 +116,19 @@ footer{
   line-height: 30px;
   padding-left: 5px;
   font-size: 18px;
+  z-index: 100;
 }
 
 .modal-body {
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 18px;
+  z-index: 100;
 }
 
 .modal-footer {
   text-align: right;
+  z-index: 100;
 }
 
 #modal-button {
