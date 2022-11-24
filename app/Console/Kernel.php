@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(WeatherAlert::class)->dailyAt('18:00');
+        $schedule->command(WeatherAlert::class)->dailyAt('15:50');
     }
 
     /**
