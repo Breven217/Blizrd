@@ -103,6 +103,8 @@
 }
 
 .expanded-installation {
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
     grid-template-rows: 30px 30px 50px 50px auto;
     margin-top: 40px;
