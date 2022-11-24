@@ -51,7 +51,7 @@ class WeatherAlert extends Command
 
         $users = User::where('receives_alerts',true)->get();
         
-        $users->notify(new ForecastText($message));
+        Notification::send($users, new ForecastText($message));
         return Command::SUCCESS;
     }
 
