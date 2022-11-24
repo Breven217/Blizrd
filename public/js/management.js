@@ -146,7 +146,7 @@ async function updateUser(event)
     content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i>'
 
     let body = new FormData(event.target)
-    body.receives_alerts = event.target.receives_alerts.checked
+    body.receives_alerts = event.target.receives_alerts.checked == 'on' ? true : false
     let response = await fetch("/update_user", {
         headers: {
             'Accept': 'application/json',
