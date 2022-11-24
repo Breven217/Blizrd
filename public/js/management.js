@@ -27,8 +27,7 @@ async function searchUsers(event)
     .then((response) => response.json())
     .then((data) => {
         if (data.error){
-            content.innerHTML = originalContent
-            //throw up an error modal here
+            content.innerHTML = 'No Employees found'
         }
         else{
             let userTable = `
@@ -83,7 +82,7 @@ async function editUser(user_id=null)
         .then((data) => {
             if (data.error){
             content.innerHTML = originalContent
-            //throw up an error modal here
+            createModal('Failed to get Employee data', 'error')
             }
             else {
                 user_data = data;
@@ -163,12 +162,13 @@ async function updateUser(event)
     if (response.ok)
     {
         content.innerHTML = 'success'
-            //throw up a success modal here
+        let data = response.json()
+        createModal(data.name + ' has been saved', 'success')
     }
     else 
     {
         content.innerHTML = originalContent
-            //throw up an error modal here
+        createModal('Failed to save employee', 'error')
     }
 }
 
@@ -189,12 +189,12 @@ async function deleteUser(user_id=null)
     if (response.ok)
     {
         content.innerHTML = 'success'
-            //throw up a success modal here
+        createModal('Successfully deleted employee', 'success')
     }
     else 
     {
         content.innerHTML = originalContent
-            //throw up an error modal here
+        createModal('Failed to delete employee', 'error')
     }
 }
 

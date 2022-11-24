@@ -22,3 +22,42 @@ async function management(){
 async function home(){
     window.location.href = 'home'
 }
+
+function createModal(message=null, type=null)
+{
+    let content = document.getElementsByClassName('content')[0]
+
+    if (document.getElementById('modal') != undefined){
+        return
+    }
+
+    let modalClass = 'error-modal'
+    if (type=='success')
+    {
+        modalClass = 'success-modal'
+    }
+
+    let modal = `
+        <div id="modal" class="` + modalClass + `">
+            <div class="modal-body">
+            ` + message + `
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal()">
+                    Confirm
+                </button>
+            </div>
+        </div>
+    `
+
+    content.innerHTML = content.innerHTML + modal
+}
+
+function closeModal()
+{
+    let modal = document.getElementById('modal')
+
+    if (modal != undefined){
+        modal.remove()
+    }
+}
