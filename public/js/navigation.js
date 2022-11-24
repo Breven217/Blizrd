@@ -50,6 +50,7 @@ function createModal(message=null, type=null)
                     Confirm
                 </button>
             </div>
+            <div class="modal-lock"></div>
         </div>
     `
 
