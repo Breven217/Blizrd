@@ -209,20 +209,24 @@ async function saveInstallation()
     let originalContent = content.innerHTML
 
     let body = new FormData()
-    body.set('installed_on', document.getElementById('installed_on').value)
+    let installed_on = document.getElementById('installed_on')
+    body.set('installed_on', installed_on.value)
     body.set('location_id', document.getElementById('location_id').value)
 
     let actionElements = document.getElementsByClassName('add-action-info')
-    let actions = []
-    actionElements.forEach(element => {
-        actions.push({
-        'vehicle_id': element.querySelector('#vehicle_id').value,
-        'user_id': element.querySelector('#user_id').value,
-        'installed': element.querySelector('#installed').value
-        })
-    });
-
-    body.set('actions', actions)
+    console.log(actionElements)
+    if (actionElements.length != 0)
+    {
+        let actions = []
+        actionElements.forEach(element => {
+            actions.push({
+                'vehicle_id': element.querySelector('#vehicle_id').value,
+                'user_id': element.querySelector('#user_id').value,
+                'installed': element.querySelector('#installed').value
+            })
+        });
+        body.set('actions', actions)
+    }
 
     content.innerHTML = '<div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>'
 
