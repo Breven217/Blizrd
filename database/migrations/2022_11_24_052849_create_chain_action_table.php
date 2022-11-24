@@ -15,11 +15,15 @@ return new class extends Migration
     {
         Schema::create('chain_action', function (Blueprint $table) {
             $table->id();
-            $table->foreign('vehicle_id')->references('id')->on('vehicle');
-            $table->foreign('user_id')->references('id')->on('user');
-            $table->foreign('installation_id')->references('id')->on('installation');
+            $table->unsignedBigInteger('installation_id');
+            $table->unsignedBigInteger('vehicle_id');
+            $table->unsignedBigInteger('user_id');
             $table->boolean('install_chain');
             $table->timestamps();
+
+            $table->foreign('installation_id')->references('id')->on('installation');
+            $table->foreign('vehicle_id')->references('id')->on('vehicle');
+            $table->foreign('user_id')->references('id')->on('user');
         });
     }
 

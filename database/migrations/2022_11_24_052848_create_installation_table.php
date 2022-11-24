@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('installation', function (Blueprint $table) {
             $table->id();
             $table->dateTime('installed_on');
-            $table->foreign('location_id')->references('id')->on('location');
+            $table->unsignedBigInteger('location_id');
             $table->timestamps();
+
+            $table->foreign('location_id')->references('id')->on('location');
         });
     }
 
