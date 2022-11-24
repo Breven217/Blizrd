@@ -10,6 +10,9 @@
 
 @section('content')
     <div class="content">
+        <div id="login-error">
+            Invalid username or password 
+        </div>
         <form onsubmit="checkLogin(event)" method="POST">
             @csrf
             <input type="text" name="username" id="username" required>
@@ -20,9 +23,6 @@
                 </span>
             </button>
         </form>
-        <div id="login-error">
-            Invalid username or password 
-        </div>
     </div>
 @endsection
     

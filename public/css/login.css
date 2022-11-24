@@ -68,8 +68,12 @@ form{
     visibility: hidden;
     background-color: red;
     width: min(500px, 100%);
-    font-size: medium;
+    font-size: 20px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 4px;
+    color: white;
+    margin-bottom: 20px;
+    height: 50px;
+    line-height: 50px;
   }
