@@ -150,10 +150,12 @@ async function addInstallation()
                         <input type="date" id="installed_on" name="installed_on">
                     </div>
                     <div id="add-actions-container">
-                        <h3>Chain installs/removals</h3>
-                        <button id="add-action-button" onclick="addAction()">
-                            Add Action
-                        </button>
+                        <div class="add-actions-title">
+                            <h3>Chain installs/removals</h3>
+                            <button id="add-action-button" onclick="addAction()">
+                                Add Action
+                            </button>
+                        </div>
                         <div id="add-actions">
 
                         </div>
