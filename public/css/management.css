@@ -66,7 +66,7 @@
 }
 
 #management-content {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .user-table {
@@ -156,4 +156,5 @@
     grid-template-columns: 50% 50%;
     font-size: 20px;
     text-align: left;
+    line-height: 50px;
 }
