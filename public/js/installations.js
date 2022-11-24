@@ -212,6 +212,12 @@ function updateVehicleOptions()
     locationElement = document.getElementById('location_id')
     let locationVehicles = installationOptions.vehicles.filter(vehicle => vehicle.location_id == locationElement.value)
 
+    if (locationVehicles.length == 0)
+    {
+        document.getElementById('add-actions').innerHTML = ''
+        createModal('No vehicles available at this Location.', 'error')
+    }
+
     elements.forEach(element => {
         let options = ''
 
