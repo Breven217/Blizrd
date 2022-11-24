@@ -17,7 +17,7 @@ async function checkLogin(event)
     .then((data) => {
         if (data.error){
             content.innerHTML = originalContent
-            //throw up an error modal here
+            document.getElementById('login-error').style.visibility = 'visible'
         }
         else{
             sessionStorage.setItem('user.name', data.name)

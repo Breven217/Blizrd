@@ -20,6 +20,9 @@
                 </span>
             </button>
         </form>
+        <div id="login-error">
+            Invalid username or password 
+        </div>
     </div>
 @endsection
     
