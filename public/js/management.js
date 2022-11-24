@@ -152,7 +152,7 @@ async function updateUser(event)
     })
     if (response.ok)
     {
-        content.innerHTML = ''
+        content.innerHTML = 'success'
             //throw up a success modal here
     }
     else 
@@ -177,7 +177,7 @@ async function deleteUser(user_id=null)
     })
     if (response.ok)
     {
-        content.innerHTML = ''
+        content.innerHTML = 'success'
             //throw up a success modal here
     }
     else 
