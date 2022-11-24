@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateInstallationRequest;
 use App\Models\ChainAction;
 use App\Models\Installation;
+use App\Models\Location;
+use App\Models\User;
+use App\Models\Vehicle;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -26,6 +29,20 @@ class InstallationsController extends Controller
             $i->balance_due = $i->chainActions->count('id') * config('app.chain_rate');
         });
         return $installations;
+    }
+
+    /**
+     * returns all the available options for locations, users, and vehicles
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function getInstallationOptions()
+    {
+        return collect([
+            User::all(),
+            Location::all(),
+            Vehicle::all()
+        ]);
     }
 
     /**

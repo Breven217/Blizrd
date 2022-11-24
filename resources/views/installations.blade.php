@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="installation-buttons">
-            <button id="add-installation-button" onclick="">
+            <button id="add-installation-button" onclick="addInstallation()">
                 Add installation
             </button>
         </div>

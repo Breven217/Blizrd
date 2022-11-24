@@ -25,6 +25,7 @@ Route::get('/search_users', [ManagementController::class, 'searchUsers']);
 Route::get('/get_user', [ManagementController::class, 'getUser']);
 
 Route::get('/get_installations', [InstallationsController::class, 'getOutstandingInstallations']);
+Route::get('/get_installation_options', [InstallationsController::class, 'getInstallationOptions']);
 Route::post('/mark_installation_paid', [InstallationsController::class, 'markPaid']);
 Route::post('/create_installation', [InstallationsController::class, 'createInstallation']);
 

@@ -110,3 +110,30 @@ async function markPaid(index=null)
         }
     })
 }
+
+async function addInstallation()
+{
+    let content = document.getElementsByClassName('content')[0]
+    let originalContent = content.innerHTML
+    content.innerHTML = '<div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>'
+
+    await fetch("/get_installation_options", {
+        headers: {
+            'Accept': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.message){
+            content.innerHTML = originalContent
+            createModal('Failed to get Installation options.  Error: ' + data.message, 'error')
+        }
+        else{
+            let newContent = `
+                `
+            
+            content.innerHTML = newContent
+        }
+    })
+}
