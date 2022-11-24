@@ -1,5 +1,5 @@
 
-let installations = []
+let installationsData = []
 
 async function getOutstandingInstallations()
 {
@@ -16,7 +16,7 @@ async function getOutstandingInstallations()
             content.innerHTML = 'Failed to get installations data.  Error: ' + data.message
         }
         else{
-            installations = data
+            installationsData = data
             let content = document.getElementById('installation-table-container')
             let installationTable = `
             <table class='installation-table'> 
@@ -28,7 +28,7 @@ async function getOutstandingInstallations()
 
             data.forEach(installation => {
                 installationTable += `
-                <tr onclick="expandInstallation(` + installations.indexOf(installation) + `)">
+                <tr onclick="expandInstallation(` + installationsData.indexOf(installation) + `)">
                     <td>` + installation.location.name + `</td>
                     <td>` + installation.installed_on + `</td>
                     <td> $` + installation.balance_due + `.00</td>
@@ -46,13 +46,28 @@ async function getOutstandingInstallations()
 function expandInstallation(index=null){
     let content = document.getElementsByClassName('content')[0]
 
-    let installation = installations[index]
-    content.innerHTML = `
+    let installation = installationsData[index]
+    let newContent = `
         <div class="expanded-installation">
             <div>Location: ` + installation.location.name + `</div>
             <div>Installed on: ` + installation.installed_on + `</div>
             <div>Balance Due: ` + installation.balance_due + `</div>
+            <h3>Chain installs/removals</h3>
+            <div class="installation-actions">`
 
-        </div>
-    `
+    installation.chain_actions.forEach(action => {
+        let type = 'Chain Installed'
+        if (!action.install_chain){type = 'Chain Removed'}
+        newContent += `
+            <div class="action-info">
+                <div>Employee: ` + action.user.name + `</div>
+                <div>Vehicle: ` + action.vehicle.vehicle_number + `</div>
+                <div>` + type + `</div>
+            </div>
+        `
+    });
+
+    newContent += `</div> </div>`
+    
+    content.innerHTML = newContent
 }
