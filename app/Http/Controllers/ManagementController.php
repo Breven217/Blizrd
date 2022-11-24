@@ -6,53 +6,41 @@ use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserSearchRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
-use TheSeer\Tokenizer\Exception;
 
 class ManagementController extends Controller
 {
     /**
-     * creates a new user with the passed up information
+     * updates the matching user with all parameters passed up or creates a new user
      *
      * @param UserRequest $request
      * @return void
      */
-    public function addUser(UserRequest $request)
+    public function updateUser(UserRequest $request)
     {
-        $validated = $request->validated();
-        return User::create([
-            'name' => $validated['name'],
-            'username' => $validated['username'],
-            'password' => $validated['password'],
-            'phone_number' => $validated['phone_number'],
-            'email_address' => $validated['email_address'],
-            'recieves_alerts' => $validated['recieves_alerts']
-        ]);
-    }
+       $validated = $request->validated(); 
 
-    /**
-     * updates the matching user with all parameters passed up
-     *
-     * @param UserRequest $request
-     * @return void
-     */
-    public function editUser(UserRequest $request)
-    {
         if (!filled($request->user)){
-            throw new Exception('user_id is required to edit user');
+            return User::create([
+                'name' => $validated['name'],
+                'username' => $validated['username'],
+                'password' => $validated['password'],
+                'phone_number' => $validated['phone_number'],
+                'email_address' => $validated['email_address'],
+                'recieves_alerts' => $validated['recieves_alerts']
+            ]);
         }
-
-        $validated = $request->validated();
-
-        $request->user->update([
+        else{
+             $request->user->update([
             'name' => $validated['name'],
             'username' => $validated['username'],
             'password' => $validated['password'],
             'phone_number' => $validated['phone_number'],
             'email_address' => $validated['email_address'],
             'recieves_alerts' => $validated['recieves_alerts']
-        ]);
+            ]);
 
-        return $request->user;
+            return $request->user;
+        }
     }
 
     /**

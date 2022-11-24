@@ -17,8 +17,7 @@ Route::get('/management', [NavController::class, 'goManagement']);
 Route::get('/current_weather', [WeatherController::class, 'getCurrentWeather']);
 Route::get('/forecast', [WeatherController::class, 'getForecast']);
 
-Route::post('/add_user', [ManagementController::class, 'addUser']);
-Route::post('/edit_user', [ManagementController::class, 'editUser']);
+Route::post('/update_user', [ManagementController::class, 'editUser']);
 Route::post('/delete_user', [ManagementController::class, 'deleteUser']);
 Route::get('/search_users', [ManagementController::class, 'searchUsers']);
 Route::get('/get_user', [ManagementController::class, 'getUser']);
