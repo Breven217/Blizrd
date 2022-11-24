@@ -51,7 +51,11 @@ function expandInstallation(index=null){
         <div class="expanded-installation">
             <div>Location: ` + installation.location.name + `</div>
             <div>Installed on: ` + installation.installed_on + `</div>
-            <div>Balance Due: $` + installation.balance_due + `.00</div>
+            <div>Balance Due: $` + installation.balance_due + `.00
+                <button id="mark-paid-button" onclick="markPaid(` + index + `)">
+                Mark Paid
+                </button>
+            </div>
             <h3>Chain installs/removals</h3>
             <div class="installation-actions">`
 
