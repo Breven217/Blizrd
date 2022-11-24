@@ -93,7 +93,7 @@ footer{
   display: grid;
   width: 400px;
   grid-template-rows: 30px auto 35px;
-  background-color: #2d6dcc30;
+  background-color: #fff;
   z-index: 100;
 }
 
@@ -102,7 +102,7 @@ footer{
   height: 100vh;
   top: 0px;
   left: 0px;
-  background-color: #2d6dcc0a;
+  background-color: #2d6dcc0e;
   z-index: 99;
   position: absolute;
 }
