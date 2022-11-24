@@ -30,14 +30,16 @@ class ManagementController extends Controller
             ]);
         }
         else{
-             $request->user->update([
-            'name' => $validated['name'],
-            'username' => $validated['username'],
-            'password' => $validated['password'],
-            'phone_number' => $validated['phone_number'],
-            'email_address' => $validated['email_address'],
-            'recieves_alerts' => $validated['recieves_alerts']
-            ]);
+            $request->user->name = $validated['name'];
+            $request->user->username = $validated['username'];
+            if (filled($request->input('password')))
+            {
+                $request->user->password = $validated['password'];
+            }
+            $request->user->phone_number = $validated['phone_number'];
+            $request->user->email_address = $validated['email_address'];
+            $request->user->recieves_alerts = $validated['recieves_alerts'];
+            $request->user->save();
         }
     }
 
