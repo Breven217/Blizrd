@@ -36,11 +36,12 @@ class WeatherAlert extends Command
 
         $forecastTomorrow = $weatherController->getForecast()[1]['data'];
 
-        $snowCasts = $forecastTomorrow->whereIn('weather_code',[800,600,601,602,611,612,613,615,616,620,621,622]);
+        $snowCasts = $forecastTomorrow->whereIn('weather_code',[600,601,602,611,612,613,615,616,620,621,622]);
 
-        // if (!filled($snowCasts)){
-        //     return Command::SUCCESS;
-        // }
+        if (!filled($snowCasts)){
+            echo ("no texts sents as there is no snow on the forecast");
+            return Command::SUCCESS;
+        }
 
         $message = "Snow is on tomorrow's forecast: ";
 
@@ -49,7 +50,9 @@ class WeatherAlert extends Command
         }
 
         $users = User::where('receives_alerts',true)->get();
-        echo($users);
+        
+        echo("texts sent successfully with message: " . $message ."\n To the following users: \n" . $users);
+
         Notification::send($users, new ForecastText($message));
         return Command::SUCCESS;
     }
