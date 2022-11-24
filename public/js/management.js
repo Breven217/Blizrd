@@ -91,7 +91,6 @@ async function editUser(user_id=null)
 
     content.innerHTML = `
     <form class="user-form" onsubmit="updateUser(event)"  method="POST">
-    @csrf
         <input type="text" name="username" id="username" placeholder="Username" value="` + user_data.username ?? '' + `">
         <input type="text" name="password" id="password" placeholder="Password" value="` + user_data.password ?? '' + `">
         <input type="text" name="name" id="name" placeholder="Name" value="` + user_data.name ?? '' + `">
