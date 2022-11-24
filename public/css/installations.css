@@ -163,6 +163,8 @@
     display:grid;
     text-align: left;
     grid-template-columns: 34% 33% 33%;
+    padding-left: 10px;
+    padding-top: 5px;
 }
 
 .add-action-info:hover {

@@ -179,28 +179,30 @@ function addAction()
 {
     let content = document.getElementById('add-actions')
 
-    let users = `<label for="user_id">Employee:</label>
+    let users = `<div><label for="user_id">Employee:</label>
         <select name="user_id" id="user_id">`
     installationOptions.users.forEach(user => {
         users += '<option value="'+user.id+'">'+user.name+'</option>'
     });
-    users += '</select>'
+    users += '</select></div>'
 
-    let vehicles = `<label for="vehicle_id">Vehicle:</label>
+    let vehicles = `<div><label for="vehicle_id">Vehicle:</label>
         <select name="vehicle_id" id="vehicle_id">`
     installationOptions.vehicles.forEach(veh => {
         vehicles += '<option value="'+veh.id+'">'+veh.vehicle_number+'</option>'
     });
-    vehicles += '</select>'
+    vehicles += '</select></div>'
 
     content.innerHTML = content.innerHTML + `
         <div class="add-action-info">
             ` + users + vehicles + `
-            <label for="installed">Action Type: </label>
-            <select name="installed" id="installed">
-                <option value="1">Install</option>
-                <option value="0">Removal</option>
-            </select>
+            <div>
+                <label for="installed">Action Type: </label>
+                <select name="installed" id="installed">
+                    <option value="1">Install</option>
+                    <option value="0">Removal</option>
+                </select>
+            </div>
         </div>
     `
 }
