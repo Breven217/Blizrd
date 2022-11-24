@@ -21,4 +21,6 @@ Route::post('/add_user', [ManagementController::class, 'addUser']);
 Route::post('/edit_user', [ManagementController::class, 'editUser']);
 Route::post('/delete_user', [ManagementController::class, 'deleteUser']);
 Route::get('/search_users', [ManagementController::class, 'searchUsers']);
+Route::get('/get_user', [ManagementController::class, 'getUser']);
+
 

@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Exception;
+use Illuminate\Http\JsonResponse;
 
 class LoginController extends Controller
 {
+    /**
+     * opening function routes to either home or login based on login status
+     *
+     * @return \Illuminate\Routing\Redirector 
+     */
     public function index(){
         session_start();
         if (!isset($_SESSION['user'])){
@@ -18,6 +23,12 @@ class LoginController extends Controller
         }
     }
     
+    /**
+     * attempts to login the user based on the passed up username and password
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function checkLogin(Request $request){
         $request->validate([
             'username' => 'required',
@@ -49,6 +60,11 @@ class LoginController extends Controller
         }
     }
 
+    /**
+     * logs the user out by destroying the phpsession holding the user information
+     *
+     * @return void
+     */
     public function logout(){
         session_start();
         session_destroy();

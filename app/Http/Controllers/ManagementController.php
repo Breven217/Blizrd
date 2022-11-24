@@ -10,6 +10,12 @@ use TheSeer\Tokenizer\Exception;
 
 class ManagementController extends Controller
 {
+    /**
+     * creates a new user with the passed up information
+     *
+     * @param UserRequest $request
+     * @return void
+     */
     public function addUser(UserRequest $request)
     {
         $validated = $request->validated();
@@ -23,6 +29,12 @@ class ManagementController extends Controller
         ]);
     }
 
+    /**
+     * updates the matching user with all parameters passed up
+     *
+     * @param UserRequest $request
+     * @return void
+     */
     public function editUser(UserRequest $request)
     {
         if (!filled($request->user)){
@@ -43,6 +55,12 @@ class ManagementController extends Controller
         return $request->user;
     }
 
+    /**
+     * deletes the user matching the passed in user_id
+     *
+     * @param Request $request
+     * @return void
+     */
     public function deleteUser(Request $request)
     {
         $request->validate([
@@ -53,6 +71,12 @@ class ManagementController extends Controller
         $user->delete();
     }
 
+    /**
+     * searchs the user table by the passed in parameters
+     *
+     * @param UserSearchRequest $request
+     * @return void
+     */
     public function searchUsers(UserSearchRequest $request) 
     {
         $name = $request->input('name');
@@ -76,5 +100,20 @@ class ManagementController extends Controller
                 ->orderByRaw('email_address like ? desc', [$email]);
             })
         ->get();
+    }
+
+    /**
+     * return the user associated with a passed up user_id
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function getUser(Request $request)
+    {
+        $request->validate([
+            'user_id' => 'required|integer|exists:user,id'
+        ]);
+
+        return User::find($request->input('user_id'));
     }
 }

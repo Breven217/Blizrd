@@ -14,7 +14,7 @@
             @csrf
             <div class="tooltip">
                 <span class="tooltiptext" id="username-tooltip">Username is required</span>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username" required>
             </div>
             <div class="tooltip">
                 <span class="tooltiptext" id="password-tooltip">Password is required</span>

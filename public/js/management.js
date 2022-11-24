@@ -45,7 +45,7 @@ async function searchUsers(event)
                     alertBox = '<i class="fa-regular fa-square-check fa-lg"></i>'
                 }
                 userTable += `
-                <tr onclick="editUser(` + result + `)">
+                <tr onclick="editUser(` + result.id + `)">
                     <td>` + result.name + `</td>
                     <td>` + result.phone_number.slice(0,3) + '-' + 
                         result.phone_number.slice(3,6) + '-' + 
@@ -64,7 +64,54 @@ async function searchUsers(event)
     });
 }
 
-async function editUser(event)
+async function editUser(user_id=null)
 {
-    console.log(event)
+    let content = document.getElementById('management-content')
+    let originalContent = content.innerHTML
+    content.innerHTML = '<i class="fa-regular fa-snowflake fa-spin fa-4x"></i>'
+
+    let user_data = null
+    if (user_id != null) {
+        await fetch("/get_user?user_id=" + user_id, {
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.error){
+            content.innerHTML = originalContent
+            //throw up an error modal here
+            }
+            else {
+                user_data = data;
+            }   
+        })
+    }
+
+    userContent = `
+    <form class="user-form" onsubmit="updateUser(event)">
+    @csrf
+            <div class="tooltip">
+                <span class="tooltiptext" id="username-tooltip">Username is required</span>
+                <input type="text" name="username" id="username" placeholder="Username" value="` + user_data.username ?? "" + `">
+            </div>
+            <div class="tooltip">
+                <span class="tooltiptext" id="username-tooltip">Password is required</span>
+                <input type="text" name="password" id="password" placeholder="Password" value="` + user_data.password ?? "" + `">
+            </div>
+
+            <button name="login-button" class="login-button">
+                <span>
+                    Login
+                </span>
+            </button>
+    </form>
+    `
 }
+
+async function updateUser(event)
+{
+    event.preventDefault()
+}
+

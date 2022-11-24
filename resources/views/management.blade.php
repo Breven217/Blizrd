@@ -11,7 +11,7 @@
 @section('content')
     <div class="content">
         <div id="search-container"> 
-            <button id="add-user-button" class="management-button" onclick="editUser(event)">
+            <button id="add-user-button" class="management-button" onclick="editUser()">
                 Add Employee
             </button>       
 
