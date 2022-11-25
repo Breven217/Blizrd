@@ -48,10 +48,10 @@ async function searchUsers(event)
                 userTable += `
                 <tr onclick="editUser(` + result.id + `)">
                     <td>` + result.name + `</td>
-                    <td>` + result.phone_number.slice(0,1) + ' ' +
-                        result.phone_number.slice(1,4) + '-' + 
-                        result.phone_number.slice(4,7) + '-' + 
-                        result.phone_number.slice(7,11) + 
+                    <td>` + 
+                        result.phone_number.slice(0,3) + '-' + 
+                        result.phone_number.slice(3,6) + '-' + 
+                        result.phone_number.slice(6,10) + 
                     `</td>
                     <td>` + result.email_address + `</td>
                     <td>` + alertBox + `</td>
