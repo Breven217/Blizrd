@@ -189,7 +189,7 @@ function addAction()
     let vehicles = `<div><label for="vehicle_id">Vehicle:</label>
         <select name="vehicle_id" id="vehicle_id" class="vehicle-option"></select></div>`
 
-    content.innerHTML = content.innerHTML + `
+    content.innerHTML += `
         <div class="add-action-info">
             ` + users + vehicles + `
             <div>
