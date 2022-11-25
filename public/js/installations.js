@@ -188,10 +188,9 @@ function addAction()
 
     let vehicles = `<div><label for="vehicle_id">Vehicle:</label>
         <select name="vehicle_id" id="vehicle_id" class="vehicle-option"></select></div>`
-
-    content.innerHTML += `
-        <div class="add-action-info">
-            ` + users + vehicles + `
+    let newAction = document.createElement('div')
+    newAction.className = 'add-action-info'
+    newAction.innerHTML = users + vehicles + `
             <div>
                 <label for="installed">Action Type: </label>
                 <select name="installed" id="installed">
@@ -199,8 +198,8 @@ function addAction()
                     <option value="0">Removal</option>
                 </select>
             </div>
-        </div>
     `
+    content.appendChild(newAction)
 
     updateVehicleOptions()
 }
