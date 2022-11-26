@@ -6,11 +6,13 @@ let currentReport = null
 async function generateInstallationHistory() {
     generateFrame('Installation History')
     currentReport = 0
+    setButtonActive('history-button')
 }
 
 async function generateEmployeePerformance() {
     generateFrame('Employee Performance')
     currentReport = 1
+    setButtonActive('performance-button')
 }
 
 function generateFrame(title=null)
@@ -31,4 +33,16 @@ function generateFrame(title=null)
             <div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>
         </div>
     `
+}
+
+setButtonActive(button_id=null)
+{
+    if (button_id==null){return}
+
+    buttons = Array.from(document.getElementsByClassName('report-button'))
+
+    buttons.forEach(button => {
+        if (button.id == button_id){button.disabled = false}
+        else {button.disabled = true}
+    });
 }
