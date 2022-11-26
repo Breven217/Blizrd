@@ -69,15 +69,17 @@ class ReportsController extends Controller
             ->with('chainActions')
             ->get();
 
-        $employees = $employees->map(function ($e) {
+        $employees = $employees->map(function ($e) use ($request) {
+            $actions = $e->chainActions->whereBetween('installed_on', [$request->input('start_date'), $request->input('end_date')]);
+
             return [
                 'name' => $e->name,
-                'installs' => $e->chainActions->where('install_chain',true)->count('id'),
-                'removals' => $e->chainActions->where('install_chain',false)->count('id'),
-                'income' => $e->chainActions->count('id') * config('app.chain_rate'),
-                'portion' => $e->chainActions->count('id') * config('app.employee_rate'),
-                'profit' => $e->chainActions->count('id') * config('app.chain_rate') - 
-                            $e->chainActions->count('id') * config('app.employee_rate')
+                'installs' => $actions->where('install_chain',true)->count('id'),
+                'removals' => $actions->where('install_chain',false)->count('id'),
+                'income' => $actions->count('id') * config('app.chain_rate'),
+                'portion' => $actions->count('id') * config('app.employee_rate'),
+                'profit' => $actions->count('id') * config('app.chain_rate') - 
+                            $actions->count('id') * config('app.employee_rate')
             ];
         });
 
