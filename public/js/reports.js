@@ -134,6 +134,7 @@ async function getEmployeePerformanceData()
     }
 
     let content = document.getElementById('report-data')
+    content.innerHTML = '<div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>'
 
     await fetch("/get_performance_data?start_date=" + start + "&end_date=" + end, {
         headers: {
@@ -148,14 +149,34 @@ async function getEmployeePerformanceData()
         }
         else{
             let newContent = `
-                <table class="report-header-table">
+                <div class="report-header-data">
+                </div>
+                <div class="report-table-container">
+                    <table class="report-data-table">
+                        <tr>
+                            <th>Employee</th>
+                            <th>Installs</th>
+                            <th>Removals</th>
+                            <th>Income Generated</th>
+                            <th>Employee Portion</th>
+                            <th>Profit</th>
+                        </tr>
+            `   
+
+            data.forEach(e => {
+                newContent += `
                     <tr>
-                        <th>Total Installations: `+data.totals.total_installations+`</th>
-                        <th>Total Paid: $`+data.totals.total_paid+`</th>
-                        <th>Total: $`+data.totals.total_charge+`</th>
+                        <td>`+e.name+`</td>
+                        <td>`+e.installs+`</td>
+                        <td>`+e.removals+`</td>
+                        <td>`+e.income+`</td>
+                        <td>`+e.portion+`</td>
+                        <td>$`+e.profit+`.00</td>
                     </tr>
-                </table>
-            `
+                `
+            });
+
+            newContent += "</table></div>"
             content.innerHTML = newContent
         }
     })

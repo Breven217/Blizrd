@@ -51,4 +51,8 @@ class User extends Model
     protected $hidden = [
         'password'
     ];
+
+    public function chainActions() {
+        return $this->hasMany(ChainAction::class);
+    }
 }
