@@ -78,19 +78,20 @@ async function getInstallationHistoryData()
             let newContent = `
                 <div class="report-header-data">
                     <div>Total Installations: `+data.totals.total_installations+`</div>
-                    <div>Total Paid: $`+data.totals.total_paid+`</div>
-                    <div>Total Charge: $`+data.totals.total_charge+`</div>
+                    <div>Total Paid: $`+data.totals.total_paid+`.00</div>
+                    <div>Total Charge: $`+data.totals.total_charge+`.00</div>
                 </div>
-                <table class="report-data-table">
-                    <tr>
-                        <th>Location</th>
-                        <th>Installed on</th>
-                        <th>Action count</th>
-                        <th>Paid</th>
-                        <th>Paid on</th>
-                        <th>Charge</th>
-                    </tr>
-            `
+                <div class="report-table-container">
+                    <table class="report-data-table">
+                        <tr>
+                            <th>Location</th>
+                            <th>Installed on</th>
+                            <th>Action count</th>
+                            <th>Paid</th>
+                            <th>Paid on</th>
+                            <th>Charge</th>
+                        </tr>
+            `   
 
             data.installations.forEach(i => {
                 let paid = false
@@ -109,6 +110,8 @@ async function getInstallationHistoryData()
                     </tr>
                 `
             });
+
+            newContent += "</table></div>"
             content.innerHTML = newContent
         }
     })
