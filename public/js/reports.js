@@ -106,7 +106,16 @@ async function getEmployeePerformanceData()
             content.innerHTML = 'Failed to get Employee Performance.  Error: ' + data.message
         }
         else{
-            content.innerHTML = data
+            let newContent = `
+                <table class="report-header-table">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+            `
+            content.innerHTML = newContent
         }
     })
 }
