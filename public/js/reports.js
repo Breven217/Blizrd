@@ -7,12 +7,14 @@ function generateInstallationHistory() {
     generateFrame('Installation History')
     currentReport = 0
     setButtonActive('history-button')
+    getInstallationHistoryData()
 }
 
 function generateEmployeePerformance() {
     generateFrame('Employee Performance')
     currentReport = 1
     setButtonActive('performance-button')
+    getInstallationHistoryData()
 }
 
 function generateFrame(title=null)
@@ -47,7 +49,7 @@ function setButtonActive(button_id=null)
     });
 }
 
-getInstallationHistoryData()
+async function getInstallationHistoryData()
 {
     let start = document.getElementById('report-date-from').value
     let end = document.getElementById('report-date-to').value
