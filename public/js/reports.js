@@ -4,16 +4,16 @@ let currentReport = null
 //1 = Employee Performance
 
 async function generateInstallationHistory() {
-    generateTitle('Installation History')
+    generateFrame('Installation History')
     currentReport = 0
 }
 
 async function generateEmployeePerformance() {
-    generateTitle('Employee Performance')
+    generateFrame('Employee Performance')
     currentReport = 1
 }
 
-function generateTitle(title=null)
+function generateFrame(title=null)
 {
     let content = document.getElementById('report-content')
 
