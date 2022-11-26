@@ -14,7 +14,7 @@ function generateEmployeePerformance() {
     generateFrame('Employee Performance')
     currentReport = 1
     setButtonActive('performance-button')
-    getInstallationHistoryData()
+    getEmployeePerformanceData()
 }
 
 function generateFrame(title=null)
@@ -51,8 +51,15 @@ function setButtonActive(button_id=null)
 
 async function getInstallationHistoryData()
 {
-    let start = document.getElementById('report-date-from').value
-    let end = document.getElementById('report-date-to').value
+    let startSelector = document.getElementById('report-date-from')
+    let endSelector = document.getElementById('report-date-to')
+    let start = startSelector.value
+    let end = endSelector.value
+
+    if (start > end)
+    {
+        endSelector.value = start
+    }
 
     let content = document.getElementById('report-data')
 
@@ -66,6 +73,37 @@ async function getInstallationHistoryData()
     .then((data) => {
         if (data.message){
             content.innerHTML = 'Failed to get Installation History.  Error: ' + data.message
+        }
+        else{
+            content.innerHTML = data
+        }
+    })
+}
+
+async function getEmployeePerformanceData()
+{
+    let startSelector = document.getElementById('report-date-from')
+    let endSelector = document.getElementById('report-date-to')
+    let start = startSelector.value
+    let end = endSelector.value
+
+    if (start > end)
+    {
+        endSelector.value = start
+    }
+
+    let content = document.getElementById('report-data')
+
+    await fetch("/get_performance_data?start_date=" + start + "&end_date=" + end, {
+        headers: {
+            'Accept': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.message){
+            content.innerHTML = 'Failed to get Employee Performance.  Error: ' + data.message
         }
         else{
             content.innerHTML = data

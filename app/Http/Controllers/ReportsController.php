@@ -26,7 +26,7 @@ class ReportsController extends Controller
             ->with('location', 'chainActions')
             ->get();
 
-        $installations->map(function ($i) {
+        $installations = $installations->map(function ($i) {
             return [
                 'installed_on' => $i->installed_on,
                 'location' => $i->location->name,
