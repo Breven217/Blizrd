@@ -19,6 +19,8 @@
                     Employee Performance
                 </button>
             </div>
+            <div id='report-content'>
+            </div>
         </div>
     </div>
 @endsection
