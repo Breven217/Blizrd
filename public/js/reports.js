@@ -94,8 +94,8 @@ async function getInstallationHistoryData()
             `   
 
             data.installations.forEach(i => {
-                let paid = false
-                if (i.paid){paid=true}
+                let paid = '<i class="fa-regular fa-square fa-lg"></i>'
+                if (i.paid){paid='<i class="fa-regular fa-square-check fa-lg"></i>'}
 
                 let paid_on = 'N/A'
                 if (i.paid_on != null){paid_on = i.paid_on}
