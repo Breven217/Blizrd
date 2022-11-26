@@ -35,8 +35,7 @@
 
 #report-content {
     display: grid;
-    grid-template-rows: 50px auto;
-    grid-row-gap: 10px;
+    grid-template-rows: 50px 10px auto;
 }
 
 .report-title {
