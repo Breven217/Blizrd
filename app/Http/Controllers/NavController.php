@@ -79,4 +79,20 @@ class NavController extends Controller
             return $loggedIn;
         }
     }
+
+    /**
+     * returns the Reports view if a user is not logged in or the login view if not
+     *
+     * @return \Illuminate\Contracts\View\View|boolean
+     */
+    public function goReports()
+    {
+        $loggedIn = $this->checkLoggedUser();
+        if(!$loggedIn) {
+            return view('reports');
+        }
+        else{
+            return $loggedIn;
+        }
+    }
 }
