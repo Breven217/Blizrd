@@ -26,3 +26,7 @@ async function home(){
 async function installations(){
     window.location.href = 'installations'
 }
+
+async function reports(){
+    window.location.href = 'reports'
+}
