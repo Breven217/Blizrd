@@ -28,7 +28,7 @@ class ReportsController extends Controller
 
         $installations = $installations->map(function ($i) {
             return [
-                'installed_on' => $i->installed_on,
+                'installed_on' => date("Y/m/d", strtotime($i->installed_on)),
                 'location' => $i->location->name,
                 'action_count' => $i->chainActions->count('id'),
                 'paid' => $i->paid,
