@@ -56,7 +56,7 @@ class ReportsController extends Controller
      * Undocumented function
      *
      * @param Request $request
-     * @return Illuminate\Support\Collection
+     * @return \Illuminate\Database\Eloquent\Collection
      */
     public function getPerformanceData(Request $request)
     {
