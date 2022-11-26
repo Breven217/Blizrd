@@ -12,8 +12,8 @@ function generateTitle(title=null)
     let content = document.getElementById('report-content')
 
     let now = new Date();
-    let firstDay = new Date(now.getFullYear(), now.getMonth(), 1)
-    let lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0)
+    let firstDay = now.getFullYear() + '-' + now.getMonth() + '-01'
+    let lastDay = now.getFullYear() + '-' + now.getMonth() + '-' + new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate()
 
     content.innerHTML = `
         <h2 class="report-title">`+title+`</h2>
