@@ -66,7 +66,7 @@ class ReportsController extends Controller
         ]);
 
         $employees = User::query()
-            ->with('chainActions', function ($query) use ($request) {
+            ->with('chainActions.installation', function ($query) use ($request) {
                 $query->whereBetween('installed_on', [$request->input('start_date'), $request->input('end_date')]);
             })
             ->get();
