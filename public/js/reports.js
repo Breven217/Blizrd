@@ -35,7 +35,7 @@ function generateFrame(title=null)
     `
 }
 
-setButtonActive(button_id=null)
+function setButtonActive(button_id=null)
 {
     if (button_id==null){return}
 
