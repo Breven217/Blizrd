@@ -75,7 +75,41 @@ async function getInstallationHistoryData()
             content.innerHTML = 'Failed to get Installation History.  Error: ' + data.message
         }
         else{
-            content.innerHTML = data
+            let newContent = `
+                <div class="report-header-data">
+                    <div>Total Installations: `+data.totals.total_installations+`</div>
+                    <div>Total Paid: $`+data.totals.total_paid+`</div>
+                    <div>Total Charge: $`+data.totals.total_charge+`</div>
+                </div>
+                <table class="report-data-table">
+                    <tr>
+                        <th>Location</th>
+                        <th>Installed on</th>
+                        <th>Action count</th>
+                        <th>Paid</th>
+                        <th>Paid on</th>
+                        <th>Charge</th>
+                    </tr>
+            `
+
+            data.installations.forEach(i => {
+                let paid = false
+                if (i.paid){paid=true}
+
+                let paid_on = 'N/A'
+                if (i.paid_on != null){paid_on = i.paid_on}
+                newContent += `
+                    <tr>
+                        <td>`+i.location+`</td>
+                        <td>`+i.installed_on+`</td>
+                        <td>`+i.action_count+`</td>
+                        <td>`+paid+`</td>
+                        <td>`+paid_on+`</td>
+                        <td>$`+i.total_charge+`.00</td>
+                    </tr>
+                `
+            });
+            content.innerHTML = newContent
         }
     })
 }
