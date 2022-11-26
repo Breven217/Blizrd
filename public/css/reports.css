@@ -19,7 +19,11 @@
     line-height: 30px;
 }
 
-.content button:hover {
+.content button:disabled {
+    opacity: 50%;
+}
+
+.content button:hover:not(:disabled) {
     background-color: #2d6dcc75;
     cursor: pointer;
 }

@@ -42,7 +42,7 @@ function setButtonActive(button_id=null)
     buttons = Array.from(document.getElementsByClassName('report-button'))
 
     buttons.forEach(button => {
-        if (button.id == button_id){button.disabled = false}
-        else {button.disabled = true}
+        if (button.id == button_id){button.disabled = true}
+        else {button.disabled = false}
     });
 }
