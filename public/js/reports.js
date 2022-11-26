@@ -3,13 +3,13 @@ let currentReport = null
 //0 = Installation History
 //1 = Employee Performance
 
-async function generateInstallationHistory() {
+function generateInstallationHistory() {
     generateFrame('Installation History')
     currentReport = 0
     setButtonActive('history-button')
 }
 
-async function generateEmployeePerformance() {
+function generateEmployeePerformance() {
     generateFrame('Employee Performance')
     currentReport = 1
     setButtonActive('performance-button')
@@ -26,10 +26,10 @@ function generateFrame(title=null)
     content.innerHTML = `
         <h2 class="report-title">`+title+`</h2>
         <div class="report-dates">
-            <input type="date" id="report-date-to" name="report-date-to" value="`+firstDay+`">
-            <input type="date" id="report-date-from" name="report-date-from" value="`+lastDay+`">
+            <input type="date" id="report-date-from" name="report-date-from" value="`+firstDay+`">
+            <input type="date" id="report-date-to" name="report-date-to" value="`+lastDay+`">
         </div>
-        <div class="report-data">
+        <div id="report-data">
             <div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>
         </div>
     `
@@ -45,4 +45,28 @@ function setButtonActive(button_id=null)
         if (button.id == button_id){button.disabled = true}
         else {button.disabled = false}
     });
+}
+
+getInstallationHistoryData()
+{
+    let start = document.getElementById('report-date-from').value
+    let end = document.getElementById('report-date-to').value
+
+    let content = document.getElementById('report-data')
+
+    await fetch("/get_history_data?start_date=" + start + "&end_date=" + end, {
+        headers: {
+            'Accept': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.message){
+            content.innerHTML = 'Failed to get Installation History.  Error: ' + data.message
+        }
+        else{
+            content.innerHTML = data
+        }
+    })
 }

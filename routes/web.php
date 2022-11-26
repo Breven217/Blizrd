@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\NavController;
+use App\Http\Controllers\ReportsController;
 use App\Models\Location;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
@@ -33,6 +34,9 @@ Route::get('/get_installations', [InstallationsController::class, 'getOutstandin
 Route::get('/get_installation_options', [InstallationsController::class, 'getInstallationOptions']);
 Route::post('/mark_installation_paid', [InstallationsController::class, 'markPaid']);
 Route::post('/create_installation', [InstallationsController::class, 'createInstallation']);
+
+Route::get('/get_history_data', [ReportsController::class, 'getHistoryData']);
+Route::get('/get_performance_data', [ReportsController::class, 'getPerformanceData']);
 
 
 //testing routes
