@@ -10,6 +10,16 @@
 
 @section('content')
     <div class="content">
+        <div class='reports-container'>
+            <div class='report-buttons'>
+                <button id="history-button" onclick="generateInstallationHistory()">
+                    Installation History
+                </button>
+                <button id="performance-button" onclick="generateEmployeePerformance()">
+                    Employee Performance
+                </button>
+            </div>
+        </div>
     </div>
 @endsection
     
