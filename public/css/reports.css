@@ -35,7 +35,7 @@
 
 #report-content {
     display: grid;
-    grid-template-rows: 50px 10px auto;
+    grid-template-rows: 50px 30px auto;
 }
 
 .report-title {
