@@ -63,7 +63,7 @@
 
 #report-data {
     display: grid;
-    grid-template-rows: 30px, auto;
+    grid-template-rows: 30px, 90%;
 }
 
 .report-header-data {
