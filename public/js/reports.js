@@ -1,10 +1,16 @@
 
 let currentReport = null
 //0 = Installation History
+//1 = Employee Performance
 
 async function generateInstallationHistory() {
     generateTitle('Installation History')
     currentReport = 0
+}
+
+async function generateEmployeePerformance() {
+    generateTitle('Employee Performance')
+    currentReport = 1
 }
 
 function generateTitle(title=null)
