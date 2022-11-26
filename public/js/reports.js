@@ -65,6 +65,7 @@ async function getInstallationHistoryData()
     }
 
     let content = document.getElementById('report-data')
+    content.innerHTML = '<div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>'
 
     await fetch("/get_history_data?start_date=" + start + "&end_date=" + end, {
         headers: {
