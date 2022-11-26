@@ -35,7 +35,8 @@
 
 #report-content {
     display: grid;
-    grid-template-rows: 50px 30px auto;
+    grid-template-rows: 50px auto;
+    grid-row-gap: 10px;
 }
 
 .report-title {
@@ -59,11 +60,6 @@
     justify-self: right;
     position: relative;
     bottom: 30px;
-}
-
-#report-data {
-    display: grid;
-    grid-template-rows: 30px, 90%;
 }
 
 .report-header-data {
