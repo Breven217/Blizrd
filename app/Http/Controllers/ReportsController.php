@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\ChainAction;
 use App\Models\Installation;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -66,19 +65,21 @@ class ReportsController extends Controller
             'end_date' => 'required|date'
         ]);
 
-        $employees = User::get();
+        $employees = User::query()
+            ->with('chainActions', function ($query) use ($request) {
+                $query->whereBetween('installed_on', [$request->input('start_date'), $request->input('end_date')]);
+            })
+            ->get();
 
-        $employees = $employees->map(function ($e) use ($request) {
-            $actions = ChainAction::with('installation')->where('user_id',$e->id);
-            $actions = $actions->whereBetween('installation.installed_on', [$request->input('start_date'), $request->input('end_date')]);
+        $employees = $employees->map(function ($e) {
             return [
                 'name' => $e->name,
-                'installs' => $actions->where('install_chain',true)->count('id'),
-                'removals' => $actions->where('install_chain',false)->count('id'),
-                'income' => $actions->count('id') * config('app.chain_rate'),
-                'portion' => $actions->count('id') * config('app.employee_rate'),
-                'profit' => $actions->count('id') * config('app.chain_rate') - 
-                            $actions->count('id') * config('app.employee_rate')
+                'installs' => $e->chainActions->where('install_chain',true)->count('id'),
+                'removals' => $e->chainActions->where('install_chain',false)->count('id'),
+                'income' => $e->chainActions->count('id') * config('app.chain_rate'),
+                'portion' => $e->chainActions->count('id') * config('app.employee_rate'),
+                'profit' => $e->chainActions->count('id') * config('app.chain_rate') - 
+                            $e->chainActions->count('id') * config('app.employee_rate')
             ];
         });
 
