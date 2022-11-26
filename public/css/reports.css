@@ -53,9 +53,9 @@
     line-height: 50px;
     display: grid;
     grid-template-columns: 50% 50%;
-    text-align: right;
+    padding-left: 100% - 250px;
 }
 
 .report-dates input {
-    width:75px;
+    width:125px;
 }
