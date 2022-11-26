@@ -102,8 +102,6 @@
 .report-data-table tr {
     transition-duration: 0.25s;
     font-size: 18px;
-    display: grid;
-    grid-template-columns: 17% 16% 16% 16% 16% 16%;
 }
 
 .report-data-table tr:last-child {
