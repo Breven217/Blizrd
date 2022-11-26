@@ -37,4 +37,9 @@ class ChainAction extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function installation()
+    {
+        return $this->belongsTo(Installation::class);
+    }
 }

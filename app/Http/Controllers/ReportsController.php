@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\ChainAction;
 use App\Models\Installation;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -65,13 +66,11 @@ class ReportsController extends Controller
             'end_date' => 'required|date'
         ]);
 
-        $employees = User::query() 
-            ->with('chainActions')
-            ->get();
+        $employees = User::get();
 
         $employees = $employees->map(function ($e) use ($request) {
-            $actions = $e->chainActions->whereBetween('installed_on', [$request->input('start_date'), $request->input('end_date')]);
-
+            $actions = ChainAction::with('installation')->where('user_id',$e->id);
+            $actions = $actions->whereBetween('installation.installed_on', [$request->input('start_date'), $request->input('end_date')]);
             return [
                 'name' => $e->name,
                 'installs' => $actions->where('install_chain',true)->count('id'),
