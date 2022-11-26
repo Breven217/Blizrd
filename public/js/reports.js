@@ -169,8 +169,8 @@ async function getEmployeePerformanceData()
                         <td>`+e.name+`</td>
                         <td>`+e.installs+`</td>
                         <td>`+e.removals+`</td>
-                        <td>`+e.income+`</td>
-                        <td>`+e.portion+`</td>
+                        <td>$`+e.income+`.00</td>
+                        <td>$`+e.portion+`.00</td>
                         <td>$`+e.profit+`.00</td>
                     </tr>
                 `
