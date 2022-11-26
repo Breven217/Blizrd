@@ -25,11 +25,14 @@ function generateFrame(title=null)
     let firstDay = now.getFullYear() + '-' + now.getMonth() + '-01'
     let lastDay = now.getFullYear() + '-' + now.getMonth() + '-' + new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate()
 
+    let reportFunction = "getInstallationHistoryData()"
+    if (title=='Employee Performance'){reportFunction = "getEmployeePerformanceData()"}
+    onclick="generateInstallationHistory()"
     content.innerHTML = `
         <h2 class="report-title">`+title+`</h2>
         <div class="report-dates">
-            <input type="date" id="report-date-from" name="report-date-from" value="`+firstDay+`">
-            <input type="date" id="report-date-to" name="report-date-to" value="`+lastDay+`">
+            <input type="date" id="report-date-from" name="report-date-from" value="`+firstDay+`" onchange="`+reportFunction+`">
+            <input type="date" id="report-date-to" name="report-date-to" value="`+lastDay+`" onchange="`+reportFunction+`">
         </div>
         <div id="report-data">
             <div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>
