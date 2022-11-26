@@ -37,10 +37,15 @@ class ReportsController extends Controller
             ];
         });
 
-        $installations->put('totals',[
+        $totals = [
             'total_installations' => $installations->count(),
             'total_paid' => $installations->where('paid',true)->sum('total_charge'),
             'total_charge' => $installations->sum('total_charge')
+        ];
+
+        $installations = collect([
+            'totals' => $totals,
+            'installations' => $installations
         ]);
 
         return $installations;

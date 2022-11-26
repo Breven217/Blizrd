@@ -109,9 +109,9 @@ async function getEmployeePerformanceData()
             let newContent = `
                 <table class="report-header-table">
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>Total Installations: `+data.totals.total_installations+`</th>
+                        <th>Total Paid: $`+data.totals.total_paid+`</th>
+                        <th>Total: $`+data.totals.total_charge+`</th>
                     </tr>
                 </table>
             `
