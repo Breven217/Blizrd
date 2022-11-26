@@ -73,17 +73,17 @@ class ReportsController extends Controller
             })
             ->get();
 
-        // $employees = $employees->map(function ($e) {
-        //     return [
-        //         'name' => $e->name,
-        //         'installs' => $e->chainActions->where('install_chain',true)->count('id'),
-        //         'removals' => $e->chainActions->where('install_chain',false)->count('id'),
-        //         'income' => $e->chainActions->count('id') * config('app.chain_rate'),
-        //         'portion' => $e->chainActions->count('id') * config('app.employee_rate'),
-        //         'profit' => $e->chainActions->count('id') * config('app.chain_rate') - 
-        //                     $e->chainActions->count('id') * config('app.employee_rate')
-        //     ];
-        // });
+        $employees = $employees->map(function ($e) {
+            return [
+                'name' => $e->name,
+                'installs' => $e->chainActions->where('install_chain',true)->count('id'),
+                'removals' => $e->chainActions->where('install_chain',false)->count('id'),
+                'income' => $e->chainActions->count('id') * config('app.chain_rate'),
+                'portion' => $e->chainActions->count('id') * config('app.employee_rate'),
+                'profit' => $e->chainActions->count('id') * config('app.chain_rate') - 
+                            $e->chainActions->count('id') * config('app.employee_rate')
+            ];
+        });
 
         return $employees;
     }
