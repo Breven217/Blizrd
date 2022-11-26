@@ -27,5 +27,8 @@ function generateTitle(title=null)
             <input type="date" id="report-date-to" name="report-date-to" value="`+firstDay+`">
             <input type="date" id="report-date-from" name="report-date-from" value="`+lastDay+`">
         </div>
+        <div class="report-data">
+            <div><i class="fa-regular fa-snowflake fa-spin fa-4x vertical-center"></i></div>
+        </div>
     `
 }
