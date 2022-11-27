@@ -7,7 +7,7 @@ return [
     'openweather_key' => '54a6d10f3bffb5d3e5e67b9fa58a63a6',
     'logan_lat' => '41.7370',
     'logan_lon' => '-111.8338',
-    'chain_rate' => 14,
+    'chain_rate' => 13,
     'employee_rate' => 8,
 
     /*
